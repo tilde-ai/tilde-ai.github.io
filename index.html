@@ -1,0 +1,1378 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tilde · Sistemas para negocios</title>
+<meta name="description" content="Sistemas a medida para ordenar ventas, administración y procesos de negocios, pymes y emprendimientos. Menos tiempo en papeles y en Excel.">
+<meta name="theme-color" content="#F6F0E8">
+<meta property="og:title" content="Tilde · Sistemas para negocios">
+<meta property="og:description" content="Menos tiempo en papeles y en Excel. Más tiempo para tu negocio.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&amp;family=IBM+Plex+Mono:wght@500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Cormorant+Garamond:wght@500;600;700&amp;family=Jost:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,600;1,500;1,600&amp;family=Montserrat:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap">
+<style>
+body{margin:0;background:#F6F0E8;color:#2A2421;font-family:'IBM Plex Sans',system-ui,sans-serif}
+a{color:#A8481F}a:hover{color:#873A19}
+h1,h2,h3{text-wrap:balance}
+p{text-wrap:pretty}
+button,input{font-family:inherit}
+input::placeholder{color:#9C9087}
+/* ---- Pantallas completas (compu y celular) ---- */
+html{scroll-snap-type:y mandatory}
+.site-head{scroll-snap-align:start}
+.hero{min-height:calc(100vh - 63px);box-sizing:border-box;justify-content:center;padding-top:24px!important;padding-bottom:24px!important;gap:18px!important}
+.snap{scroll-snap-align:start}
+.full{min-height:100vh;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center}
+.full > div{width:100%;box-sizing:border-box}
+#proceso > div{padding-top:40px!important;padding-bottom:40px!important;gap:36px!important}
+#contacto > div:first-child{flex:1}
+.contact-main{justify-content:center;padding-top:40px!important;padding-bottom:40px!important}
+.mods{height:100vh;box-sizing:border-box;padding-top:22px!important;padding-bottom:18px!important;gap:12px!important}
+.mod-head{border-top:none!important;padding-top:0!important}
+.app-win{flex:1;min-height:0;display:flex;flex-direction:column;box-shadow:0 2px 6px rgba(0,0,0,0.18),0 18px 36px -24px rgba(0,0,0,0.45)!important}
+.app-body{flex:1;min-height:0;flex-wrap:nowrap!important}
+.app-side{overflow-y:auto;min-height:0;scrollbar-width:thin;scrollbar-color:#5A5048 transparent}
+.app-content{min-height:0!important;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#5A5048 transparent}
+.site-scroll{height:clamp(320px,calc(100vh - 205px),700px)!important}
+.mods{max-width:1480px!important;padding:14px 20px!important;gap:0!important}
+.app-top{padding:8px 16px!important}
+.app-side{flex:0 0 236px!important;padding:12px 10px!important;gap:clamp(4px,1.2vh,12px)!important}
+.app-side > div{gap:2px!important}
+.app-side .grp-label{font-size:10.5px!important;padding-bottom:0!important}
+.app-side .grp-items{grid-template-columns:1fr!important;gap:1px!important}
+.app-side button{height:clamp(31px,4.3vh,42px)!important;font-size:clamp(13px,1.75vh,14.5px)!important}
+.app-content{padding:clamp(14px,2vh,22px) 24px!important}
+.agscroll{max-height:clamp(240px,calc(100vh - 340px),520px)!important}
+@media (max-width: 760px){
+.pg{padding-left:16px!important;padding-right:16px!important}
+.hide-sm{display:none!important}
+.mob-only{display:flex!important}
+.app-side{display:none!important}
+.app-side.open{display:flex!important;flex:1 1 100%!important;flex-direction:column!important;border-right:none!important;border-bottom:1px solid #3A3430;padding:14px 12px 18px!important;gap:14px!important}
+.app-side.open .grp-items{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
+.app-side.open button{height:52px!important;font-size:14px!important;line-height:1.2;border-color:#403934!important;background:#2F2A27!important}
+.app-side.open button[aria-pressed="true"]{border-color:#E07A45!important;background:rgba(224,122,69,0.14)!important}
+.app-content.is-hidden{display:none!important}
+html{scroll-snap-type:y mandatory}
+.site-head{scroll-snap-align:start}
+.site-head .pg{flex-wrap:nowrap!important}
+.hero{min-height:calc(100svh - 63px);box-sizing:border-box;justify-content:center;padding-top:20px!important;padding-bottom:16px!important;gap:16px!important}
+.hero p{font-size:16px!important}
+.hero{gap:14px!important}
+.hero h1{font-size:31px!important}
+.pillars{grid-template-columns:1fr!important;gap:6px!important;padding-top:0!important}
+.pillars > div{padding:9px 12px!important;border-radius:11px!important;align-items:center!important;gap:10px!important}
+.pillars > div > span:first-child{width:32px!important;height:32px!important;border-radius:8px!important}
+.pillars > div > span:last-child > span:first-child{font-size:14px!important}
+.pillars > div > span:last-child > span:last-child{font-size:12.5px!important}
+.hero-mods{gap:8px!important}
+.hero-mods > span{font-size:11px!important}
+.hero-mods > div{gap:6px!important}
+.hero-mods a{padding:6px 11px!important;font-size:12.5px!important}
+.snap{scroll-snap-align:start}
+.full{min-height:100svh;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center}
+.full > div{width:100%;box-sizing:border-box}
+#contacto{justify-content:flex-start!important}
+#contacto > div:first-child{flex:1}
+.contact-main{justify-content:flex-start!important;padding-top:36px!important;padding-bottom:20px!important;gap:16px!important}
+.contact-head{gap:4px!important}
+.contact-head > div{font-size:11.5px!important}
+.contact-head h2{font-size:28px!important}
+.contact-head p{font-size:14px!important}
+.contact-opts{gap:10px!important}
+.contact-opts > div{padding:16px!important;gap:10px!important;border-radius:14px!important}
+.contact-opts span{font-size:11.5px!important}
+.contact-opts p{font-size:14.5px!important}
+.contact-opts a{font-size:15px!important;padding:12px 14px!important}
+.contact-note{font-size:12.5px!important}
+#proceso > div{padding-top:24px!important;padding-bottom:24px!important;gap:20px!important}
+.proc-head{gap:6px!important}
+.proc-head > div{font-size:11.5px!important}
+.proc-head h2{font-size:24px!important}
+.proc-head p{font-size:14px!important}
+.steps{grid-template-columns:1fr!important;gap:0!important}
+.step{flex-direction:row!important;gap:14px!important;padding-bottom:16px}
+.step:last-child{padding-bottom:0}
+.step-line{top:44px!important;bottom:0!important;left:17px!important;right:auto!important;width:2px!important;height:auto!important}
+.step-num{width:36px!important;height:36px!important;font-size:17px!important;box-shadow:none!important}
+.step-body{gap:4px!important;padding-top:4px}
+.step-body h3{font-size:15.5px!important}
+.step-body p{font-size:13px!important;line-height:1.45!important}
+.step-body span{font-size:11px!important;padding:2px 8px!important}
+.proc-cta{padding-top:14px!important;gap:8px 12px!important}
+.proc-cta span{font-size:13.5px!important}
+.proc-cta a{font-size:14px!important;padding:10px 16px!important}
+.mods{height:100svh;box-sizing:border-box;padding:10px 8px!important;gap:8px!important}
+.mod-head{border-top:none!important;padding:0 4px!important}
+.mod-head h2{font-size:21px!important}
+.mod-head p,.mod-tail,.app-top,.app-status{display:none!important}
+.app-win{flex:1;min-height:0;display:flex;flex-direction:column;border-radius:14px!important}
+.app-body{flex:1;min-height:0;flex-direction:column;flex-wrap:nowrap!important}
+.app-side.open{overflow-y:auto;flex:1 1 auto!important;min-height:0}
+.app-content{flex:1 1 auto!important;min-height:0!important;overflow-y:auto;padding:12px 10px 14px!important;font-size:13.5px}
+.mroot{gap:10px!important}
+.mh3{font-size:17px!important}
+.msub{display:none!important}
+.kpis{grid-template-columns:none!important;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:6px!important}
+.kpis > div{padding:7px 8px!important;border-radius:9px!important}
+.kpis > div > div:first-child{font-size:10.5px!important;line-height:1.25}
+.kpis > div > div:last-child{font-size:15px!important}
+.kpis2{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:6px!important}
+.kpis2 > div{padding:8px 10px!important}
+.kpis2 > div > span:nth-child(2){font-size:17px!important}
+.trow{padding:9px 11px!important;font-size:13px!important}
+.agscroll{max-height:300px!important}
+.agcell{height:48px!important}
+.chart{height:120px!important}
+.site-scroll{height:calc(100svh - 236px)!important}
+.web-head h3{display:none!important}
+.web-head > div:last-child{margin-left:auto}
+.app-content{padding:16px 12px 18px!important;min-height:0!important}
+.tmin,.agmin{min-width:0!important}
+.thead{display:none!important}
+.trow{display:flex!important;flex-wrap:wrap;align-items:center;gap:8px 12px!important;padding:12px 14px!important}
+.trow > *{flex:0 0 auto}
+.tfull{flex:1 1 100%!important;min-width:0}
+.tgrow{flex:1 1 0!important;min-width:0}
+.tfirst{order:-1}
+.thide{display:none!important}
+.tend{margin-left:auto!important}
+.gmin{min-width:540px!important}
+.ggrid{grid-template-columns:120px repeat(5,minmax(0,1fr))!important}
+.aggrid{grid-template-columns:46px repeat(3,minmax(0,1fr))!important}
+.kanban{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
+.kanban .kcol{flex:0 0 84%;min-height:0!important;scroll-snap-align:start}
+.site-name{font-size:30px!important}
+.site-h1{font-size:30px!important}
+}
+@keyframes siteIn{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<template id="tpl">
+<div style="width: 100%; background: #F6F0E8; color: #2A2421; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.5">
+
+<!-- NAV -->
+<header class="site-head" style="border-bottom: 1px solid #E2D6C6; background: #F6F0E8">
+<div class="pg" style="max-width: 1180px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 24px">
+<a href="#inicio" aria-label="Tilde, ir al inicio" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #2A2421">
+<svg width="36" height="36" viewBox="0 0 40 40" aria-hidden="true" style="flex-shrink: 0; display: block"><rect width="40" height="40" rx="11" fill="#A8481F"></rect><path d="M11.5 20.5l5.5 5.5 11.5-12" fill="none" stroke="#FFFFFF" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<span style="display: flex; flex-direction: column; gap: 3px"><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 26px; line-height: 1; letter-spacing: -0.04em; color: #2A2421">Tilde</span><span style="font-size: 10.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #5C5049">Sistemas para negocios</span></span>
+</a>
+<nav aria-label="Secciones" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 22px; font-size: 15px; font-weight: 500">
+<a href="#modulos" class="hide-sm" style="color: #2A2421; text-decoration: none; padding: 10px 0">Módulos</a>
+<a href="#proceso" class="hide-sm" style="color: #2A2421; text-decoration: none; padding: 10px 0">Cómo trabajamos</a>
+<a href="#contacto" style="background: #A8481F; color: #FFFFFF; text-decoration: none; padding: 10px 18px; border-radius: 999px; font-weight: 600">Hablemos</a>
+</nav>
+</div>
+</header>
+
+<!-- HERO -->
+<section id="inicio" class="pg hero" style="max-width: 1180px; margin: 0 auto; padding: 64px 24px 40px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #A8481F">Sistemas para negocios, pymes y emprendimientos</div>
+<h1 style="margin: 0; max-width: 1000px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(34px, 4.2vw, 56px); line-height: 1.03; letter-spacing: -0.025em">Menos tiempo en papeles y en Excel. Más tiempo para tu negocio.</h1>
+<p style="margin: 0; font-size: 19px; color: #4A403A; max-width: 640px">Sistemas a medida para ordenar ventas, administración y procesos, con puntos de control que evitan errores.</p>
+<div class="pillars" style="width: 100%; max-width: 940px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; text-align: left; padding-top: 6px">
+<div style="background: #FFFFFF; border: 1px solid #E2D6C6; border-radius: 14px; padding: 14px 16px; display: flex; gap: 12px; align-items: flex-start">
+<span style="width: 38px; height: 38px; border-radius: 10px; background: #F3E4DA; color: #A8481F; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l1.5 1.5L8 5M4 12l1.5 1.5L8 11M4 18l1.5 1.5L8 17M11 6h9M11 12h9M11 18h9"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><span style="font-weight: 700; font-size: 15.5px; color: #2A2421">Estandarización</span><span style="font-size: 14px; color: #5C5049">Cada tarea se hace siempre igual, paso a paso.</span></span>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E2D6C6; border-radius: 14px; padding: 14px 16px; display: flex; gap: 12px; align-items: flex-start">
+<span style="width: 38px; height: 38px; border-radius: 10px; background: #F3E4DA; color: #A8481F; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><span style="font-weight: 700; font-size: 15.5px; color: #2A2421">Puntos de control</span><span style="font-size: 14px; color: #5C5049">Validaciones que frenan el error antes de que pase.</span></span>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E2D6C6; border-radius: 14px; padding: 14px 16px; display: flex; gap: 12px; align-items: flex-start">
+<span style="width: 38px; height: 38px; border-radius: 10px; background: #F3E4DA; color: #A8481F; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"></path><path d="M15 7h6v6"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><span style="font-weight: 700; font-size: 15.5px; color: #2A2421">Mejora continua</span><span style="font-size: 14px; color: #5C5049">Medimos tiempos y ajustamos el sistema con vos.</span></span>
+</div>
+</div>
+<div class="hero-mods" style="width: 100%; max-width: 940px; display: flex; flex-direction: column; align-items: center; gap: 10px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C5049">Algunos ejemplos de lo que podemos armar</span>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px">
+<sc-for list="{{heroMods}}" as="h" hint-placeholder-count="12">
+<a href="#modulos" onClick="{{h.pick}}" style="display: inline-flex; align-items: center; padding: 8px 14px; border-radius: 999px; text-decoration: none; font-size: 14px; font-weight: 600; background: {{h.bg}}; color: {{h.fg}}; border: 1px solid {{h.bd}}">{{h.name}}</a>
+</sc-for>
+</div>
+</div>
+<div class="hide-sm" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 28px; font-size: 15px; font-weight: 500; padding-top: 4px">
+<span style="display: flex; align-items: center; gap: 8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A8481F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>En la compu y en el celular</span>
+<span style="display: flex; align-items: center; gap: 8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A8481F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>Conectado a Google Sheets o sin internet</span>
+<span style="display: flex; align-items: center; gap: 8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A8481F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>Respaldo en GitHub</span>
+<span style="display: flex; align-items: center; gap: 8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A8481F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>Diagnóstico inicial sin costo</span>
+</div>
+<a href="#modulos" class="mob-only" style="display: none; flex-direction: column; align-items: center; gap: 4px; margin-top: 8px; color: #A8481F; text-decoration: none; font-size: 13.5px; font-weight: 600">Bajá para probarlos
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></a>
+</section>
+
+<!-- MODULES EXPLORER -->
+<section id="modulos" class="pg mods snap" style="max-width: 1180px; margin: 0 auto; padding: 8px 24px 64px; display: flex; flex-direction: column; gap: 20px">
+<!-- APP WINDOW (matte black) -->
+<div class="app-win" style="background: #282421; color: #F3EDE7; border: 1px solid #403934; border-radius: 16px; box-shadow: 0 2px 4px rgba(0,0,0,0.25), 0 44px 80px -40px rgba(0,0,0,0.65); overflow: hidden">
+
+<!-- Top bar -->
+<div class="app-top" style="background: #1C1A18; border-bottom: 1px solid #3A3430; padding: 10px 16px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px">
+<div style="display: flex; align-items: center; gap: 12px; min-width: 0">
+<span style="width: 28px; height: 28px; border-radius: 7px; background: #E8B04A; color: #1C1A18; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span>
+<span style="font-weight: 600; font-size: 14.5px; color: #FBF7F3">Tu negocio</span>
+<span class="hide-sm" style="color: #6B6058">/</span>
+<span class="hide-sm" style="font-size: 14px; color: #AA9F96">{{cur.group}}</span>
+<span style="color: #6B6058">/</span>
+<span style="font-size: 14px; font-weight: 600; color: #FBF7F3">{{cur.name}}</span>
+</div>
+<div style="display: flex; align-items: center; gap: 14px">
+<span class="hide-sm" style="display: flex; align-items: center; gap: 7px; font-size: 13px; color: #C0B6AD"><span style="width: 7px; height: 7px; border-radius: 50%; background: #7FC08A"></span>Sincronizado</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; color: #E8B04A; border: 1px solid #50473F; border-radius: 6px; padding: 3px 8px">EJEMPLOS INTERACTIVOS</span>
+<span style="width: 30px; height: 30px; border-radius: 50%; background: #2F6FB0; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600">AG</span>
+</div>
+</div>
+
+<!-- Mobile module bar -->
+<div class="mob-only" style="display: none; align-items: center; gap: 8px; padding: 10px 12px; background: #221F1D; border-bottom: 1px solid #3A3430">
+<button type="button" onClick="{{navPrev}}" aria-label="Módulo anterior" style="width: 44px; height: 48px; flex-shrink: 0; border-radius: 10px; border: 1px solid #50473F; background: #332E2A; color: #F3EDE7; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg></button>
+<button type="button" onClick="{{menuToggle}}" aria-expanded="{{menuOpen}}" style="flex: 1; min-width: 0; height: 48px; border-radius: 10px; border: 1px solid {{menuBd}}; background: #332E2A; color: #FBF7F3; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 0 12px; text-align: left">
+<span style="display: flex; flex-direction: column; min-width: 0">
+<span style="font-size: 11.5px; color: #AA9F96">Ejemplo {{navPos}}</span>
+<span style="font-size: 15px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{cur.name}}</span>
+</span>
+<span style="display: flex; align-items: center; gap: 6px; flex-shrink: 0; font-size: 12.5px; font-weight: 600; color: #F2A57A">
+<sc-if value="{{menuClosed}}" hint-placeholder-val="{{true}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg>Ver todos</sc-if>
+<sc-if value="{{menuOpen}}" hint-placeholder-val="{{false}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>Cerrar</sc-if>
+</span>
+</button>
+<button type="button" onClick="{{navNext}}" aria-label="Módulo siguiente" style="width: 44px; height: 48px; flex-shrink: 0; border-radius: 10px; border: 1px solid #50473F; background: #332E2A; color: #F3EDE7; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button>
+</div>
+
+<div class="app-body" style="display: flex; flex-wrap: wrap">
+
+<!-- Sidebar -->
+<nav aria-label="Módulos" class="app-side {{menuCls}}" style="flex: 1 1 210px; min-width: 0; background: #221F1D; border-right: 1px solid #3A3430; padding: 16px 12px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span class="grp-label" style="font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #9C9087; padding: 0 10px 2px">Comercial</span>
+<div class="grp-items" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 2px">
+<button type="button" onClick="{{tm.web.pick}}" aria-pressed="{{tm.web.on}}" style="display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 10px; border-radius: 8px; cursor: pointer; text-align: left; font-size: 14.5px; font-weight: 500; background: {{tm.web.bg}}; color: {{tm.web.fg}}; border: 1px solid {{tm.web.bd}}">
+<span style="display: flex; color: {{tm.web.ic}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg></span>Página web</button>
+<button type="button" onClick="{{tm.cotizador.pick}}" aria-pressed="{{tm.cotizador.on}}" style="display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 10px; border-radius: 8px; cursor: pointer; text-align: left; font-size: 14.5px; font-weight: 500; background: {{tm.cotizador.bg}}; color: {{tm.cotizador.fg}}; border: 1px solid {{tm.cotizador.bd}}">
+<span style="display: flex; color: {{tm.cotizador.ic}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5M9 13h6M9 17h6"></path></svg></span>Cotizador</button>
+<button type="button" onClick="{{tm.clientes.pick}}" aria-pressed="{{tm.clientes.on}}" style="display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 10px; border-radius: 8px; cursor: pointer; text-align: left; font-size: 14.5px; font-weight: 500; background: {{tm.clientes.bg}}; color: {{tm.clientes.fg}}; border: 1px solid {{tm.clientes.bd}}">
+<span style="display: flex; color: {{tm.clientes.ic}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7M21.5 20a6.5 6.5 0 0 0-4-6"></path></svg></span>Clientes</button>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span class="grp-label" style="font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #9C9087; padding: 0 10px 2px">Operaciones</span>
+<div class="grp-items" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 2px">
+<button type="button" onClick="{{tm.stock.pick}}" aria-pressed="{{tm.stock.on}}" style="display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 10px; border-radius: 8px; cursor: pointer; text-align: left; font-size: 14.5px; font-weight: 500; background: {{tm.stock.bg}}; color: {{tm.stock.fg}}; border: 1px solid {{tm.stock.bd}}">
+<span style="display: flex; color: {{tm.stock.ic}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8l-9-5-9 5 9 5 9-5z"></path><path d="M3 8v8l9 5 9-5V8M12 13v8"></path></svg></span>Stock</button>
+<button type="button" onClick="{{tm.plan.pick}}" aria-pressed="{{tm.plan.on}}" style="display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 10px; border-radius: 8px; cursor: pointer; text-align: left; font-size: 14.5px; font-weight: 500; background: {{tm.plan.bg}}; color: {{tm.plan.fg}}; border: 1px solid {{tm.plan.bd}}">
+<span style="display: flex; color: {{tm.plan.ic}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h8M8 12h11M6 18h7"></path></svg></span>Planificación</button>
+<button type="button" onClick="{{tm.agenda.pick}}" aria-pressed="{{tm.agenda.on}}" style="display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 10px; border-radius: 8px; cursor: pointer; text-align: left; font-size: 14.5px; font-weight: 500; background: {{tm.agenda.bg}}; color: {{tm.agenda.fg}}; border: 1px solid {{tm.agenda.bd}}">
+<span style="display: flex; color: {{tm.agenda.ic}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path><path d="M12 13v3l2 1"></path></svg></span>Agenda y turnos</button>
+<button type="button" onClick="{{tm.ordenes.pick}}" aria-pressed="{{tm.ordenes.on}}" style="display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 10px; border-radius: 8px; cursor: pointer; text-align: left; font-size: 14.5px; font-weight: 500; background: {{tm.ordenes.bg}}; color: {{tm.ordenes.fg}}; border: 1px solid {{tm.ordenes.bd}}">
+<span style="display: flex; color: {{tm.ordenes.ic}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"></path></svg></span>Órdenes de trabajo</button>
+<button type="button" onClick="{{tm.checklist.pick}}" aria-pressed="{{tm.checklist.on}}" style="display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 10px; border-radius: 8px; cursor: pointer; text-align: left; font-size: 14.5px; font-weight: 500; background: {{tm.checklist.bg}}; color: {{tm.checklist.fg}}; border: 1px solid {{tm.checklist.bd}}">
+<span style="display: flex; color: {{tm.checklist.ic}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l1.5 1.5L8 5M4 12l1.5 1.5L8 11M4 18l1.5 1.5L8 17M11 6h9M11 12h9M11 18h9"></path></svg></span>Control de calidad</button>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span class="grp-label" style="font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #9C9087; padding: 0 10px 2px">Administración</span>
+<div class="grp-items" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 2px">
+<button type="button" onClick="{{tm.caja.pick}}" aria-pressed="{{tm.caja.on}}" style="display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 10px; border-radius: 8px; cursor: pointer; text-align: left; font-size: 14.5px; font-weight: 500; background: {{tm.caja.bg}}; color: {{tm.caja.fg}}; border: 1px solid {{tm.caja.bd}}">
+<span style="display: flex; color: {{tm.caja.ic}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"></rect><path d="M3 10h18M16 15h2"></path></svg></span>Caja</button>
+<button type="button" onClick="{{tm.cobranzas.pick}}" aria-pressed="{{tm.cobranzas.on}}" style="display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 10px; border-radius: 8px; cursor: pointer; text-align: left; font-size: 14.5px; font-weight: 500; background: {{tm.cobranzas.bg}}; color: {{tm.cobranzas.fg}}; border: 1px solid {{tm.cobranzas.bd}}">
+<span style="display: flex; color: {{tm.cobranzas.ic}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"></path><path d="M9 8h6M9 12h6"></path></svg></span>Cobranzas</button>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span class="grp-label" style="font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #9C9087; padding: 0 10px 2px">Gestión</span>
+<div class="grp-items" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 2px">
+<button type="button" onClick="{{tm.kpi.pick}}" aria-pressed="{{tm.kpi.on}}" style="display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 10px; border-radius: 8px; cursor: pointer; text-align: left; font-size: 14.5px; font-weight: 500; background: {{tm.kpi.bg}}; color: {{tm.kpi.fg}}; border: 1px solid {{tm.kpi.bd}}">
+<span style="display: flex; color: {{tm.kpi.ic}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M21 20H3"></path></svg></span>Indicadores</button>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span class="grp-label" style="font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #9C9087; padding: 0 10px 2px">A medida</span>
+<div class="grp-items" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 2px">
+<button type="button" onClick="{{tm.idea.pick}}" aria-pressed="{{tm.idea.on}}" style="display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 10px; border-radius: 8px; cursor: pointer; text-align: left; font-size: 14.5px; font-weight: 500; background: {{tm.idea.bg}}; color: {{tm.idea.fg}}; border: 1px solid {{tm.idea.bd}}">
+<span style="display: flex; color: #E8B04A"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4"></path><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.9V16h5v-.2c0-.8.4-1.5 1-1.9A6 6 0 0 0 12 3z"></path></svg></span>Tu idea</button>
+</div>
+</div>
+
+</nav>
+
+<!-- Content -->
+<div class="app-content {{contentCls}}" style="flex: 999 1 600px; min-width: 0; padding: 22px 24px 24px; box-sizing: border-box; min-height: 620px; color: #F3EDE7">
+
+<!-- ===================== COTIZADOR ===================== -->
+<sc-if value="{{isCot}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px">
+<h3 class="mh3" style="margin: 0; font-size: 21px; font-weight: 700; letter-spacing: -0.01em; color: #FBF7F3">Presupuesto #0143</h3>
+<span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: {{cotStatus.bg}}; color: {{cotStatus.fg}}"><span style="width: 6px; height: 6px; border-radius: 50%; background: {{cotStatus.fg}}"></span>{{cotStatus.label}}</span>
+</div>
+<span class="msub" style="font-size: 14px; color: #C0B6AD">Martín Gómez · Válido por 15 días · Lista de precios de octubre</span>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 18px; align-items: flex-start">
+<div style="flex: 999 1 400px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="border: 1px solid #403934; border-radius: 12px; overflow: hidden">
+<div style="overflow-x: auto">
+<div class="tmin" style="min-width: 520px">
+<div class="thead" style="display: grid; grid-template-columns: minmax(0, 1fr) 120px 128px 120px; gap: 12px; padding: 10px 16px; background: #332E2A; border-bottom: 1px solid #403934; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #AA9F96">
+<span>Producto</span><span style="text-align: right">Precio unit.</span><span style="text-align: center">Cantidad</span><span style="text-align: right">Subtotal</span>
+</div>
+<sc-for list="{{cotRows}}" as="r" hint-placeholder-count="3">
+<div class="trow" style="display: grid; grid-template-columns: minmax(0, 1fr) 120px 128px 120px; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #3A3430; align-items: center; font-size: 14.5px">
+<div class="tfull" style="display: flex; flex-direction: column; min-width: 0"><span style="font-weight: 600; color: #F5F0EB">{{r.name}}</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #AA9F96">{{r.code}}</span></div>
+<span style="text-align: right; font-variant-numeric: tabular-nums; color: #D3CAC2">{{r.price}}</span>
+<div style="display: flex; justify-content: center">
+<div style="display: inline-flex; align-items: center; border: 1px solid #50473F; border-radius: 8px; overflow: hidden">
+<button type="button" onClick="{{r.dec}}" aria-label="Restar uno" style="width: 36px; height: 36px; border: none; background: #332E2A; color: #F3EDE7; font-size: 18px; cursor: pointer">−</button>
+<span style="width: 40px; text-align: center; font-weight: 600; font-variant-numeric: tabular-nums; border-left: 1px solid #403934; border-right: 1px solid #403934; line-height: 36px; color: #FBF7F3">{{r.qty}}</span>
+<button type="button" onClick="{{r.inc}}" aria-label="Sumar uno" style="width: 36px; height: 36px; border: none; background: #332E2A; color: #F3EDE7; font-size: 18px; cursor: pointer">+</button>
+</div>
+</div>
+<span class="tend" style="text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; color: #FBF7F3">{{r.sub}}</span>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+<div style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #C0B6AD">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E07A45" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
+Precios tomados automáticamente de la lista vigente
+</div>
+</div>
+
+<div style="flex: 1 1 260px; background: #332E2A; border: 1px solid #403934; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #AA9F96">Descuento</span>
+<div style="display: inline-flex; align-self: flex-start; background: #221F1D; border: 1px solid #403934; border-radius: 10px; padding: 3px; gap: 2px">
+<sc-for list="{{descBtns}}" as="d" hint-placeholder-count="3">
+<button type="button" onClick="{{d.pick}}" style="height: 34px; min-width: 56px; padding: 0 12px; border-radius: 8px; border: none; font-weight: 600; font-size: 13.5px; cursor: pointer; background: {{d.bg}}; color: {{d.fg}}">{{d.label}}</button>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-variant-numeric: tabular-nums">
+<div style="display: flex; justify-content: space-between; color: #D3CAC2"><span>Subtotal</span><span>{{cotSubtotal}}</span></div>
+<div style="display: flex; justify-content: space-between; color: #D3CAC2"><span>{{cotDescLabel}}</span><span>{{cotDesc}}</span></div>
+<div style="display: flex; justify-content: space-between; color: #D3CAC2"><span>IVA 21%</span><span>{{cotIva}}</span></div>
+<div style="display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid #4A423C; padding-top: 10px; margin-top: 4px"><span style="font-weight: 600; color: #FBF7F3">Total</span><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 24px; color: #FFFFFF">{{cotTotal}}</span></div>
+</div>
+<sc-if value="{{showApprovalWarn}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; gap: 8px; align-items: flex-start; background: rgba(232,200,100,0.12); color: #E8CC7A; border-radius: 9px; padding: 9px 12px; font-size: 13px">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px"><path d="M12 3l9.5 17h-19z"></path><path d="M12 10v4M12 17.5v.01"></path></svg>
+<span>Un descuento mayor al 15% requiere aprobación.</span>
+</div>
+</sc-if>
+<sc-if value="{{cotEmpty}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; gap: 8px; align-items: flex-start; background: rgba(226,95,120,0.12); color: #F59DB0; border-radius: 9px; padding: 9px 12px; font-size: 13px">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16.5v.01"></path></svg>
+<span>Agregá al menos un ítem para continuar.</span>
+</div>
+</sc-if>
+<button type="button" onClick="{{cotGenerate}}" disabled="{{cotEmpty}}" style="height: 44px; border-radius: 10px; border: none; font-weight: 600; font-size: 14.5px; cursor: pointer; color: {{cotBtnFg}}; background: {{cotBtnBg}}">{{cotBtnLabel}}</button>
+<sc-if value="{{pdfDone}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; gap: 8px; align-items: flex-start; background: rgba(130,190,140,0.12); color: #A5D6AA; border-radius: 9px; padding: 9px 12px; font-size: 13px">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px"><path d="M20 6L9 17l-5-5"></path></svg>
+<span>PDF generado con tu logo, listo para enviar.</span>
+</div>
+</sc-if>
+<sc-if value="{{approvalSent}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; gap: 8px; align-items: flex-start; background: rgba(232,200,100,0.12); color: #E8CC7A; border-radius: 9px; padding: 9px 12px; font-size: 13px">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+<span>Enviado al responsable. Al aprobarse, se genera el PDF.</span>
+</div>
+</sc-if>
+</div>
+</div>
+</div>
+</sc-if>
+
+<!-- ===================== CLIENTES ===================== -->
+<sc-if value="{{isCli}}" hint-placeholder-val="{{false}}">
+<div class="mroot" style="display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 class="mh3" style="margin: 0; font-size: 21px; font-weight: 700; letter-spacing: -0.01em; color: #FBF7F3">Clientes</h3>
+<span class="msub" style="font-size: 14px; color: #C0B6AD">{{cliSummary}}</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px">
+<label style="flex: 0 1 300px; position: relative; display: flex; align-items: center">
+<span style="position: absolute; left: 12px; display: flex; color: #AA9F96"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg></span>
+<input type="search" aria-label="Buscar cliente" value="{{cliQ}}" onChange="{{onCliQ}}" placeholder="Buscar cliente" style="width: 100%; height: 38px; border: 1px solid #50473F; border-radius: 9px; padding: 0 12px 0 36px; font-size: 14px; color: #F3EDE7; background: #221F1D; box-sizing: border-box"></input>
+</label>
+<div style="display: inline-flex; background: #221F1D; border: 1px solid #403934; border-radius: 10px; padding: 3px; gap: 2px">
+<sc-for list="{{cliFilters}}" as="f" hint-placeholder-count="2">
+<button type="button" onClick="{{f.pick}}" style="height: 34px; padding: 0 14px; border-radius: 8px; border: none; font-weight: 600; font-size: 13.5px; cursor: pointer; background: {{f.bg}}; color: {{f.fg}}">{{f.label}}</button>
+</sc-for>
+</div>
+</div>
+<div style="border: 1px solid #403934; border-radius: 12px; overflow: hidden">
+<div style="overflow-x: auto">
+<div class="tmin" style="min-width: 720px">
+<div class="thead" style="display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, 0.9fr) minmax(0, 1.1fr) 116px; gap: 12px; padding: 10px 16px; background: #332E2A; border-bottom: 1px solid #403934; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #AA9F96">
+<span>Cliente</span><span>Estado</span><span>Último contacto</span><span>Próxima acción</span><span></span>
+</div>
+<div style="max-height: 336px; overflow-y: auto">
+<sc-for list="{{cliRows}}" as="c" hint-placeholder-count="5">
+<div class="trow" style="display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, 0.9fr) minmax(0, 1.1fr) 116px; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #3A3430; align-items: center; font-size: 14px">
+<div class="tfull" style="display: flex; align-items: center; gap: 10px; min-width: 0">
+<span style="width: 34px; height: 34px; border-radius: 50%; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 12.5px; flex-shrink: 0; background: {{c.av}}">{{c.ini}}</span>
+<span style="display: flex; flex-direction: column; min-width: 0"><span style="font-weight: 600; font-size: 14.5px; color: #F5F0EB">{{c.name}}</span><span style="font-size: 12.5px; color: #AA9F96">{{c.sub}}</span></span>
+</div>
+<span style="justify-self: start; display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: {{c.sbg}}; color: {{c.sfg}}"><span style="width: 6px; height: 6px; border-radius: 50%; background: {{c.sfg}}"></span>{{c.status}}</span>
+<span style="font-weight: {{c.lastW}}; color: {{c.lastC}}">{{c.last}}</span>
+<span class="thide" style="color: #D3CAC2">{{c.next}}</span>
+<a class="tend" href="{{c.wa}}" target="_blank" rel="noopener" style="justify-self: end; display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 12px; border-radius: 8px; border: 1px solid #E07A45; color: #F2A57A; background: transparent; text-decoration: none; font-size: 13.5px; font-weight: 600">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.6A8.5 8.5 0 1 1 21 11.5z"></path></svg>WhatsApp</a>
+</div>
+</sc-for>
+<sc-if value="{{cliEmpty}}" hint-placeholder-val="{{false}}">
+<div style="padding: 28px 16px; text-align: center; font-size: 14px; color: #C0B6AD">No hay clientes que coincidan con la búsqueda.</div>
+</sc-if>
+</div>
+</div>
+</div>
+</div>
+<span class="msub" style="font-size: 13px; color: #C0B6AD">El botón de WhatsApp abre el chat con un mensaje ya escrito según el estado de cada cliente.</span>
+</div>
+</sc-if>
+
+<!-- ===================== PÁGINA WEB ===================== -->
+<sc-if value="{{isWeb}}" hint-placeholder-val="{{true}}">
+<div class="web-root" style="display: flex; flex-direction: column; gap: 10px">
+<div class="web-head" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px">
+<h3 class="mh3" style="margin: 0; font-size: 17px; font-weight: 700; letter-spacing: -0.01em; color: #FBF7F3">Página web</h3>
+<div style="display: inline-flex; background: #221F1D; border: 1px solid #403934; border-radius: 8px; padding: 2px; gap: 2px">
+<sc-for list="{{webTabs}}" as="w" hint-placeholder-count="3">
+<button type="button" onClick="{{w.pick}}" aria-pressed="{{w.on}}" style="height: 28px; padding: 0 11px; border-radius: 6px; border: none; font-weight: 600; font-size: 12.5px; cursor: pointer; background: {{w.bg}}; color: {{w.fg}}">{{w.label}}</button>
+</sc-for>
+</div>
+<div style="margin-left: auto; display: flex; gap: 4px">
+<button type="button" onClick="{{webPrev}}" aria-label="Sitio anterior" class="hide-sm" style="width: 30px; height: 30px; border-radius: 7px; border: 1px solid #50473F; background: #332E2A; color: #F3EDE7; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg></button>
+<button type="button" onClick="{{webToggle}}" aria-label="{{webPauseLabel}}" style="width: 30px; height: 30px; border-radius: 7px; border: 1px solid #50473F; background: #332E2A; color: #F3EDE7; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0">
+<sc-if value="{{webPlaying}}" hint-placeholder-val="{{true}}"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"></rect><rect x="14" y="5" width="4" height="14" rx="1"></rect></svg></sc-if>
+<sc-if value="{{webPaused}}" hint-placeholder-val="{{false}}"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5l12 7-12 7z"></path></svg></sc-if>
+</button>
+<button type="button" onClick="{{webNext}}" aria-label="Sitio siguiente" class="hide-sm" style="width: 30px; height: 30px; border-radius: 7px; border: 1px solid #50473F; background: #332E2A; color: #F3EDE7; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button>
+</div>
+</div>
+
+<div onMouseEnter="{{webEnter}}" onMouseLeave="{{webLeave}}" style="border: 1px solid #403934; border-radius: 12px; overflow: hidden; background: #332E2A">
+<div style="padding: 6px 10px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #403934">
+<span style="display: flex; gap: 6px"><span style="width: 10px; height: 10px; border-radius: 50%; background: #5A5048"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: #5A5048"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: #5A5048"></span></span>
+<span style="flex: 1; display: flex; align-items: center; gap: 6px; background: #221F1D; border-radius: 6px; padding: 3px 10px; font-size: 12px; color: #C0B6AD; min-width: 0">
+<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg>{{siteDomain}}</span>
+<span style="display: flex; align-items: center; gap: 6px; font-size: 12.5px; color: #C0B6AD; white-space: nowrap"><span style="width: 7px; height: 7px; border-radius: 50%; background: {{webDot}}"></span>{{webStatusTxt}}</span>
+</div>
+
+<!-- ======== SITIO 1: MUEBLERÍA ======== -->
+<sc-if value="{{isSite0}}" hint-placeholder-val="{{true}}">
+<div style="position: relative; animation: siteIn 0.45s ease">
+<div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; z-index: 2; background: rgba(0,0,0,0.08)"><div style="height: 100%; background: #E07A45; transition: width 1s linear; width: {{webProg}}%"></div></div>
+<div class="site-scroll" style="height: 540px; overflow-y: auto; background: #F6F1EA; color: #2B2118; font-family: 'Jost', sans-serif">
+<div style="background: #2B2118; color: #E9DCCB; font-size: 12.5px; letter-spacing: 0.04em; text-align: center; padding: 8px 16px">Fabricación propia · Envíos e instalación en todo el país</div>
+<div style="padding: 24px 20px 14px; display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; border-bottom: 1px solid #E4D8C8">
+<span style="font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 40px; line-height: 1; letter-spacing: 0.01em" class="site-name">Mueblería Roble</span>
+<span style="font-size: 11.5px; letter-spacing: 0.24em; text-transform: uppercase; color: #7A6450">Muebles de madera maciza · desde 1998</span>
+<span style="display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 24px; margin-top: 12px; font-size: 14px; color: #4A3A2C"><span>Living</span><span>Comedor</span><span>Dormitorio</span><span>Showroom</span><span>Contacto</span></span>
+</div>
+<div style="position: relative; height: 310px; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden">
+<img src="img/muebles-hero.jpg" alt="Comedor con mesa de madera y sillas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover">
+<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(30,20,12,0.5)"></div>
+<div style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 0 24px; color: #FFFFFF; max-width: 580px">
+<span style="font-size: 12px; letter-spacing: 0.26em; text-transform: uppercase; color: #E9DCCB">Colección otoño 2026</span>
+<span style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 46px; line-height: 1.02" class="site-h1">Muebles que duran generaciones</span>
+<span style="font-size: 15.5px; color: #F1E7DA">Diseñados y fabricados a medida en nuestro taller.</span>
+<span style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 6px">
+<a href="{{waRoble}}" target="_blank" rel="noopener" style="background: #F6F1EA; color: #2B2118; text-decoration: none; font-weight: 600; font-size: 14px; padding: 12px 22px; border-radius: 2px">Pedí tu presupuesto</a>
+<span style="border: 1px solid #F6F1EA; color: #FFFFFF; font-weight: 500; font-size: 14px; padding: 11px 21px; border-radius: 2px">Ver catálogo</span>
+</span>
+</div>
+</div>
+<div style="padding: 30px 22px; display: flex; flex-direction: column; align-items: center; gap: 18px">
+<span style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 30px; text-align: center">Destacados de la temporada</span>
+<div style="width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px">
+<div style="background: #FFFFFF; border: 1px solid #E4D8C8; display: flex; flex-direction: column">
+<img src="img/muebles-1.jpg" alt="Mesa de comedor de roble" style="width: 100%; height: 150px; object-fit: cover; display: block">
+<div style="padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 21px">Mesa Comedor Roble</span>
+<span style="font-size: 13px; color: #6B5B4B">Roble macizo, de 6 a 8 personas</span>
+<span style="font-size: 15px; font-weight: 600; margin-top: 4px">$ 480.000</span>
+</div>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E4D8C8; display: flex; flex-direction: column">
+<img src="img/muebles-2.jpg" alt="Mesa redonda de madera clara" style="width: 100%; height: 150px; object-fit: cover; display: block">
+<div style="padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 21px">Mesa Redonda Nórdica</span>
+<span style="font-size: 13px; color: #6B5B4B">Ideal para espacios chicos</span>
+<span style="font-size: 15px; font-weight: 600; margin-top: 4px">$ 310.000</span>
+</div>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E4D8C8; display: flex; flex-direction: column">
+<img src="img/muebles-3.jpg" alt="Living con sofá y mesa ratona" style="width: 100%; height: 150px; object-fit: cover; display: block">
+<div style="padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 4px">
+<span style="font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 21px">Living Arena</span>
+<span style="font-size: 13px; color: #6B5B4B">Sofá de 3 cuerpos y mesa ratona</span>
+<span style="font-size: 15px; font-weight: 600; margin-top: 4px">$ 920.000</span>
+</div>
+</div>
+</div>
+</div>
+<div style="background: #EDE3D6; padding: 22px; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 16px; text-align: center">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 6px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8A5A2B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"></path></svg><span style="font-weight: 600; font-size: 14.5px">Fabricación propia</span><span style="font-size: 13px; color: #6B5B4B">En nuestro taller, a tu medida</span></div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 6px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8A5A2B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg><span style="font-weight: 600; font-size: 14.5px">Garantía de 5 años</span><span style="font-size: 13px; color: #6B5B4B">En estructura y terminaciones</span></div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 6px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8A5A2B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"></path><circle cx="7" cy="18" r="2"></circle><circle cx="17" cy="18" r="2"></circle></svg><span style="font-weight: 600; font-size: 14.5px">Envío e instalación</span><span style="font-size: 13px; color: #6B5B4B">Coordinamos día y horario</span></div>
+</div>
+<div style="background: #2B2118; color: #E9DCCB; padding: 24px 20px; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center">
+<span style="font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 26px; color: #FFFFFF">Mueblería Roble</span>
+<span style="font-size: 13.5px">Showroom abierto de lunes a sábado, de 9 a 19 h</span>
+<span style="font-size: 12px; color: #BFAE99">© 2026 Mueblería Roble · Sitio de ejemplo</span>
+</div>
+</div>
+<a href="{{waRoble}}" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp" style="position: absolute; right: 22px; bottom: 18px; width: 50px; height: 50px; border-radius: 50%; background: #1FA855; color: #FFFFFF; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 18px rgba(0,0,0,0.3)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.6A8.5 8.5 0 1 1 21 11.5z"></path></svg></a>
+</div>
+</sc-if>
+
+<!-- ======== SITIO 2: PELUQUERÍA ======== -->
+<sc-if value="{{isSite1}}" hint-placeholder-val="{{false}}">
+<div style="position: relative; animation: siteIn 0.45s ease">
+<div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; z-index: 2; background: rgba(0,0,0,0.08)"><div style="height: 100%; background: #E07A45; transition: width 1s linear; width: {{webProg}}%"></div></div>
+<div class="site-scroll" style="height: 540px; overflow-y: auto; background: #FBF6F4; color: #1E1718; font-family: 'Montserrat', sans-serif">
+<div style="background: #1E1718; color: #F3E3E3; font-size: 12px; letter-spacing: 0.05em; text-align: center; padding: 8px 16px">Turnos online las 24 h · Martes a sábado de 10 a 20 h</div>
+<div style="padding: 24px 20px 14px; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center">
+<span style="font-family: 'Playfair Display', serif; font-style: italic; font-weight: 600; font-size: 42px; line-height: 1" class="site-name">Studio Bruma</span>
+<span style="font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: #7E5F65">Peluquería · Color · Barbería</span>
+<span style="display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 24px; margin-top: 12px; font-size: 13px; font-weight: 500; color: #3A2E30"><span>Servicios</span><span>Equipo</span><span>Galería</span><span>Turnos</span><span>Contacto</span></span>
+</div>
+<div style="position: relative; height: 310px; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; margin: 0 18px; border-radius: 18px">
+<img src="img/pelu-hero.jpg" alt="Salón con espejos iluminados" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover">
+<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(18,10,12,0.55)"></div>
+<div style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 0 24px; color: #FFFFFF; max-width: 560px">
+<span style="font-family: 'Playfair Display', serif; font-weight: 600; font-size: 42px; line-height: 1.05" class="site-h1">Tu mejor versión empieza acá</span>
+<span style="font-size: 14.5px; color: #F3E3E3">Cortes, color y tratamientos con productos profesionales.</span>
+<span style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 6px">
+<a href="{{waBruma}}" target="_blank" rel="noopener" style="background: #A44D61; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 13.5px; padding: 12px 22px; border-radius: 999px">Reservá tu turno</a>
+<span style="border: 1px solid #FFFFFF; color: #FFFFFF; font-weight: 500; font-size: 13.5px; padding: 11px 21px; border-radius: 999px">Ver servicios</span>
+</span>
+</div>
+</div>
+<div style="padding: 30px 22px; display: flex; flex-direction: column; align-items: center; gap: 18px">
+<span style="font-family: 'Playfair Display', serif; font-style: italic; font-weight: 600; font-size: 30px; text-align: center">Nuestros servicios</span>
+<div style="width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px">
+<div style="background: #FFFFFF; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 18px rgba(30,23,24,0.08); display: flex; flex-direction: column">
+<img src="img/pelu-1.jpg" alt="Estilista cortando el cabello" style="width: 100%; height: 150px; object-fit: cover; display: block">
+<div style="padding: 12px 14px 16px; display: flex; flex-direction: column; gap: 4px">
+<span style="font-weight: 600; font-size: 15px">Corte y diseño</span>
+<span style="font-size: 12.5px; color: #6E5A5D">Asesoramiento personalizado y lavado incluido</span>
+<span style="font-size: 14px; font-weight: 600; color: #A44D61; margin-top: 4px">Desde $ 18.000</span>
+</div>
+</div>
+<div style="background: #FFFFFF; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 18px rgba(30,23,24,0.08); display: flex; flex-direction: column">
+<img src="img/pelu-2.jpg" alt="Sillones de barbería" style="width: 100%; height: 150px; object-fit: cover; display: block">
+<div style="padding: 12px 14px 16px; display: flex; flex-direction: column; gap: 4px">
+<span style="font-weight: 600; font-size: 15px">Barbería</span>
+<span style="font-size: 12.5px; color: #6E5A5D">Corte, perfilado de barba y toalla caliente</span>
+<span style="font-size: 14px; font-weight: 600; color: #A44D61; margin-top: 4px">Desde $ 12.000</span>
+</div>
+</div>
+<div style="background: #FFFFFF; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 18px rgba(30,23,24,0.08); display: flex; flex-direction: column">
+<img src="img/pelu-3.jpg" alt="Estilista preparando un peinado" style="width: 100%; height: 150px; object-fit: cover; display: block">
+<div style="padding: 12px 14px 16px; display: flex; flex-direction: column; gap: 4px">
+<span style="font-weight: 600; font-size: 15px">Brushing y peinados</span>
+<span style="font-size: 12.5px; color: #6E5A5D">Para eventos, fiestas y el día a día</span>
+<span style="font-size: 14px; font-weight: 600; color: #A44D61; margin-top: 4px">Desde $ 15.000</span>
+</div>
+</div>
+</div>
+</div>
+<div style="background: #F3E3E3; padding: 24px 20px; display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center">
+<span style="font-family: 'Playfair Display', serif; font-weight: 600; font-size: 22px">Turnos disponibles hoy</span>
+<span style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px">
+<sc-for list="{{slots}}" as="t" hint-placeholder-count="5">
+<button type="button" onClick="{{t.pick}}" aria-pressed="{{t.on}}" style="height: 40px; padding: 0 16px; border-radius: 999px; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 13.5px; cursor: pointer; background: {{t.bg}}; color: {{t.fg}}; border: 1px solid {{t.bd}}">{{t.label}}</button>
+</sc-for>
+</span>
+<sc-if value="{{slotChosen}}" hint-placeholder-val="{{false}}">
+<span style="font-size: 13px; font-weight: 500; color: #5A2A35">{{slotMsg}}</span>
+</sc-if>
+</div>
+<div style="background: #1E1718; color: #F3E3E3; padding: 24px 20px; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center">
+<span style="font-family: 'Playfair Display', serif; font-style: italic; font-weight: 600; font-size: 26px; color: #FFFFFF">Studio Bruma</span>
+<span style="font-size: 13px">Martes a sábado de 10 a 20 h</span>
+<span style="font-size: 12px; color: #C9AEB1">© 2026 Studio Bruma · Sitio de ejemplo</span>
+</div>
+</div>
+<a href="{{waBruma}}" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp" style="position: absolute; right: 22px; bottom: 18px; width: 50px; height: 50px; border-radius: 50%; background: #1FA855; color: #FFFFFF; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 18px rgba(0,0,0,0.3)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.6A8.5 8.5 0 1 1 21 11.5z"></path></svg></a>
+</div>
+</sc-if>
+
+<!-- ======== SITIO 3: FARMACIA ======== -->
+<sc-if value="{{isSite2}}" hint-placeholder-val="{{false}}">
+<div style="position: relative; animation: siteIn 0.45s ease">
+<div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; z-index: 2; background: rgba(0,0,0,0.08)"><div style="height: 100%; background: #E07A45; transition: width 1s linear; width: {{webProg}}%"></div></div>
+<div class="site-scroll" style="height: 540px; overflow-y: auto; background: #F4FAF9; color: #0E2A2B; font-family: 'Manrope', sans-serif">
+<div style="background: #0B7A75; color: #FFFFFF; font-size: 12.5px; font-weight: 600; text-align: center; padding: 8px 16px">Abierto las 24 horas · Envíos a domicilio en el día</div>
+<div style="background: #FFFFFF; padding: 22px 20px 14px; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; border-bottom: 1px solid #DCEBEA">
+<span style="display: flex; align-items: center; gap: 10px">
+<span style="width: 38px; height: 38px; border-radius: 10px; background: #0B7A75; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z"></path></svg></span>
+<span style="font-weight: 800; font-size: 32px; letter-spacing: -0.02em; line-height: 1" class="site-name">Farmacia del Parque</span>
+</span>
+<span style="font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: #4F6B6B">Salud · Dermocosmética · Perfumería</span>
+<span style="display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 24px; margin-top: 10px; font-size: 13.5px; font-weight: 600; color: #234445"><span>Productos</span><span>Obras sociales</span><span>Recetas</span><span>Sucursales</span><span>Contacto</span></span>
+</div>
+<div style="position: relative; height: 300px; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden">
+<img src="img/farma-hero.jpg" alt="Farmacéutico revisando medicamentos" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover">
+<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(6,38,40,0.58)"></div>
+<div style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 0 24px; color: #FFFFFF; max-width: 580px">
+<span style="font-weight: 800; font-size: 38px; line-height: 1.08; letter-spacing: -0.02em" class="site-h1">Cuidamos tu salud, todos los días</span>
+<span style="font-size: 15px; color: #D7EEEC">Atendemos con todas las obras sociales y prepagas.</span>
+<span style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 6px">
+<a href="{{waFarma}}" target="_blank" rel="noopener" style="background: #FFFFFF; color: #0B5F5B; text-decoration: none; font-weight: 700; font-size: 14px; padding: 12px 22px; border-radius: 10px">Enviá tu receta</a>
+<span style="border: 1px solid #FFFFFF; color: #FFFFFF; font-weight: 600; font-size: 14px; padding: 11px 21px; border-radius: 10px">Ver productos</span>
+</span>
+</div>
+</div>
+<div style="padding: 30px 22px; display: flex; flex-direction: column; align-items: center; gap: 18px">
+<span style="font-weight: 800; font-size: 26px; letter-spacing: -0.01em; text-align: center">¿Qué estás buscando?</span>
+<div style="width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px">
+<div style="background: #FFFFFF; border: 1px solid #DCEBEA; border-radius: 14px; overflow: hidden; display: flex; flex-direction: column">
+<img src="img/farma-1.jpg" alt="Farmacéutico en el mostrador" style="width: 100%; height: 150px; object-fit: cover; display: block">
+<div style="padding: 12px 14px 16px; display: flex; flex-direction: column; gap: 4px">
+<span style="font-weight: 700; font-size: 15.5px">Medicamentos</span>
+<span style="font-size: 13px; color: #4F6B6B">Venta libre y con receta electrónica</span>
+<span style="font-size: 13.5px; font-weight: 700; color: #0B7A75; margin-top: 4px">Ver productos →</span>
+</div>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #DCEBEA; border-radius: 14px; overflow: hidden; display: flex; flex-direction: column">
+<img src="img/farma-2.jpg" alt="Productos de dermocosmética en estantes" style="width: 100%; height: 150px; object-fit: cover; display: block">
+<div style="padding: 12px 14px 16px; display: flex; flex-direction: column; gap: 4px">
+<span style="font-weight: 700; font-size: 15.5px">Dermocosmética</span>
+<span style="font-size: 13px; color: #4F6B6B">Cuidado de la piel con asesoramiento</span>
+<span style="font-size: 13.5px; font-weight: 700; color: #0B7A75; margin-top: 4px">Ver productos →</span>
+</div>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #DCEBEA; border-radius: 14px; overflow: hidden; display: flex; flex-direction: column">
+<img src="img/farma-3.jpg" alt="Estantería con productos de cuidado personal" style="width: 100%; height: 150px; object-fit: cover; display: block">
+<div style="padding: 12px 14px 16px; display: flex; flex-direction: column; gap: 4px">
+<span style="font-weight: 700; font-size: 15.5px">Cuidado personal</span>
+<span style="font-size: 13px; color: #4F6B6B">Higiene, bebés y perfumería</span>
+<span style="font-size: 13.5px; font-weight: 700; color: #0B7A75; margin-top: 4px">Ver productos →</span>
+</div>
+</div>
+</div>
+</div>
+<div style="background: #E3F3F1; padding: 22px; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 16px; text-align: center">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 6px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0B7A75" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"></rect><path d="M10 7h4M10 11h4M11 18h2"></path></svg><span style="font-weight: 700; font-size: 14.5px">Receta electrónica</span><span style="font-size: 13px; color: #4F6B6B">Envianos la foto y la preparamos</span></div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 6px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0B7A75" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"></path><circle cx="7" cy="18" r="2"></circle><circle cx="17" cy="18" r="2"></circle></svg><span style="font-weight: 700; font-size: 14.5px">Envío en el día</span><span style="font-size: 13px; color: #4F6B6B">Pedidos antes de las 17 h</span></div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 6px"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0B7A75" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg><span style="font-weight: 700; font-size: 14.5px">Atención farmacéutica</span><span style="font-size: 13px; color: #4F6B6B">Consultas sin cargo</span></div>
+</div>
+<div style="background: #0E2A2B; color: #CFE7E5; padding: 24px 20px; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center">
+<span style="font-weight: 800; font-size: 22px; color: #FFFFFF">Farmacia del Parque</span>
+<span style="font-size: 13px">Abierto las 24 horas, todos los días</span>
+<span style="font-size: 12px; color: #9CC3C0">© 2026 Farmacia del Parque · Sitio de ejemplo</span>
+</div>
+</div>
+<a href="{{waFarma}}" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp" style="position: absolute; right: 22px; bottom: 18px; width: 50px; height: 50px; border-radius: 50%; background: #1FA855; color: #FFFFFF; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 18px rgba(0,0,0,0.3)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.6A8.5 8.5 0 1 1 21 11.5z"></path></svg></a>
+</div>
+</sc-if>
+</div>
+
+<div style="display: flex; justify-content: center; gap: 8px">
+<sc-for list="{{webDots}}" as="d" hint-placeholder-count="3">
+<button type="button" onClick="{{d.pick}}" aria-label="{{d.label}}" style="width: 44px; height: 24px; border: none; background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0"><span style="height: 6px; border-radius: 999px; width: {{d.w}}px; background: {{d.bg}}"></span></button>
+</sc-for>
+</div>
+</div>
+</sc-if>
+
+<!-- ===================== AGENDA Y TURNOS ===================== -->
+<sc-if value="{{isAg}}" hint-placeholder-val="{{false}}">
+<div class="mroot" style="display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 class="mh3" style="margin: 0; font-size: 21px; font-weight: 700; letter-spacing: -0.01em; color: #FBF7F3">Agenda y turnos</h3>
+<span class="msub" style="font-size: 14px; color: #C0B6AD">Viernes 17 de octubre · Studio Bruma · 3 profesionales</span>
+</div>
+<div class="kpis" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px">
+<div style="background: #332E2A; border: 1px solid #403934; border-radius: 12px; padding: 12px 14px"><div style="font-size: 12.5px; color: #C0B6AD">Turnos del día</div><div style="font-size: 24px; font-weight: 700; color: #FBF7F3; font-variant-numeric: tabular-nums">{{agTotal}}</div></div>
+<div style="background: rgba(130,190,140,0.10); border: 1px solid rgba(130,190,140,0.3); border-radius: 12px; padding: 12px 14px"><div style="font-size: 12.5px; color: #A5D6AA">Confirmados</div><div style="font-size: 24px; font-weight: 700; color: #FBF7F3; font-variant-numeric: tabular-nums">{{agConf}}</div></div>
+<div style="background: rgba(232,200,100,0.08); border: 1px solid rgba(232,200,100,0.3); border-radius: 12px; padding: 12px 14px"><div style="font-size: 12.5px; color: #E8CC7A">Sin confirmar</div><div style="font-size: 24px; font-weight: 700; color: #E8CC7A; font-variant-numeric: tabular-nums">{{agPend}}</div></div>
+<div style="background: #332E2A; border: 1px solid #403934; border-radius: 12px; padding: 12px 14px"><div style="font-size: 12.5px; color: #C0B6AD">Horarios libres</div><div style="font-size: 24px; font-weight: 700; color: #FBF7F3; font-variant-numeric: tabular-nums">{{agFree}}</div></div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: flex-start">
+
+<!-- Calendar -->
+<div style="flex: 999 1 460px; min-width: 0; border: 1px solid #403934; border-radius: 12px; overflow: hidden">
+<div style="overflow-x: auto">
+<div class="agmin" style="min-width: 520px">
+<div class="aggrid" style="display: grid; grid-template-columns: 60px repeat(3, minmax(0, 1fr)); background: #332E2A; border-bottom: 1px solid #403934">
+<span></span>
+<sc-for list="{{agPros}}" as="p" hint-placeholder-count="3">
+<div style="display: flex; align-items: center; gap: 9px; padding: 10px 12px; border-left: 1px solid #403934; min-width: 0">
+<span style="width: 30px; height: 30px; border-radius: 50%; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 12px; flex-shrink: 0; background: {{p.av}}">{{p.ini}}</span>
+<span style="display: flex; flex-direction: column; min-width: 0"><span style="font-size: 14px; font-weight: 600; color: #F5F0EB">{{p.name}}</span><span class="hide-sm" style="font-size: 12px; color: #AA9F96">{{p.role}}</span></span>
+</div>
+</sc-for>
+</div>
+<div class="agscroll" style="max-height: 452px; overflow-y: auto">
+<sc-for list="{{agRows}}" as="r" hint-placeholder-count="9">
+<div class="aggrid" style="display: grid; grid-template-columns: 60px repeat(3, minmax(0, 1fr)); border-bottom: 1px solid #3A3430">
+<span style="padding: 8px 0 0 12px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #AA9F96">{{r.time}}</span>
+<sc-for list="{{r.cells}}" as="c" hint-placeholder-count="3">
+<div style="border-left: 1px solid #3A3430; padding: 4px; height: 58px; box-sizing: border-box" class="agcell">
+<sc-if value="{{c.isAppt}}" hint-placeholder-val="{{false}}">
+<button type="button" onClick="{{c.pick}}" aria-label="{{c.aria}}" style="width: 100%; height: 100%; border-radius: 8px; padding: 6px 9px; box-sizing: border-box; cursor: pointer; text-align: left; display: flex; flex-direction: column; justify-content: center; gap: 3px; overflow: hidden; background: {{c.bg}}; border: 1px solid {{c.bd}}; color: #F3EDE7">
+<span style="display: flex; align-items: center; gap: 6px; min-width: 0"><span style="width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; background: {{c.proC}}"></span><span style="font-size: 13px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{c.client}}</span></span>
+<span style="display: flex; align-items: center; gap: 6px; font-size: 11.5px; white-space: nowrap; overflow: hidden"><span style="color: {{c.sfg}}; font-weight: 600">{{c.status}}</span><span style="color: #AA9F96">· {{c.service}}</span></span>
+</button>
+</sc-if>
+<sc-if value="{{c.isFree}}" hint-placeholder-val="{{true}}">
+<button type="button" onClick="{{c.pick}}" aria-label="{{c.aria}}" style="width: 100%; height: 100%; border-radius: 8px; box-sizing: border-box; cursor: pointer; font-size: 12.5px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 4px; background: {{c.bg}}; border: 1px {{c.bs}} {{c.bd}}; color: {{c.fg}}">{{c.label}}</button>
+</sc-if>
+<sc-if value="{{c.isBlocked}}" hint-placeholder-val="{{false}}">
+<div style="width: 100%; height: 100%; border-radius: 8px; background: repeating-linear-gradient(135deg, #2F2A27 0, #2F2A27 6px, #35302C 6px, #35302C 12px); display: flex; align-items: center; justify-content: center; font-size: 12px; color: #9C9087">Almuerzo</div>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Side panel -->
+<div style="flex: 1 1 250px; min-width: 0; background: #332E2A; border: 1px solid #403934; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 14px">
+
+<sc-if value="{{agPanelNone}}" hint-placeholder-val="{{true}}">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 15px; font-weight: 600; color: #FBF7F3">Cómo usar la agenda</span>
+<span style="font-size: 13.5px; color: #C0B6AD">Tocá un horario libre para cargar un turno, o un turno para ver el detalle, confirmarlo o enviar un recordatorio.</span>
+<div style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #D3CAC2; border-top: 1px solid #403934; padding-top: 12px">
+<span style="display: flex; align-items: center; gap: 8px"><span style="width: 8px; height: 8px; border-radius: 50%; background: #A5D6AA"></span>Confirmado</span>
+<span style="display: flex; align-items: center; gap: 8px"><span style="width: 8px; height: 8px; border-radius: 50%; background: #E8CC7A"></span>Sin confirmar</span>
+<span style="display: flex; align-items: center; gap: 8px"><span style="width: 8px; height: 8px; border-radius: 50%; background: #8DB6F2"></span>Asistió</span>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{agPanelNew}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #AA9F96">Nuevo turno</span>
+<span style="font-size: 17px; font-weight: 700; color: #FBF7F3">{{agSelTitle}}</span>
+</div>
+<label style="display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 500; color: #D3CAC2">Cliente
+<input type="text" value="{{agName}}" onChange="{{onAgName}}" placeholder="Nombre y apellido" style="height: 38px; border: 1px solid #50473F; border-radius: 9px; padding: 0 12px; font-size: 14px; color: #F3EDE7; background: #221F1D"></input>
+</label>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; font-weight: 500; color: #D3CAC2">Servicio</span>
+<div style="display: flex; flex-wrap: wrap; gap: 6px">
+<sc-for list="{{agSvcs}}" as="v" hint-placeholder-count="5">
+<button type="button" onClick="{{v.pick}}" aria-pressed="{{v.on}}" style="height: 34px; padding: 0 12px; border-radius: 999px; font-size: 13px; font-weight: 600; cursor: pointer; background: {{v.bg}}; color: {{v.fg}}; border: 1px solid {{v.bd}}">{{v.label}}</button>
+</sc-for>
+</div>
+</div>
+<sc-if value="{{agErrShow}}" hint-placeholder-val="{{false}}">
+<div style="border-radius: 9px; padding: 8px 12px; font-size: 13px; background: rgba(226,95,120,0.14); color: #F59DB0">{{agErr}}</div>
+</sc-if>
+<div style="display: flex; gap: 8px">
+<button type="button" onClick="{{agBook}}" style="flex: 1; height: 40px; border-radius: 9px; border: none; background: #E07A45; color: #22150E; font-weight: 600; font-size: 14px; cursor: pointer">Agendar turno</button>
+<button type="button" onClick="{{agClose}}" style="height: 40px; padding: 0 14px; border-radius: 9px; border: 1px solid #5A5048; background: transparent; color: #F3EDE7; font-weight: 600; font-size: 14px; cursor: pointer">Cerrar</button>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{agPanelAppt}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #AA9F96">Turno</span>
+<span style="font-size: 18px; font-weight: 700; color: #FBF7F3">{{agD.client}}</span>
+<span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: {{agD.sbg}}; color: {{agD.sfg}}"><span style="width: 6px; height: 6px; border-radius: 50%; background: {{agD.sfg}}"></span>{{agD.status}}</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; border-top: 1px solid #403934; padding-top: 12px">
+<div style="display: flex; justify-content: space-between; gap: 10px"><span style="color: #AA9F96">Servicio</span><span style="color: #F3EDE7; font-weight: 500">{{agD.service}}</span></div>
+<div style="display: flex; justify-content: space-between; gap: 10px"><span style="color: #AA9F96">Profesional</span><span style="color: #F3EDE7; font-weight: 500">{{agD.pro}}</span></div>
+<div style="display: flex; justify-content: space-between; gap: 10px"><span style="color: #AA9F96">Horario</span><span style="color: #F3EDE7; font-weight: 500">{{agD.time}}</span></div>
+</div>
+<a href="{{agD.wa}}" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 40px; border-radius: 9px; border: 1px solid #E07A45; color: #F2A57A; text-decoration: none; font-weight: 600; font-size: 14px">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.6A8.5 8.5 0 1 1 21 11.5z"></path></svg>Recordar por WhatsApp</a>
+<sc-if value="{{agD.canConfirm}}" hint-placeholder-val="{{false}}">
+<button type="button" onClick="{{agConfirm}}" style="height: 40px; border-radius: 9px; border: none; background: #E07A45; color: #22150E; font-weight: 600; font-size: 14px; cursor: pointer">Marcar confirmado</button>
+</sc-if>
+<sc-if value="{{agD.canAttend}}" hint-placeholder-val="{{false}}">
+<button type="button" onClick="{{agAttend}}" style="height: 40px; border-radius: 9px; border: none; background: #E07A45; color: #22150E; font-weight: 600; font-size: 14px; cursor: pointer">Marcar que asistió</button>
+</sc-if>
+<div style="display: flex; gap: 8px">
+<button type="button" onClick="{{agCancel}}" style="flex: 1; height: 38px; border-radius: 9px; border: 1px solid #5A5048; background: transparent; color: #F59DB0; font-weight: 600; font-size: 13.5px; cursor: pointer">Cancelar turno</button>
+<button type="button" onClick="{{agClose}}" style="height: 38px; padding: 0 14px; border-radius: 9px; border: 1px solid #5A5048; background: transparent; color: #F3EDE7; font-weight: 600; font-size: 13.5px; cursor: pointer">Cerrar</button>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{agMsgShow}}" hint-placeholder-val="{{false}}">
+<div style="border-radius: 9px; padding: 9px 12px; font-size: 13px; background: rgba(130,190,140,0.12); color: #A5D6AA">{{agMsg}}</div>
+</sc-if>
+</div>
+</div>
+</div>
+</sc-if>
+
+<!-- ===================== TU IDEA ===================== -->
+<sc-if value="{{isIdea}}" hint-placeholder-val="{{false}}">
+<div class="mroot" style="display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 class="mh3" style="margin: 0; font-size: 21px; font-weight: 700; letter-spacing: -0.01em; color: #FBF7F3">¿Tenés otra idea? También se puede hacer.</h3>
+<span class="msub" style="font-size: 14px; color: #C0B6AD">Si hoy lo resolvés con papeles, planillas o mensajes, se puede convertir en un sistema a tu medida.</span>
+</div>
+
+<div style="background: #332E2A; border: 1px solid #403934; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end">
+<label style="flex: 1 1 280px; display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 500; color: #D3CAC2">¿Qué te gustaría ordenar en tu negocio?
+<input type="text" value="{{ideaDraft}}" onChange="{{onIdeaDraft}}" placeholder="Ej: control de pedidos de mi panadería" style="height: 42px; border: 1px solid #50473F; border-radius: 10px; padding: 0 14px; font-size: 15px; color: #F3EDE7; background: #221F1D"></input>
+</label>
+<button type="button" onClick="{{ideaBuild}}" style="height: 42px; padding: 0 18px; border-radius: 10px; border: none; background: #E8B04A; color: #1A1200; font-weight: 700; font-size: 14px; cursor: pointer">Ver cómo quedaría</button>
+</div>
+<sc-if value="{{ideaErrShow}}" hint-placeholder-val="{{false}}">
+<span style="font-size: 13px; color: #F59DB0">{{ideaErr}}</span>
+</sc-if>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
+<span style="font-size: 12.5px; color: #AA9F96">O probá con:</span>
+<sc-for list="{{ideaChips}}" as="i" hint-placeholder-count="6">
+<button type="button" onClick="{{i.pick}}" aria-pressed="{{i.on}}" style="height: 34px; padding: 0 12px; border-radius: 999px; font-size: 13px; font-weight: 600; cursor: pointer; background: {{i.bg}}; color: {{i.fg}}; border: 1px solid {{i.bd}}">{{i.label}}</button>
+</sc-for>
+</div>
+</div>
+
+<div style="border: 1px solid #403934; border-radius: 12px; overflow: hidden; animation: siteIn 0.35s ease">
+<div style="background: #332E2A; border-bottom: 1px solid #403934; padding: 14px 16px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 16px">
+<div style="display: flex; flex-direction: column; gap: 2px; min-width: 0">
+<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #E8CC7A">Así podría quedar</span>
+<span style="font-size: 18px; font-weight: 700; color: #FBF7F3">{{idea.title}}</span>
+</div>
+<a href="{{idea.wa}}" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; height: 38px; padding: 0 14px; border-radius: 9px; background: #E07A45; color: #22150E; text-decoration: none; font-weight: 700; font-size: 13.5px">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.6A8.5 8.5 0 1 1 21 11.5z"></path></svg>Contame tu idea</a>
+</div>
+<div style="overflow-x: auto">
+<div class="tmin" style="min-width: 560px">
+<div class="thead" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) 150px; gap: 12px; padding: 10px 16px; background: #2F2A27; border-bottom: 1px solid #403934; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #AA9F96">
+<span>{{idea.c1}}</span><span>{{idea.c2}}</span><span>{{idea.c3}}</span><span>{{idea.c4}}</span>
+</div>
+<sc-for list="{{idea.rows}}" as="r" hint-placeholder-count="3">
+<div class="trow" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) 150px; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #3A3430; align-items: center; font-size: 14px">
+<span class="tfull" style="font-weight: 600; color: #F5F0EB">{{r.a}}</span>
+<span style="color: #D3CAC2">{{r.b}}</span>
+<span style="color: #D3CAC2; font-variant-numeric: tabular-nums">{{r.c}}</span>
+<span style="justify-self: start; display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: {{r.bg}}; color: {{r.fg}}"><span style="width: 6px; height: 6px; border-radius: 50%; background: {{r.fg}}"></span>{{r.st}}</span>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; border-top: 1px solid #403934">
+<div style="padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; border-right: 1px solid #3A3430">
+<span style="display: flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 700; color: #FBF7F3"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8DB6F2" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5M9 13h6M9 17h6"></path></svg>Qué registra</span>
+<sc-for list="{{idea.reg}}" as="t" hint-placeholder-count="3"><span style="font-size: 13px; color: #D3CAC2">{{t.x}}</span></sc-for>
+</div>
+<div style="padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; border-right: 1px solid #3A3430">
+<span style="display: flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 700; color: #FBF7F3"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A5D6AA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg>Puntos de control</span>
+<sc-for list="{{idea.ctl}}" as="t" hint-placeholder-count="2"><span style="font-size: 13px; color: #D3CAC2">{{t.x}}</span></sc-for>
+</div>
+<div style="padding: 14px 16px; display: flex; flex-direction: column; gap: 8px">
+<span style="display: flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 700; color: #FBF7F3"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8CC7A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.7 21a2 2 0 0 1-3.4 0"></path></svg>Alertas y reportes</span>
+<sc-for list="{{idea.al}}" as="t" hint-placeholder-count="2"><span style="font-size: 13px; color: #D3CAC2">{{t.x}}</span></sc-for>
+</div>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 10px; font-size: 13px; color: #C0B6AD">
+<span style="padding: 5px 12px; border-radius: 999px; background: #332E2A; border: 1px solid #403934">1 · Me contás la idea</span>
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9C9087" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+<span style="padding: 5px 12px; border-radius: 999px; background: #332E2A; border: 1px solid #403934">2 · Armo un prototipo para probar</span>
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9C9087" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+<span style="padding: 5px 12px; border-radius: 999px; background: #332E2A; border: 1px solid #403934">3 · Lo ajustamos juntos</span>
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9C9087" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+<span style="padding: 5px 12px; border-radius: 999px; background: rgba(130,190,140,0.12); border: 1px solid rgba(130,190,140,0.35); color: #A5D6AA">4 · Funcionando en tu negocio</span>
+</div>
+</div>
+</sc-if>
+
+<!-- ===================== STOCK ===================== -->
+<sc-if value="{{isStock}}" hint-placeholder-val="{{false}}">
+<div class="mroot" style="display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 class="mh3" style="margin: 0; font-size: 21px; font-weight: 700; letter-spacing: -0.01em; color: #FBF7F3">Stock</h3>
+<span class="msub" style="font-size: 14px; color: #C0B6AD">Depósito central · cada movimiento queda registrado</span>
+</div>
+<div class="kpis" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px">
+<div style="background: #332E2A; border: 1px solid #403934; border-radius: 12px; padding: 12px 14px"><div style="font-size: 12.5px; color: #C0B6AD">Productos</div><div style="font-size: 24px; font-weight: 700; color: #FBF7F3; font-variant-numeric: tabular-nums">{{stockTotal}}</div></div>
+<div style="background: rgba(226,95,120,0.08); border: 1px solid rgba(226,95,120,0.3); border-radius: 12px; padding: 12px 14px"><div style="font-size: 12.5px; color: #F59DB0">Para reponer</div><div style="font-size: 24px; font-weight: 700; color: #F59DB0; font-variant-numeric: tabular-nums">{{lowCount}}</div></div>
+<div style="background: #332E2A; border: 1px solid #403934; border-radius: 12px; padding: 12px 14px"><div style="font-size: 12.5px; color: #C0B6AD">Movimientos hoy</div><div style="font-size: 24px; font-weight: 700; color: #FBF7F3; font-variant-numeric: tabular-nums">{{movesToday}}</div></div>
+</div>
+<label style="position: relative; display: flex; align-items: center; max-width: 340px">
+<span style="position: absolute; left: 12px; display: flex; color: #AA9F96"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg></span>
+<input type="search" aria-label="Buscar producto o código" value="{{stockQ}}" onChange="{{onStockQ}}" placeholder="Buscar por nombre o código" style="width: 100%; height: 38px; border: 1px solid #50473F; border-radius: 9px; padding: 0 12px 0 36px; font-size: 14px; color: #F3EDE7; background: #221F1D; box-sizing: border-box"></input>
+</label>
+<div style="border: 1px solid #403934; border-radius: 12px; overflow: hidden">
+<div style="overflow-x: auto">
+<div class="tmin" style="min-width: 600px">
+<div class="thead" style="display: grid; grid-template-columns: 76px minmax(0, 1fr) 70px 140px 104px; gap: 12px; padding: 10px 16px; background: #332E2A; border-bottom: 1px solid #403934; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #AA9F96">
+<span>Código</span><span>Producto</span><span style="text-align: right">Mínimo</span><span style="text-align: center">Stock</span><span>Estado</span>
+</div>
+<div style="max-height: 228px; overflow-y: auto">
+<sc-for list="{{stockRows}}" as="p" hint-placeholder-count="6">
+<div class="trow" style="display: grid; grid-template-columns: 76px minmax(0, 1fr) 70px 140px 104px; gap: 12px; padding: 7px 16px; border-bottom: 1px solid #3A3430; align-items: center; font-size: 14px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #AA9F96">{{p.code}}</span>
+<span class="tfull tfirst" style="font-weight: 500; color: #F5F0EB">{{p.name}}</span>
+<span class="thide" style="text-align: right; color: #C0B6AD; font-variant-numeric: tabular-nums">{{p.min}}</span>
+<div style="display: flex; justify-content: center">
+<div style="display: inline-flex; align-items: center; border: 1px solid #50473F; border-radius: 8px; overflow: hidden">
+<button type="button" onClick="{{p.dec}}" aria-label="Registrar salida" style="width: 34px; height: 34px; border: none; background: #332E2A; color: #F3EDE7; font-size: 17px; cursor: pointer">−</button>
+<span style="width: 44px; text-align: center; font-weight: 700; font-variant-numeric: tabular-nums; border-left: 1px solid #403934; border-right: 1px solid #403934; line-height: 34px; color: {{p.qc}}">{{p.qty}}</span>
+<button type="button" onClick="{{p.inc}}" aria-label="Registrar entrada" style="width: 34px; height: 34px; border: none; background: #332E2A; color: #F3EDE7; font-size: 17px; cursor: pointer">+</button>
+</div>
+</div>
+<span style="justify-self: start; display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: {{p.sbg}}; color: {{p.sfg}}"><span style="width: 6px; height: 6px; border-radius: 50%; background: {{p.sfg}}"></span>{{p.status}}</span>
+</div>
+</sc-for>
+<sc-if value="{{stockNoResults}}" hint-placeholder-val="{{false}}">
+<div style="padding: 24px 16px; text-align: center; font-size: 14px; color: #C0B6AD">Sin resultados. Podés darlo de alta abajo.</div>
+</sc-if>
+</div>
+</div>
+</div>
+</div>
+<div style="background: #332E2A; border: 1px solid #403934; border-radius: 12px; padding: 12px 14px; display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end">
+<span style="flex: 1 1 100%; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #AA9F96">Alta rápida</span>
+<label style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 500; color: #D3CAC2">Producto
+<input type="text" value="{{newName}}" onChange="{{onNewName}}" placeholder="Nombre del producto" style="height: 38px; border: 1px solid #50473F; border-radius: 9px; padding: 0 12px; font-size: 14px; color: #F3EDE7; background: #221F1D"></input>
+</label>
+<label style="flex: 0 1 110px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 500; color: #D3CAC2">Cantidad
+<input type="number" min="0" value="{{newQty}}" onChange="{{onNewQty}}" placeholder="0" style="height: 38px; border: 1px solid #50473F; border-radius: 9px; padding: 0 12px; font-size: 14px; color: #F3EDE7; background: #221F1D; width: 100%; box-sizing: border-box"></input>
+</label>
+<button type="button" onClick="{{addProduct}}" style="height: 38px; padding: 0 18px; border-radius: 9px; border: none; background: #E07A45; color: #22150E; font-weight: 600; font-size: 14px; cursor: pointer">Dar de alta</button>
+</div>
+<sc-if value="{{stockMsgShow}}" hint-placeholder-val="{{false}}">
+<div style="border-radius: 9px; padding: 9px 12px; font-size: 13.5px; background: {{stockMsgBg}}; color: {{stockMsgFg}}">{{stockMsg}}</div>
+</sc-if>
+</div>
+</sc-if>
+
+<!-- ===================== PLANIFICACIÓN ===================== -->
+<sc-if value="{{isPlan}}" hint-placeholder-val="{{false}}">
+<div class="mroot" style="display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 10px 20px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 class="mh3" style="margin: 0; font-size: 21px; font-weight: 700; letter-spacing: -0.01em; color: #FBF7F3">Planificación</h3>
+<span class="msub" style="font-size: 14px; color: #C0B6AD">Semana 42 · del 13 al 17 de octubre</span>
+</div>
+<div style="display: inline-flex; background: #221F1D; border: 1px solid #403934; border-radius: 10px; padding: 3px; gap: 2px">
+<sc-for list="{{planToggles}}" as="v" hint-placeholder-count="2">
+<button type="button" onClick="{{v.pick}}" style="height: 34px; padding: 0 14px; border-radius: 8px; border: none; font-weight: 600; font-size: 13.5px; cursor: pointer; background: {{v.bg}}; color: {{v.fg}}">{{v.label}}</button>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; align-items: center; gap: 12px">
+<div style="flex: 1; height: 8px; background: #3D3733; border-radius: 999px; overflow: hidden"><div style="height: 100%; background: #E07A45; border-radius: 999px; width: {{planPct}}%"></div></div>
+<span style="font-size: 13.5px; font-weight: 600; white-space: nowrap; color: #F3EDE7">{{planProgress}}</span>
+</div>
+
+<sc-if value="{{planIsGantt}}" hint-placeholder-val="{{true}}">
+<div style="border: 1px solid #403934; border-radius: 12px; overflow: hidden">
+<div style="overflow-x: auto">
+<div class="gmin" style="min-width: 640px">
+<div class="ggrid" style="display: grid; grid-template-columns: 210px repeat(5, minmax(0, 1fr)); background: #332E2A; border-bottom: 1px solid #403934; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #AA9F96">
+<span style="padding: 10px 16px">Tarea</span>
+<span style="padding: 10px 0; text-align: center; border-left: 1px solid #403934">Lun 13</span>
+<span style="padding: 10px 0; text-align: center; border-left: 1px solid #403934">Mar 14</span>
+<span style="padding: 10px 0; text-align: center; border-left: 1px solid #403934; background: rgba(130,190,140,0.14); color: #A5D6AA">Hoy · Mié 15</span>
+<span style="padding: 10px 0; text-align: center; border-left: 1px solid #403934">Jue 16</span>
+<span style="padding: 10px 0; text-align: center; border-left: 1px solid #403934">Vie 17</span>
+</div>
+<sc-for list="{{taskRows}}" as="t" hint-placeholder-count="5">
+<div class="ggrid" style="display: grid; grid-template-columns: 210px repeat(5, minmax(0, 1fr)); border-bottom: 1px solid #3A3430; align-items: stretch">
+<div style="display: flex; align-items: center; gap: 10px; padding: 9px 16px; min-width: 0">
+<span style="width: 26px; height: 26px; border-radius: 50%; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 10.5px; flex-shrink: 0; background: {{t.whoBg}}">{{t.ini}}</span>
+<span style="font-size: 14px; font-weight: 500; text-decoration: {{t.deco}}; color: {{t.tc}}">{{t.name}}</span>
+</div>
+<div style="grid-column: 2 / span 5; position: relative; min-height: 48px; background: repeating-linear-gradient(to right, transparent 0, transparent calc(20% - 1px), #3D3733 calc(20% - 1px), #3D3733 20%)">
+<div style="position: absolute; top: 0; bottom: 0; left: 40%; width: 20%; background: rgba(130,190,140,0.07)"></div>
+<button type="button" onClick="{{t.toggle}}" aria-label="Marcar tarea" style="position: absolute; top: 9px; bottom: 9px; border: none; border-radius: 7px; color: #FFFFFF; font-size: 12.5px; font-weight: 600; cursor: pointer; text-align: left; padding: 0 10px; white-space: nowrap; overflow: hidden; display: flex; align-items: center; gap: 6px; left: calc({{t.left}}% + 4px); width: calc({{t.width}}% - 8px); background: {{t.barBg}}">
+<sc-if value="{{t.done}}" hint-placeholder-val="{{false}}"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></sc-if>{{t.barLabel}}</button>
+</div>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+<span class="msub" style="font-size: 13px; color: #C0B6AD">Tocá una barra para marcar la tarea como terminada.</span>
+</sc-if>
+
+<sc-if value="{{planIsTasks}}" hint-placeholder-val="{{false}}">
+<div style="border: 1px solid #403934; border-radius: 12px; overflow: hidden">
+<div style="overflow-x: auto">
+<div class="tmin" style="min-width: 600px">
+<div class="thead" style="display: grid; grid-template-columns: 44px minmax(0, 1fr) 150px 110px 110px; gap: 12px; padding: 10px 16px; background: #332E2A; border-bottom: 1px solid #403934; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #AA9F96">
+<span></span><span>Tarea</span><span>Responsable</span><span>Fechas</span><span>Estado</span>
+</div>
+<sc-for list="{{taskRows}}" as="t" hint-placeholder-count="5">
+<div class="trow" style="display: grid; grid-template-columns: 44px minmax(0, 1fr) 150px 110px 110px; gap: 12px; padding: 8px 16px; border-bottom: 1px solid #3A3430; align-items: center; font-size: 14px">
+<button type="button" onClick="{{t.toggle}}" aria-pressed="{{t.done}}" aria-label="Marcar tarea" style="width: 36px; height: 36px; border: none; background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0">
+<span style="width: 22px; height: 22px; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #22150E; box-sizing: border-box; background: {{t.boxBg}}; border: 2px solid {{t.boxBd}}">
+<sc-if value="{{t.done}}" hint-placeholder-val="{{false}}"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></sc-if>
+</span>
+</button>
+<span class="tgrow" style="font-weight: 500; text-decoration: {{t.deco}}; color: {{t.tc}}">{{t.name}}</span>
+<span style="display: flex; align-items: center; gap: 8px; color: #D3CAC2"><span style="width: 24px; height: 24px; border-radius: 50%; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 10px; background: {{t.whoBg}}">{{t.ini}}</span>{{t.who}}</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #C0B6AD">{{t.when}}</span>
+<span style="justify-self: start; display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: {{t.sbg}}; color: {{t.sfg}}"><span style="width: 6px; height: 6px; border-radius: 50%; background: {{t.sfg}}"></span>{{t.status}}</span>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</sc-if>
+</div>
+</sc-if>
+
+<!-- ===================== ÓRDENES ===================== -->
+<sc-if value="{{isOrd}}" hint-placeholder-val="{{false}}">
+<div class="mroot" style="display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 class="mh3" style="margin: 0; font-size: 21px; font-weight: 700; letter-spacing: -0.01em; color: #FBF7F3">Órdenes de trabajo</h3>
+<span class="msub" style="font-size: 14px; color: #C0B6AD">{{ordSummary}}</span>
+</div>
+<div class="kanban" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px">
+<sc-for list="{{ordCols}}" as="col" hint-placeholder-count="3">
+<div style="background: #2F2A27; border: 1px solid #3D3733; border-radius: 12px; padding: 10px; display: flex; flex-direction: column; gap: 8px; min-height: 380px" class="kcol">
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 4px 4px 6px">
+<span style="display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; color: #F3EDE7"><span style="width: 8px; height: 8px; border-radius: 50%; background: {{col.dot}}"></span>{{col.title}}</span>
+<span style="font-size: 12.5px; font-weight: 600; color: #C0B6AD; background: #221F1D; border: 1px solid #403934; border-radius: 999px; padding: 1px 9px">{{col.count}}</span>
+</div>
+<sc-for list="{{col.cards}}" as="o" hint-placeholder-count="2">
+<div style="background: #3A3430; border: 1px solid #4A423C; border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 8px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #AA9F96">{{o.id}}</span>
+<span style="font-size: 11.5px; font-weight: 600; padding: 2px 8px; border-radius: 999px; background: {{o.pbg}}; color: {{o.pfg}}">{{o.prio}}</span>
+</div>
+<span style="font-size: 14.5px; font-weight: 600; line-height: 1.3; color: #F5F0EB">{{o.title}}</span>
+<span style="font-size: 12.5px; color: #C0B6AD">{{o.client}}</span>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; border-top: 1px solid #4A423C; padding-top: 8px">
+<span style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: #C0B6AD"><span style="width: 22px; height: 22px; border-radius: 50%; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 9.5px; background: {{o.av}}">{{o.who}}</span>{{o.due}}</span>
+<button type="button" onClick="{{o.advance}}" style="height: 30px; padding: 0 10px; border-radius: 7px; border: 1px solid #5A5048; background: transparent; color: #F3EDE7; font-size: 12.5px; font-weight: 600; cursor: pointer">{{o.action}}</button>
+</div>
+</div>
+</sc-for>
+</div>
+</sc-for>
+</div>
+</div>
+</sc-if>
+
+<!-- ===================== CONTROL DE CALIDAD ===================== -->
+<sc-if value="{{isChk}}" hint-placeholder-val="{{false}}">
+<div class="mroot" style="display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 10px 20px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 class="mh3" style="margin: 0; font-size: 21px; font-weight: 700; letter-spacing: -0.01em; color: #FBF7F3">Control de calidad</h3>
+<span class="msub" style="font-size: 14px; color: #C0B6AD">Orden #0587 · Mesa de roble 1,60 m · Laura Fernández</span>
+</div>
+<span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: {{chkBadge.bg}}; color: {{chkBadge.fg}}"><span style="width: 6px; height: 6px; border-radius: 50%; background: {{chkBadge.fg}}"></span>{{chkBadge.label}}</span>
+</div>
+<div style="display: flex; align-items: center; gap: 12px">
+<div style="flex: 1; height: 8px; background: #3D3733; border-radius: 999px; overflow: hidden"><div style="height: 100%; background: #E07A45; border-radius: 999px; width: {{chkPct}}%"></div></div>
+<span style="font-size: 13.5px; font-weight: 600; white-space: nowrap; color: #F3EDE7">{{chkProgress}}</span>
+</div>
+<div style="border: 1px solid #403934; border-radius: 12px; padding: 8px 18px">
+<sc-for list="{{chkRows}}" as="s" hint-placeholder-count="5">
+<div style="display: flex; gap: 14px">
+<div style="display: flex; flex-direction: column; align-items: center; width: 30px; flex-shrink: 0; padding-top: 12px">
+<sc-if value="{{s.isDone}}" hint-placeholder-val="{{false}}">
+<span style="width: 30px; height: 30px; border-radius: 50%; background: #E07A45; color: #22150E; display: flex; align-items: center; justify-content: center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span>
+</sc-if>
+<sc-if value="{{s.isNext}}" hint-placeholder-val="{{false}}">
+<span style="width: 30px; height: 30px; border-radius: 50%; border: 2px solid #E07A45; color: #A5D6AA; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; box-sizing: border-box">{{s.num}}</span>
+</sc-if>
+<sc-if value="{{s.isLocked}}" hint-placeholder-val="{{false}}">
+<span style="width: 30px; height: 30px; border-radius: 50%; background: #3A3430; color: #9C9087; display: flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg></span>
+</sc-if>
+<sc-if value="{{s.hasLine}}" hint-placeholder-val="{{true}}">
+<span style="flex: 1; width: 2px; min-height: 14px; margin-top: 4px; background: {{s.lineC}}"></span>
+</sc-if>
+</div>
+<div style="flex: 1; min-width: 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; padding: 12px 0 14px">
+<div style="display: flex; flex-direction: column; gap: 2px; min-width: 0">
+<span style="font-size: 14.5px; font-weight: 600; color: {{s.tc}}">{{s.text}}</span>
+<span style="font-size: 12.5px; color: #AA9F96">{{s.meta}}</span>
+</div>
+<sc-if value="{{s.isNext}}" hint-placeholder-val="{{false}}">
+<button type="button" onClick="{{chkNext}}" style="height: 36px; padding: 0 14px; border-radius: 9px; border: none; background: #E07A45; color: #22150E; font-weight: 600; font-size: 13.5px; cursor: pointer">Marcar como hecho</button>
+</sc-if>
+</div>
+</div>
+</sc-for>
+</div>
+<sc-if value="{{chkComplete}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; background: rgba(130,190,140,0.12); border: 1px solid rgba(130,190,140,0.35); color: #A5D6AA; border-radius: 12px; padding: 12px 16px">
+<span style="font-weight: 600; font-size: 14.5px">Control completo: la orden pasa a entregas.</span>
+<button type="button" onClick="{{chkReset}}" style="height: 36px; padding: 0 14px; border-radius: 8px; border: 1px solid #5A5048; background: transparent; color: #F3EDE7; font-weight: 600; font-size: 13.5px; cursor: pointer">Reiniciar demo</button>
+</div>
+</sc-if>
+<sc-if value="{{chkNotComplete}}" hint-placeholder-val="{{true}}">
+<span class="msub" style="font-size: 13px; color: #C0B6AD">Los pasos se habilitan en orden y cada uno registra quién lo hizo y cuándo.</span>
+</sc-if>
+</div>
+</sc-if>
+
+<!-- ===================== CAJA ===================== -->
+<sc-if value="{{isCaja}}" hint-placeholder-val="{{false}}">
+<div class="mroot" style="display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 class="mh3" style="margin: 0; font-size: 21px; font-weight: 700; letter-spacing: -0.01em; color: #FBF7F3">Caja</h3>
+<span class="msub" style="font-size: 14px; color: #C0B6AD">Caja del día · Local central · saldo inicial {{cajaInicial}}</span>
+</div>
+<div class="kpis" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px">
+<div style="background: rgba(130,190,140,0.10); border: 1px solid rgba(130,190,140,0.3); border-radius: 12px; padding: 12px 16px"><div style="font-size: 12.5px; color: #A5D6AA">Saldo actual</div><div style="font-size: 24px; font-weight: 700; color: #FBF7F3; font-variant-numeric: tabular-nums">{{cajaSaldo}}</div></div>
+<div style="background: #332E2A; border: 1px solid #403934; border-radius: 12px; padding: 12px 16px"><div style="font-size: 12.5px; color: #C0B6AD">Ingresos</div><div style="font-size: 24px; font-weight: 700; color: #A5D6AA; font-variant-numeric: tabular-nums">{{cajaIn}}</div></div>
+<div style="background: #332E2A; border: 1px solid #403934; border-radius: 12px; padding: 12px 16px"><div style="font-size: 12.5px; color: #C0B6AD">Egresos</div><div style="font-size: 24px; font-weight: 700; color: #F59DB0; font-variant-numeric: tabular-nums">{{cajaOut}}</div></div>
+</div>
+<div style="background: #332E2A; border: 1px solid #403934; border-radius: 12px; padding: 12px 14px; display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end">
+<span style="flex: 1 1 100%; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #AA9F96">Nuevo movimiento</span>
+<label style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 500; color: #D3CAC2">Concepto
+<input type="text" value="{{cConcept}}" onChange="{{onConcept}}" placeholder="Ej: Venta mostrador" style="height: 38px; border: 1px solid #50473F; border-radius: 9px; padding: 0 12px; font-size: 14px; color: #F3EDE7; background: #221F1D"></input>
+</label>
+<label style="flex: 0 1 140px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 500; color: #D3CAC2">Monto
+<input type="text" inputmode="numeric" value="{{cAmount}}" onChange="{{onAmount}}" placeholder="$ 0" style="height: 38px; border: 1px solid #50473F; border-radius: 9px; padding: 0 12px; font-size: 14px; color: #F3EDE7; background: #221F1D; width: 100%; box-sizing: border-box"></input>
+</label>
+<button type="button" onClick="{{addIn}}" style="height: 38px; padding: 0 16px; border-radius: 9px; border: none; background: #E07A45; color: #22150E; font-weight: 600; font-size: 14px; cursor: pointer">Ingreso</button>
+<button type="button" onClick="{{addOut}}" style="height: 38px; padding: 0 16px; border-radius: 9px; border: 1px solid #5A5048; background: transparent; color: #F59DB0; font-weight: 600; font-size: 14px; cursor: pointer">Egreso</button>
+</div>
+<sc-if value="{{cajaMsgShow}}" hint-placeholder-val="{{false}}">
+<div style="border-radius: 9px; padding: 9px 12px; font-size: 13.5px; background: {{cajaMsgBg}}; color: {{cajaMsgFg}}">{{cajaMsg}}</div>
+</sc-if>
+<div style="border: 1px solid #403934; border-radius: 12px; overflow: hidden">
+<div style="overflow-x: auto">
+<div class="tmin" style="min-width: 520px">
+<div class="thead" style="display: grid; grid-template-columns: 70px minmax(0, 1fr) 100px 130px; gap: 12px; padding: 10px 16px; background: #332E2A; border-bottom: 1px solid #403934; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #AA9F96">
+<span>Hora</span><span>Concepto</span><span>Tipo</span><span style="text-align: right">Monto</span>
+</div>
+<div style="max-height: 200px; overflow-y: auto">
+<sc-for list="{{movRows}}" as="m" hint-placeholder-count="3">
+<div class="trow" style="display: grid; grid-template-columns: 70px minmax(0, 1fr) 100px 130px; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #3A3430; align-items: center; font-size: 14px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #AA9F96">{{m.time}}</span>
+<span class="tgrow" style="font-weight: 500; color: #F5F0EB">{{m.concept}}</span>
+<span style="justify-self: start; display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: {{m.bg}}; color: {{m.fg}}"><span style="width: 6px; height: 6px; border-radius: 50%; background: {{m.fg}}"></span>{{m.type}}</span>
+<span class="tend" style="text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; color: {{m.fg}}">{{m.amount}}</span>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</div>
+</div>
+</sc-if>
+
+<!-- ===================== COBRANZAS ===================== -->
+<sc-if value="{{isCob}}" hint-placeholder-val="{{false}}">
+<div class="mroot" style="display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 class="mh3" style="margin: 0; font-size: 21px; font-weight: 700; letter-spacing: -0.01em; color: #FBF7F3">Cobranzas</h3>
+<span class="msub" style="font-size: 14px; color: #C0B6AD">Cuentas corrientes ordenadas por urgencia</span>
+</div>
+<div class="kpis" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px">
+<div style="background: #332E2A; border: 1px solid #403934; border-radius: 12px; padding: 12px 16px"><div style="font-size: 12.5px; color: #C0B6AD">Total a cobrar</div><div style="font-size: 24px; font-weight: 700; color: #FBF7F3; font-variant-numeric: tabular-nums">{{cobTotal}}</div></div>
+<div style="background: rgba(226,95,120,0.08); border: 1px solid rgba(226,95,120,0.3); border-radius: 12px; padding: 12px 16px"><div style="font-size: 12.5px; color: #F59DB0">Vencido</div><div style="font-size: 24px; font-weight: 700; color: #F59DB0; font-variant-numeric: tabular-nums">{{cobVencido}}</div></div>
+<div style="background: rgba(232,200,100,0.08); border: 1px solid rgba(232,200,100,0.3); border-radius: 12px; padding: 12px 16px"><div style="font-size: 12.5px; color: #E8CC7A">Vence en 7 días</div><div style="font-size: 24px; font-weight: 700; color: #E8CC7A; font-variant-numeric: tabular-nums">{{cobProx}}</div></div>
+</div>
+<div style="border: 1px solid #403934; border-radius: 12px; overflow: hidden">
+<div style="overflow-x: auto">
+<div class="tmin" style="min-width: 760px">
+<div class="thead" style="display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr) 100px minmax(0, 1.1fr) 120px 112px; gap: 12px; padding: 10px 16px; background: #332E2A; border-bottom: 1px solid #403934; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #AA9F96">
+<span>Cliente</span><span>Comprobante</span><span>Vence</span><span>Estado</span><span style="text-align: right">Saldo</span><span></span>
+</div>
+<sc-for list="{{debtRows}}" as="d" hint-placeholder-count="4">
+<div class="trow" style="display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr) 100px minmax(0, 1.1fr) 120px 112px; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #3A3430; align-items: center; font-size: 14px">
+<span class="tfull" style="font-weight: 600; color: #F5F0EB">{{d.name}}</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #AA9F96">{{d.comp}}</span>
+<span style="font-variant-numeric: tabular-nums; color: #D3CAC2">{{d.vto}}</span>
+<span style="justify-self: start; display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: {{d.bg}}; color: {{d.fg}}"><span style="width: 6px; height: 6px; border-radius: 50%; background: {{d.fg}}"></span>{{d.status}}</span>
+<span style="text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; color: #FBF7F3">{{d.amount}}</span>
+<a class="tend" href="{{d.wa}}" target="_blank" rel="noopener" style="justify-self: end; display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 12px; border-radius: 8px; border: 1px solid #E07A45; color: #F2A57A; background: transparent; text-decoration: none; font-size: 13.5px; font-weight: 600">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.6A8.5 8.5 0 1 1 21 11.5z"></path></svg>Recordar</a>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+<span class="msub" style="font-size: 13px; color: #C0B6AD">"Recordar" abre WhatsApp con el monto y el vencimiento ya escritos.</span>
+</div>
+</sc-if>
+
+<!-- ===================== INDICADORES ===================== -->
+<sc-if value="{{isKpi}}" hint-placeholder-val="{{false}}">
+<div class="mroot" style="display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 10px 20px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h3 class="mh3" style="margin: 0; font-size: 21px; font-weight: 700; letter-spacing: -0.01em; color: #FBF7F3">Indicadores</h3>
+<span class="msub" style="font-size: 14px; color: #C0B6AD">Resumen del negocio, actualizado con cada módulo</span>
+</div>
+<div style="display: inline-flex; background: #221F1D; border: 1px solid #403934; border-radius: 10px; padding: 3px; gap: 2px">
+<sc-for list="{{periodBtns}}" as="b" hint-placeholder-count="2">
+<button type="button" onClick="{{b.pick}}" style="height: 34px; padding: 0 14px; border-radius: 8px; border: none; font-weight: 600; font-size: 13.5px; cursor: pointer; background: {{b.bg}}; color: {{b.fg}}">{{b.label}}</button>
+</sc-for>
+</div>
+</div>
+<div class="kpis2" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px">
+<sc-for list="{{kpis}}" as="k" hint-placeholder-count="4">
+<div style="background: #332E2A; border: 1px solid #403934; border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 12.5px; color: #C0B6AD">{{k.label}}</span>
+<span style="font-size: 23px; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; color: #FBF7F3">{{k.value}}</span>
+<span style="align-self: flex-start; font-size: 12px; font-weight: 600; padding: 1px 8px; border-radius: 999px; background: {{k.nbg}}; color: {{k.nfg}}">{{k.note}}</span>
+</div>
+</sc-for>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: stretch">
+<div style="flex: 999 1 360px; min-width: 0; background: #332E2A; border: 1px solid #403934; border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 14px; font-weight: 600; color: #F3EDE7">{{chartTitle}}</span>
+<div class="chart" style="position: relative; height: 180px; display: flex; align-items: flex-end; gap: 14px; padding: 0 4px 22px; box-sizing: border-box; background: repeating-linear-gradient(to top, transparent 0, transparent 22px, #403934 22px, #403934 23px, transparent 23px, transparent 61px)">
+<sc-for list="{{bars}}" as="b" hint-placeholder-count="6">
+<div style="flex: 1; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 4px; position: relative">
+<span style="font-size: 11.5px; font-weight: 600; color: #D3CAC2; font-variant-numeric: tabular-nums">{{b.val}}</span>
+<div style="width: 100%; max-width: 48px; border-radius: 5px 5px 0 0; height: {{b.h}}%; background: {{b.bg}}"></div>
+<span style="position: absolute; bottom: -20px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #AA9F96">{{b.label}}</span>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="flex: 1 1 230px; background: #332E2A; border: 1px solid #403934; border-radius: 12px; padding: 14px 12px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 14px; font-weight: 600; padding: 0 4px 4px; color: #F3EDE7">Para atender hoy</span>
+<sc-for list="{{alerts}}" as="a" hint-placeholder-count="5">
+<button type="button" onClick="{{a.go}}" style="display: flex; align-items: center; gap: 10px; padding: 9px 8px; border: none; border-radius: 8px; background: transparent; color: #F3EDE7; text-align: left; cursor: pointer; min-height: 44px">
+<span style="width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; background: {{a.dot}}"></span>
+<span style="flex: 1; display: flex; flex-direction: column; min-width: 0"><span style="font-size: 13.5px; font-weight: 600">{{a.text}}</span><span style="font-size: 12px; color: #AA9F96">{{a.mod}}</span></span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9C9087" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+</button>
+</sc-for>
+</div>
+</div>
+</div>
+</sc-if>
+
+
+</div>
+</div>
+
+<!-- Status bar -->
+<div class="app-status" style="border-top: 1px solid #3A3430; background: #221F1D; padding: 9px 16px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px 16px; font-size: 13px; color: #C0B6AD">
+<span style="display: flex; align-items: center; gap: 8px"><span style="width: 7px; height: 7px; border-radius: 50%; background: #7FC08A"></span>Datos guardados en Google Sheets · respaldo diario</span>
+<span style="display: flex; align-items: center; gap: 8px">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#E07A45" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"></path><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"></path></svg>
+Se integra con: <strong style="color: #F3EDE7">{{cur.integra}}</strong>
+</span>
+</div>
+</div>
+
+</section>
+
+<!-- PROCESS -->
+<section id="proceso" class="snap full" style="background: #FFFFFF; border-top: 1px solid #E2D6C6; border-bottom: 1px solid #E2D6C6">
+<div class="pg" style="max-width: 1180px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 44px">
+<div class="proc-head" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #A8481F">Cómo trabajamos</div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(28px, 3.4vw, 42px); line-height: 1.08; letter-spacing: -0.02em; color: #2A2421">Un proceso claro, de principio a fin</h2>
+<p style="margin: 0; font-size: 17px; color: #5C5049; max-width: 560px">Sabés en todo momento qué se hace, en qué plazos y con qué presupuesto.</p>
+</div>
+<ol class="steps" style="margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px">
+<li class="step" style="position: relative; display: flex; flex-direction: column; gap: 16px; list-style: none">
+<span class="step-line" aria-hidden="true" style="position: absolute; top: 22px; left: 58px; right: -28px; height: 2px; background: #E2D6C6"></span>
+<span class="step-num" style="position: relative; z-index: 1; width: 44px; height: 44px; border-radius: 50%; background: #A8481F; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 20px; flex-shrink: 0; box-shadow: 0 0 0 6px #FFFFFF">1</span>
+<div class="step-body" style="display: flex; flex-direction: column; gap: 8px; min-width: 0">
+<h3 style="margin: 0; font-size: 18px; font-weight: 700; color: #2A2421; letter-spacing: -0.01em">Diagnóstico gratuito</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #5C5049">En una llamada de 30 minutos relevamos cómo funciona tu negocio hoy y detectamos dónde se pierde tiempo y dónde aparecen los errores.</p>
+<span style="align-self: flex-start; font-size: 12.5px; font-weight: 600; color: #873A19; background: #F3E4DA; padding: 4px 10px; border-radius: 999px">Llamada de 30 min · sin costo</span>
+</div>
+</li>
+<li class="step" style="position: relative; display: flex; flex-direction: column; gap: 16px; list-style: none">
+<span class="step-line" aria-hidden="true" style="position: absolute; top: 22px; left: 58px; right: -28px; height: 2px; background: #E2D6C6"></span>
+<span class="step-num" style="position: relative; z-index: 1; width: 44px; height: 44px; border-radius: 50%; background: #A8481F; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 20px; flex-shrink: 0; box-shadow: 0 0 0 6px #FFFFFF">2</span>
+<div class="step-body" style="display: flex; flex-direction: column; gap: 8px; min-width: 0">
+<h3 style="margin: 0; font-size: 18px; font-weight: 700; color: #2A2421; letter-spacing: -0.01em">Propuesta clara</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #5C5049">Te presentamos las herramientas de mayor impacto, con alcance, plazos y presupuesto definidos desde el inicio.</p>
+<span style="align-self: flex-start; font-size: 12.5px; font-weight: 600; color: #873A19; background: #F3E4DA; padding: 4px 10px; border-radius: 999px">Alcance y precio cerrados</span>
+</div>
+</li>
+<li class="step" style="position: relative; display: flex; flex-direction: column; gap: 16px; list-style: none">
+<span class="step-line" aria-hidden="true" style="position: absolute; top: 22px; left: 58px; right: -28px; height: 2px; background: #E2D6C6"></span>
+<span class="step-num" style="position: relative; z-index: 1; width: 44px; height: 44px; border-radius: 50%; background: #A8481F; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 20px; flex-shrink: 0; box-shadow: 0 0 0 6px #FFFFFF">3</span>
+<div class="step-body" style="display: flex; flex-direction: column; gap: 8px; min-width: 0">
+<h3 style="margin: 0; font-size: 18px; font-weight: 700; color: #2A2421; letter-spacing: -0.01em">Desarrollo e implementación</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #5C5049">Generamos tus herramientas de trabajo en conjunto con vos y tu equipo, con seguimiento hasta que queden funcionando.</p>
+<span style="align-self: flex-start; font-size: 12.5px; font-weight: 600; color: #873A19; background: #F3E4DA; padding: 4px 10px; border-radius: 999px">Trabajo en conjunto</span>
+</div>
+</li>
+<li class="step" style="position: relative; display: flex; flex-direction: column; gap: 16px; list-style: none">
+<span class="step-num" style="position: relative; z-index: 1; width: 44px; height: 44px; border-radius: 50%; background: #A8481F; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 20px; flex-shrink: 0; box-shadow: 0 0 0 6px #FFFFFF">4</span>
+<div class="step-body" style="display: flex; flex-direction: column; gap: 8px; min-width: 0">
+<h3 style="margin: 0; font-size: 18px; font-weight: 700; color: #2A2421; letter-spacing: -0.01em">Pensado para crecer</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.55; color: #5C5049">Cada herramienta queda preparada para ampliarse o integrarse con nuevos módulos cuando tu negocio lo necesite.</p>
+<span style="align-self: flex-start; font-size: 12.5px; font-weight: 600; color: #873A19; background: #F3E4DA; padding: 4px 10px; border-radius: 999px">Escalable e integrable</span>
+</div>
+</li>
+</ol>
+<div class="proc-cta" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px 20px; border-top: 1px solid #EFE6DA; padding-top: 28px">
+<span style="font-size: 16px; color: #2A2421; font-weight: 500">Si te interesa, el primer paso es una llamada de 30 minutos sin costo.</span>
+<a href="#contacto" style="display: inline-flex; align-items: center; gap: 8px; background: #A8481F; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 20px; border-radius: 999px">Solicitar llamada
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contacto" class="snap full" style="background: #2A2421; color: #FFFFFF">
+<div class="pg contact-main" style="max-width: 1180px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; align-items: center; gap: 30px">
+<div class="contact-head" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px">
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #E8B04A">Contacto</div>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(30px, 3.6vw, 46px); line-height: 1.05; letter-spacing: -0.02em">¿Por dónde empezamos?</h2>
+<p style="margin: 0; font-size: 17px; color: #D6CBC0">Elegí cómo preferís dar el primer paso.</p>
+</div>
+<div class="contact-opts" style="width: 100%; max-width: 920px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px">
+<div style="background: #3A322D; border: 1px solid #574A41; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #E8B04A">Primer paso</span>
+<p style="margin: 0; font-size: 17px; line-height: 1.5; color: #F3ECE4">Si te interesa, podés solicitar una <strong style="color: #FFFFFF">llamada sin cargo de 30 minutos</strong> para presentar tu negocio y evaluar qué se puede mejorar. El horario se coordina según disponibilidad.</p>
+<a href="https://wa.me/5493514076087?text=Hola%2C%20%C2%BFc%C3%B3mo%20est%C3%A1s%3F%20Me%20interesar%C3%ADa%20solicitar%20una%20llamada%20sin%20cargo%20de%2030%20minutos%2C%20si%20hay%20disponibilidad%2C%20para%20conversar%20sobre%20mi%20negocio.%0A%0ADatos%20de%20mi%20empresa%20/%20negocio%20/%20emprendimiento%3A%0A%E2%80%A2%20Nombre%3A%20%0A%E2%80%A2%20Rubro%3A%20%0A%E2%80%A2%20A%C3%B1os%20de%20trayectoria%3A%20%0A%E2%80%A2%20Instagram%3A%20%0A%0A%C2%A1Muchas%20gracias%21" target="_blank" rel="noopener" style="margin-top: auto; display: flex; align-items: center; justify-content: center; gap: 10px; background: #E8B04A; color: #2A2421; text-decoration: none; font-weight: 700; font-size: 16px; padding: 14px 18px; border-radius: 12px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path><path d="M12 13v3l2 1"></path></svg>Solicitar una llamada</a>
+</div>
+<div style="background: #3A322D; border: 1px solid #574A41; border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #D6CBC0">Consultas</span>
+<p style="margin: 0; font-size: 17px; line-height: 1.5; color: #F3ECE4">¿Preferís conocer más antes de avanzar? Solicitá información detallada sobre alcances, plazos y modalidades de trabajo.</p>
+<a href="https://wa.me/5493514076087?text=Hola%2C%20%C2%BFc%C3%B3mo%20est%C3%A1s%3F%20Me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20sistemas%20de%20gesti%C3%B3n%20para%20negocios.%0A%0ADatos%20de%20mi%20empresa%20/%20negocio%20/%20emprendimiento%3A%0A%E2%80%A2%20Nombre%3A%20%0A%E2%80%A2%20Rubro%3A%20%0A%E2%80%A2%20A%C3%B1os%20de%20trayectoria%3A%20%0A%E2%80%A2%20Instagram%3A%20%0A%0A%C2%A1Muchas%20gracias%21" target="_blank" rel="noopener" style="margin-top: auto; display: flex; align-items: center; justify-content: center; gap: 10px; background: transparent; color: #FFFFFF; text-decoration: none; font-weight: 700; font-size: 16px; padding: 13px 17px; border-radius: 12px; border: 1.5px solid #8A7B70"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.6A8.5 8.5 0 1 1 21 11.5z"></path></svg>Solicitar más información</a>
+</div>
+</div>
+<p class="contact-note" style="margin: 0; font-size: 14px; color: #B9AC9F; text-align: center; max-width: 560px">Ambas opciones abren WhatsApp con un mensaje listo para completar con los datos de tu negocio.</p>
+<p style="margin: 0; font-size: 15px; color: #F3ECE4; text-align: center"><strong style="font-weight: 600">Andrés Morandini</strong> · Ingeniero Industrial</p>
+<a href="mailto:adm.tilde@gmail.com" style="display: flex; align-items: center; justify-content: center; gap: 8px; color: #D6CBC0; text-decoration: none; font-size: 14.5px; padding: 4px 0">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>
+También por correo: adm.tilde@gmail.com
+</a>
+</div>
+<div style="border-top: 1px solid #463C36">
+<div class="pg" style="max-width: 1180px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font-size: 14px; color: #B9AC9F">
+<span>Tilde · Sistemas para negocios · Andrés Morandini, Ingeniero Industrial</span>
+<span>WhatsApp +54 9 351 407-6087</span>
+</div>
+</div>
+</section>
+
+</div>
+</template>
+<div id="app"></div>
+<script src="js/preact.min.js"></script>
+<script src="js/dc-runtime.js"></script>
+<script src="js/app.js"></script>
+<script src="js/track.js"></script>
+</body>
+</html>
