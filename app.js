@@ -134,7 +134,27 @@ class Component extends DCLogic {
     const navName = (i) => (MODS.find((m) => m.id === NAV_ORDER[(i + NAV_ORDER.length) % NAV_ORDER.length]) || MODS[0]).name;
     const navGo = (d) => () => set({ mod: NAV_ORDER[(navIdx + d + NAV_ORDER.length) % NAV_ORDER.length], menuOpen: false });
     const hp = {};
-    const goMods = () => { const el = typeof document !== 'undefined' && document.getElementById('modulos'); if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 20); };
+    const goMods = () => {
+      if (typeof document === 'undefined') return;
+      setTimeout(() => {
+        const el = document.getElementById('modulos');
+        if (!el) return;
+        const root = document.documentElement;
+        const top = Math.round(el.getBoundingClientRect().top + window.pageYOffset);
+        // snap is paused while the page moves: some phones cancel a smooth scroll when snapping is on
+        root.style.scrollSnapType = 'none';
+        clearTimeout(window.__tildeGo);
+        const done = () => {
+          clearTimeout(window.__tildeGo);
+          window.removeEventListener('scrollend', done);
+          if (Math.abs(window.pageYOffset - top) > 2) window.scrollTo(0, top);
+          root.style.scrollSnapType = '';
+        };
+        window.addEventListener('scrollend', done);
+        window.__tildeGo = setTimeout(done, 1000);
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }, 30);
+    };
     NAV_ORDER.forEach((id) => { hp[id] = (e) => { if (e && e.preventDefault) e.preventDefault(); set({ mod: id, menuOpen: false }); goMods(); }; });
     const heroMods = NAV_ORDER.map((id) => {
       const isIdea = id === 'idea';
