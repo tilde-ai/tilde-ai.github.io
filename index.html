@@ -17,11 +17,11 @@ a{color:#A8481F}a:hover{color:#873A19}
 h1,h2,h3{text-wrap:balance}
 p{text-wrap:pretty}
 button,input{font-family:inherit}
-input::placeholder{color:#9C9087}
+input::placeholder{color:#7A6D63}
 /* ---- Pantallas completas (compu y celular) ---- */
 html{scroll-snap-type:y mandatory}
 .site-head{scroll-snap-align:start}
-.hero{min-height:calc(100vh - 63px);box-sizing:border-box;justify-content:center;padding-top:24px!important;padding-bottom:24px!important;gap:18px!important}
+.hero{min-height:calc(100vh - 63px);box-sizing:border-box;justify-content:flex-start;padding-top:clamp(28px,6vh,64px)!important;padding-bottom:24px!important;gap:18px!important}
 .snap{scroll-snap-align:start}
 .full{min-height:100vh;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center}
 .full > div{width:100%;box-sizing:border-box}
@@ -30,10 +30,10 @@ html{scroll-snap-type:y mandatory}
 .contact-main{justify-content:center;padding-top:40px!important;padding-bottom:40px!important}
 .mods{height:100vh;box-sizing:border-box;padding-top:22px!important;padding-bottom:18px!important;gap:12px!important}
 .mod-head{border-top:none!important;padding-top:0!important}
-.app-win{flex:1;min-height:0;display:flex;flex-direction:column;box-shadow:0 2px 6px rgba(0,0,0,0.18),0 18px 36px -24px rgba(0,0,0,0.45)!important}
+.app-win{flex:1;min-height:0;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(42,36,33,0.06),0 22px 44px -28px rgba(42,36,33,0.35)!important}
 .app-body{flex:1;min-height:0;flex-wrap:nowrap!important}
-.app-side{overflow-y:auto;min-height:0;scrollbar-width:thin;scrollbar-color:#5A5048 transparent}
-.app-content{min-height:0!important;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#5A5048 transparent}
+.app-side{overflow-y:auto;min-height:0;scrollbar-width:thin;scrollbar-color:#CFC2B3 transparent}
+.app-content{min-height:0!important;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#CFC2B3 transparent}
 .site-scroll{height:clamp(320px,calc(100vh - 205px),700px)!important}
 .mods{max-width:1480px!important;padding:14px 20px!important;gap:0!important}
 .app-top{padding:8px 16px!important}
@@ -44,23 +44,73 @@ html{scroll-snap-type:y mandatory}
 .app-side button{height:clamp(31px,4.3vh,42px)!important;font-size:clamp(13px,1.75vh,14.5px)!important}
 .app-content{padding:clamp(14px,2vh,22px) 24px!important}
 .agscroll{max-height:clamp(240px,calc(100vh - 340px),520px)!important}
+.mtile{transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease;box-shadow:0 1px 2px rgba(42,36,33,0.05)}
+.mtile:hover{transform:translateY(-2px);border-color:#A8481F!important;box-shadow:0 10px 22px -14px rgba(42,36,33,0.45)}
+.mtile-idea:hover{background:#873A19!important}
+.mtiles{grid-auto-rows:1fr}
+.mtile:focus-visible{outline:2px solid #A8481F;outline-offset:3px}
+@media (prefers-reduced-motion: reduce){.mtile{transition:none}.mtile:hover{transform:none}}
+@media (min-width: 761px) and (max-width: 1000px){.mtiles{grid-template-columns:repeat(4,minmax(0,1fr))!important}}
+.xk{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.xkc{background:#FFFFFF;border:1px solid #E6DDD2;border-radius:12px;padding:11px 14px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.xkl{font-size:12.5px;font-weight:500;color:#6B5E54;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.xkv{font-size:22px;font-weight:700;color:#2A2421;font-variant-numeric:tabular-nums;letter-spacing:-0.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.xkn{font-size:12px;color:#7A6D63;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.xcard{background:#FFFFFF;border:1px solid #E6DDD2;border-radius:12px;box-sizing:border-box}
+.xhead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:10px 16px}
+.xtitle{display:flex;flex-direction:column;gap:3px;min-width:0}
+.xlab{font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#7A6D63}
+.xth{display:grid;gap:12px;padding:9px 14px;background:#F8F4EF;border-bottom:1px solid #E6DDD2;font-size:11.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:#7A6D63}
+.xtr{display:grid;gap:12px;padding:9px 14px;border-bottom:1px solid #EFE8E0;align-items:center;font-size:14px;color:#2A2421}
+.xtr:last-child{border-bottom:none}
+.xtr:hover{background:#FCFAF7}
+.xpill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:3px 9px;border-radius:999px;white-space:nowrap;justify-self:start;align-self:center}
+.xdot{width:6px;height:6px;border-radius:50%;background:currentColor;display:block;flex-shrink:0}
+.xbtn,.xbtn2{display:inline-flex;align-items:center;justify-content:center;gap:7px;height:38px;padding:0 16px;border-radius:9px;font-weight:600;font-size:14px;cursor:pointer;text-decoration:none;white-space:nowrap;box-sizing:border-box;font-family:inherit;transition:background .12s,border-color .12s,color .12s}
+.xbtn{border:1px solid #A8481F;background:#A8481F;color:#FFFFFF}
+.xbtn:hover{background:#873A19;border-color:#873A19;color:#FFFFFF}
+.xbtn2{border:1px solid #DDD2C5;background:#FFFFFF;color:#2A2421}
+.xbtn2:hover{border-color:#A8481F;color:#A8481F}
+.xsm{height:32px;padding:0 11px;font-size:13px;border-radius:8px;gap:6px}
+.xin{height:38px;border:1px solid #DDD2C5;border-radius:9px;padding:0 12px;font-size:14px;color:#2A2421;background:#FFFFFF;box-sizing:border-box;width:100%;font-family:inherit}
+.xin:focus{outline:2px solid rgba(168,72,31,0.3);outline-offset:0;border-color:#A8481F}
+.xseg{display:inline-flex;background:#F1EBE3;border:1px solid #E6DDD2;border-radius:10px;padding:3px;gap:2px}
+.xseg button{height:30px;padding:0 12px;border-radius:7px;border:none;font-weight:600;font-size:13px;cursor:pointer;white-space:nowrap;font-family:inherit}
+.xsegwrap{max-width:100%;overflow-x:auto;scrollbar-width:none}
+.xmono{font-family:'IBM Plex Mono',monospace;font-size:12px;color:#7A6D63}
+.xnum{font-variant-numeric:tabular-nums}
+.xbar{height:6px;border-radius:999px;background:#EFE8E0;overflow:hidden;position:relative}
+.xcols{display:flex;gap:14px;align-items:flex-start}
+.xmain{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:12px}
+.xside{flex:0 0 300px;min-width:0;display:flex;flex-direction:column;gap:12px}
+.xnote{display:flex;gap:8px;align-items:flex-start;border-radius:9px;padding:9px 12px;font-size:13px;line-height:1.4}
+.xstep button:hover{background:#F6F1EB!important}
+@media (max-width: 1100px){.xcols{flex-direction:column;align-items:stretch}.xside{flex:1 1 auto}}
 @media (max-width: 760px){
 .pg{padding-left:16px!important;padding-right:16px!important}
 .hide-sm{display:none!important}
 .mob-only{display:flex!important}
 .app-side{display:none!important}
-.app-side.open{display:flex!important;flex:1 1 100%!important;flex-direction:column!important;border-right:none!important;border-bottom:1px solid #3A3430;padding:14px 12px 18px!important;gap:14px!important}
+.app-side.open{display:flex!important;flex:1 1 100%!important;flex-direction:column!important;border-right:none!important;border-bottom:1px solid #EFE8E0;padding:14px 12px 18px!important;gap:14px!important}
 .app-side.open .grp-items{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
-.app-side.open button{height:52px!important;font-size:14px!important;line-height:1.2;border-color:#403934!important;background:#2F2A27!important}
-.app-side.open button[aria-pressed="true"]{border-color:#E07A45!important;background:rgba(224,122,69,0.14)!important}
+.app-side.open button{height:52px!important;font-size:14px!important;line-height:1.2;border-color:#E6DDD2!important;background:#F6F1EB!important}
+.app-side.open button[aria-pressed="true"]{border-color:#A8481F!important;background:rgba(168,72,31,0.14)!important}
 .app-content.is-hidden{display:none!important}
 html{scroll-snap-type:y mandatory}
 .site-head{scroll-snap-align:start}
 .site-head .pg{flex-wrap:nowrap!important}
-.hero{min-height:calc(100svh - 63px);box-sizing:border-box;justify-content:center;padding-top:20px!important;padding-bottom:16px!important;gap:16px!important}
+.hero{min-height:calc(100svh - 63px);box-sizing:border-box;justify-content:flex-start;padding-top:22px!important;padding-bottom:16px!important;gap:16px!important}
 .hero p{font-size:16px!important}
 .hero{gap:14px!important}
 .hero h1{font-size:31px!important}
+.hero{gap:12px!important}
+.hero-try{margin-top:8px!important;gap:2px!important}
+.hero-try h2{font-size:21px!important}
+.hero-try p{font-size:13.5px!important;max-width:320px}
+.mtiles{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:8px!important}
+.mtile{min-height:84px!important;padding:10px 4px!important;font-size:12.5px!important;border-radius:14px!important;gap:6px!important}
+.mtile > span{width:34px!important;height:34px!important;border-radius:10px!important}
+.mtile svg{width:19px;height:19px}
 .pillars{grid-template-columns:1fr!important;gap:6px!important;padding-top:0!important}
 .pillars > div{padding:9px 12px!important;border-radius:11px!important;align-items:center!important;gap:10px!important}
 .pillars > div > span:first-child{width:32px!important;height:32px!important;border-radius:8px!important}
@@ -143,6 +193,21 @@ html{scroll-snap-type:y mandatory}
 .aggrid{grid-template-columns:46px repeat(3,minmax(0,1fr))!important}
 .kanban{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
 .kanban .kcol{flex:0 0 84%;min-height:0!important;scroll-snap-align:start}
+.xk{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:6px!important}
+.xkc{padding:8px 10px!important;border-radius:10px!important}
+.xkl{font-size:11.5px!important}
+.xkv{font-size:17px!important}
+.xkn{font-size:11px!important}
+.xpipe{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:6px!important}
+.xpipe button{padding:8px 10px!important}
+.xpipe button > span:nth-child(2){font-size:15px!important}
+.xcli{grid-template-columns:1fr 1fr!important}
+.xcli3{display:none!important}
+.xhead{gap:8px!important}
+.xhead .xbtn,.xhead .xbtn2{height:34px}
+.xtr{gap:6px 12px!important}
+.xscroll{max-height:none!important}
+.xsearch{flex:1 1 100%!important}
 .site-name{font-size:30px!important}
 .site-h1{font-size:30px!important}
 }
@@ -170,86 +235,72 @@ html{scroll-snap-type:y mandatory}
 
 <!-- HERO -->
 <section id="inicio" class="pg hero" style="max-width: 1180px; margin: 0 auto; padding: 64px 24px 40px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px">
-<div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #A8481F">Sistemas para negocios, pymes y emprendimientos</div>
-<h1 style="margin: 0; max-width: 1000px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(34px, 4.2vw, 56px); line-height: 1.03; letter-spacing: -0.025em">Menos tiempo en papeles y en Excel. Más tiempo para tu negocio.</h1>
-<p style="margin: 0; font-size: 19px; color: #4A403A; max-width: 640px">Sistemas a medida para ordenar ventas, administración y procesos, con puntos de control que evitan errores.</p>
-<div class="pillars" style="width: 100%; max-width: 940px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; text-align: left; padding-top: 6px">
-<div style="background: #FFFFFF; border: 1px solid #E2D6C6; border-radius: 14px; padding: 14px 16px; display: flex; gap: 12px; align-items: flex-start">
-<span style="width: 38px; height: 38px; border-radius: 10px; background: #F3E4DA; color: #A8481F; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l1.5 1.5L8 5M4 12l1.5 1.5L8 11M4 18l1.5 1.5L8 17M11 6h9M11 12h9M11 18h9"></path></svg></span>
-<span style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><span style="font-weight: 700; font-size: 15.5px; color: #2A2421">Estandarización</span><span style="font-size: 14px; color: #5C5049">Cada tarea se hace siempre igual, paso a paso.</span></span>
+<h1 style="margin: 0; max-width: 1000px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(34px, 4.6vw, 62px); line-height: 1.03; letter-spacing: -0.025em">Menos tiempo en papeles y en Excel. Más tiempo para tu negocio.</h1>
+<div class="hero-try" style="display: flex; flex-direction: column; align-items: center; gap: 6px; margin-top: 18px">
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 26px; letter-spacing: -0.015em; color: #A8481F">Probá los módulos</h2>
+<p style="margin: 0; font-size: 15.5px; color: #5C5049">Tocá uno y usalo. Son ejemplos: cada sistema se arma a la medida de tu negocio.</p>
 </div>
-<div style="background: #FFFFFF; border: 1px solid #E2D6C6; border-radius: 14px; padding: 14px 16px; display: flex; gap: 12px; align-items: flex-start">
-<span style="width: 38px; height: 38px; border-radius: 10px; background: #F3E4DA; color: #A8481F; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg></span>
-<span style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><span style="font-weight: 700; font-size: 15.5px; color: #2A2421">Puntos de control</span><span style="font-size: 14px; color: #5C5049">Validaciones que frenan el error antes de que pase.</span></span>
-</div>
-<div style="background: #FFFFFF; border: 1px solid #E2D6C6; border-radius: 14px; padding: 14px 16px; display: flex; gap: 12px; align-items: flex-start">
-<span style="width: 38px; height: 38px; border-radius: 10px; background: #F3E4DA; color: #A8481F; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"></path><path d="M15 7h6v6"></path></svg></span>
-<span style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><span style="font-weight: 700; font-size: 15.5px; color: #2A2421">Mejora continua</span><span style="font-size: 14px; color: #5C5049">Medimos tiempos y ajustamos el sistema con vos.</span></span>
-</div>
-</div>
-<div class="hero-mods" style="width: 100%; max-width: 940px; display: flex; flex-direction: column; align-items: center; gap: 10px">
-<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5C5049">Algunos ejemplos de lo que podemos armar</span>
-<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px">
-<sc-for list="{{heroMods}}" as="h" hint-placeholder-count="12">
-<a href="#modulos" onClick="{{h.pick}}" style="display: inline-flex; align-items: center; padding: 8px 14px; border-radius: 999px; text-decoration: none; font-size: 14px; font-weight: 600; background: {{h.bg}}; color: {{h.fg}}; border: 1px solid {{h.bd}}">{{h.name}}</a>
-</sc-for>
-</div>
-</div>
-<div class="hide-sm" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 28px; font-size: 15px; font-weight: 500; padding-top: 4px">
-<span style="display: flex; align-items: center; gap: 8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A8481F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>En la compu y en el celular</span>
-<span style="display: flex; align-items: center; gap: 8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A8481F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>Conectado a Google Sheets o sin internet</span>
-<span style="display: flex; align-items: center; gap: 8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A8481F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>Respaldo en GitHub</span>
-<span style="display: flex; align-items: center; gap: 8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A8481F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>Diagnóstico inicial sin costo</span>
-</div>
-<a href="#modulos" class="mob-only" style="display: none; flex-direction: column; align-items: center; gap: 4px; margin-top: 8px; color: #A8481F; text-decoration: none; font-size: 13.5px; font-weight: 600">Bajá para probarlos
-<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></a>
+<nav aria-label="Módulos de ejemplo" class="mtiles" style="width: 100%; max-width: 1040px; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px">
+<a href="#modulos" class="mtile" onClick="{{hp.web}}" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px; min-height: 104px; padding: 14px 8px; box-sizing: border-box; background: #FFFFFF; color: #2A2421; border: 1px solid #E2D6C6; border-radius: 16px; text-decoration: none; font-size: 14px; font-weight: 600; line-height: 1.2; text-align: center"><span style="width: 42px; height: 42px; border-radius: 12px; background: #F3E4DA; color: #A8481F; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg></span>Página web</a>
+<a href="#modulos" class="mtile" onClick="{{hp.cotizador}}" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px; min-height: 104px; padding: 14px 8px; box-sizing: border-box; background: #FFFFFF; color: #2A2421; border: 1px solid #E2D6C6; border-radius: 16px; text-decoration: none; font-size: 14px; font-weight: 600; line-height: 1.2; text-align: center"><span style="width: 42px; height: 42px; border-radius: 12px; background: #F3E4DA; color: #A8481F; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5M9 13h6M9 17h6"></path></svg></span>Cotizador</a>
+<a href="#modulos" class="mtile" onClick="{{hp.clientes}}" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px; min-height: 104px; padding: 14px 8px; box-sizing: border-box; background: #FFFFFF; color: #2A2421; border: 1px solid #E2D6C6; border-radius: 16px; text-decoration: none; font-size: 14px; font-weight: 600; line-height: 1.2; text-align: center"><span style="width: 42px; height: 42px; border-radius: 12px; background: #F3E4DA; color: #A8481F; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20a6.5 6.5 0 0 1 13 0"></path><path d="M16 4.5a3.5 3.5 0 0 1 0 7M21.5 20a6.5 6.5 0 0 0-4-6"></path></svg></span>Clientes</a>
+<a href="#modulos" class="mtile" onClick="{{hp.stock}}" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px; min-height: 104px; padding: 14px 8px; box-sizing: border-box; background: #FFFFFF; color: #2A2421; border: 1px solid #E2D6C6; border-radius: 16px; text-decoration: none; font-size: 14px; font-weight: 600; line-height: 1.2; text-align: center"><span style="width: 42px; height: 42px; border-radius: 12px; background: #F3E4DA; color: #A8481F; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8l-9-5-9 5 9 5 9-5z"></path><path d="M3 8v8l9 5 9-5V8M12 13v8"></path></svg></span>Stock</a>
+<a href="#modulos" class="mtile" onClick="{{hp.plan}}" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px; min-height: 104px; padding: 14px 8px; box-sizing: border-box; background: #FFFFFF; color: #2A2421; border: 1px solid #E2D6C6; border-radius: 16px; text-decoration: none; font-size: 14px; font-weight: 600; line-height: 1.2; text-align: center"><span style="width: 42px; height: 42px; border-radius: 12px; background: #F3E4DA; color: #A8481F; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h8M8 12h11M6 18h7"></path></svg></span>Planificación</a>
+<a href="#modulos" class="mtile" onClick="{{hp.agenda}}" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px; min-height: 104px; padding: 14px 8px; box-sizing: border-box; background: #FFFFFF; color: #2A2421; border: 1px solid #E2D6C6; border-radius: 16px; text-decoration: none; font-size: 14px; font-weight: 600; line-height: 1.2; text-align: center"><span style="width: 42px; height: 42px; border-radius: 12px; background: #F3E4DA; color: #A8481F; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path><path d="M12 13v3l2 1"></path></svg></span>Agenda y turnos</a>
+<a href="#modulos" class="mtile" onClick="{{hp.ordenes}}" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px; min-height: 104px; padding: 14px 8px; box-sizing: border-box; background: #FFFFFF; color: #2A2421; border: 1px solid #E2D6C6; border-radius: 16px; text-decoration: none; font-size: 14px; font-weight: 600; line-height: 1.2; text-align: center"><span style="width: 42px; height: 42px; border-radius: 12px; background: #F3E4DA; color: #A8481F; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"></path></svg></span>Órdenes de trabajo</a>
+<a href="#modulos" class="mtile" onClick="{{hp.checklist}}" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px; min-height: 104px; padding: 14px 8px; box-sizing: border-box; background: #FFFFFF; color: #2A2421; border: 1px solid #E2D6C6; border-radius: 16px; text-decoration: none; font-size: 14px; font-weight: 600; line-height: 1.2; text-align: center"><span style="width: 42px; height: 42px; border-radius: 12px; background: #F3E4DA; color: #A8481F; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l1.5 1.5L8 5M4 12l1.5 1.5L8 11M4 18l1.5 1.5L8 17M11 6h9M11 12h9M11 18h9"></path></svg></span>Control de calidad</a>
+<a href="#modulos" class="mtile" onClick="{{hp.caja}}" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px; min-height: 104px; padding: 14px 8px; box-sizing: border-box; background: #FFFFFF; color: #2A2421; border: 1px solid #E2D6C6; border-radius: 16px; text-decoration: none; font-size: 14px; font-weight: 600; line-height: 1.2; text-align: center"><span style="width: 42px; height: 42px; border-radius: 12px; background: #F3E4DA; color: #A8481F; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"></rect><path d="M3 10h18M16 15h2"></path></svg></span>Caja</a>
+<a href="#modulos" class="mtile" onClick="{{hp.cobranzas}}" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px; min-height: 104px; padding: 14px 8px; box-sizing: border-box; background: #FFFFFF; color: #2A2421; border: 1px solid #E2D6C6; border-radius: 16px; text-decoration: none; font-size: 14px; font-weight: 600; line-height: 1.2; text-align: center"><span style="width: 42px; height: 42px; border-radius: 12px; background: #F3E4DA; color: #A8481F; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"></path><path d="M9 8h6M9 12h6"></path></svg></span>Cobranzas</a>
+<a href="#modulos" class="mtile" onClick="{{hp.kpi}}" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px; min-height: 104px; padding: 14px 8px; box-sizing: border-box; background: #FFFFFF; color: #2A2421; border: 1px solid #E2D6C6; border-radius: 16px; text-decoration: none; font-size: 14px; font-weight: 600; line-height: 1.2; text-align: center"><span style="width: 42px; height: 42px; border-radius: 12px; background: #F3E4DA; color: #A8481F; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M21 20H3"></path></svg></span>Indicadores</a>
+<a href="#modulos" class="mtile mtile-idea" onClick="{{hp.idea}}" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px; min-height: 104px; padding: 14px 8px; box-sizing: border-box; background: #A8481F; color: #FFFFFF; border: 1px solid #A8481F; border-radius: 16px; text-decoration: none; font-size: 14px; font-weight: 600; line-height: 1.2; text-align: center"><span style="width: 42px; height: 42px; border-radius: 12px; background: rgba(255,255,255,0.18); color: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4"></path><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.9V16h5v-.2c0-.8.4-1.5 1-1.9A6 6 0 0 0 12 3z"></path></svg></span>Tu idea</a>
+</nav>
 </section>
 
 <!-- MODULES EXPLORER -->
 <section id="modulos" class="pg mods snap" style="max-width: 1180px; margin: 0 auto; padding: 8px 24px 64px; display: flex; flex-direction: column; gap: 20px">
 <!-- APP WINDOW (matte black) -->
-<div class="app-win" style="background: #282421; color: #F3EDE7; border: 1px solid #403934; border-radius: 16px; box-shadow: 0 2px 4px rgba(0,0,0,0.25), 0 44px 80px -40px rgba(0,0,0,0.65); overflow: hidden">
+<div class="app-win" style="background: #FFFFFF; color: #2A2421; border: 1px solid #DDD2C5; border-radius: 16px; box-shadow: 0 2px 4px rgba(0,0,0,0.25), 0 44px 80px -40px rgba(0,0,0,0.65); overflow: hidden">
 
 <!-- Top bar -->
-<div class="app-top" style="background: #1C1A18; border-bottom: 1px solid #3A3430; padding: 10px 16px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px">
+<div class="app-top" style="background: #FFFFFF; border-bottom: 1px solid #EFE8E0; padding: 10px 16px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px">
 <div style="display: flex; align-items: center; gap: 12px; min-width: 0">
-<span style="width: 28px; height: 28px; border-radius: 7px; background: #E8B04A; color: #1C1A18; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span>
-<span style="font-weight: 600; font-size: 14.5px; color: #FBF7F3">Tu negocio</span>
-<span class="hide-sm" style="color: #6B6058">/</span>
-<span class="hide-sm" style="font-size: 14px; color: #AA9F96">{{cur.group}}</span>
-<span style="color: #6B6058">/</span>
-<span style="font-size: 14px; font-weight: 600; color: #FBF7F3">{{cur.name}}</span>
+<span style="width: 28px; height: 28px; border-radius: 7px; background: #C98A1E; color: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span>
+<span style="font-weight: 600; font-size: 14.5px; color: #2A2421">Tu negocio</span>
+<span class="hide-sm" style="color: #B5A797">/</span>
+<span class="hide-sm" style="font-size: 14px; color: #6B5E54">{{cur.group}}</span>
+<span style="color: #B5A797">/</span>
+<span style="font-size: 14px; font-weight: 600; color: #2A2421">{{cur.name}}</span>
 </div>
 <div style="display: flex; align-items: center; gap: 14px">
-<span class="hide-sm" style="display: flex; align-items: center; gap: 7px; font-size: 13px; color: #C0B6AD"><span style="width: 7px; height: 7px; border-radius: 50%; background: #7FC08A"></span>Sincronizado</span>
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; color: #E8B04A; border: 1px solid #50473F; border-radius: 6px; padding: 3px 8px">EJEMPLOS INTERACTIVOS</span>
+<span class="hide-sm" style="display: flex; align-items: center; gap: 7px; font-size: 13px; color: #5C5049"><span style="width: 7px; height: 7px; border-radius: 50%; background: #3E8C54"></span>Sincronizado</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; color: #8A5A00; border: 1px solid #E6D3A8; background: #FBF3E2; border-radius: 6px; padding: 3px 8px">EJEMPLOS INTERACTIVOS</span>
 <span style="width: 30px; height: 30px; border-radius: 50%; background: #2F6FB0; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600">AG</span>
 </div>
 </div>
 
 <!-- Mobile module bar -->
-<div class="mob-only" style="display: none; align-items: center; gap: 8px; padding: 10px 12px; background: #221F1D; border-bottom: 1px solid #3A3430">
-<button type="button" onClick="{{navPrev}}" aria-label="Módulo anterior" style="width: 44px; height: 48px; flex-shrink: 0; border-radius: 10px; border: 1px solid #50473F; background: #332E2A; color: #F3EDE7; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg></button>
-<button type="button" onClick="{{menuToggle}}" aria-expanded="{{menuOpen}}" style="flex: 1; min-width: 0; height: 48px; border-radius: 10px; border: 1px solid {{menuBd}}; background: #332E2A; color: #FBF7F3; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 0 12px; text-align: left">
+<div class="mob-only" style="display: none; align-items: center; gap: 8px; padding: 10px 12px; background: #F4EEE7; border-bottom: 1px solid #EFE8E0">
+<button type="button" onClick="{{navPrev}}" aria-label="Módulo anterior" style="width: 44px; height: 48px; flex-shrink: 0; border-radius: 10px; border: 1px solid #DDD2C5; background: #FFFFFF; color: #2A2421; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg></button>
+<button type="button" onClick="{{menuToggle}}" aria-expanded="{{menuOpen}}" style="flex: 1; min-width: 0; height: 48px; border-radius: 10px; border: 1px solid {{menuBd}}; background: #FFFFFF; color: #2A2421; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 0 12px; text-align: left">
 <span style="display: flex; flex-direction: column; min-width: 0">
-<span style="font-size: 11.5px; color: #AA9F96">Ejemplo {{navPos}}</span>
+<span style="font-size: 11.5px; color: #6B5E54">Ejemplo {{navPos}}</span>
 <span style="font-size: 15px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{cur.name}}</span>
 </span>
-<span style="display: flex; align-items: center; gap: 6px; flex-shrink: 0; font-size: 12.5px; font-weight: 600; color: #F2A57A">
+<span style="display: flex; align-items: center; gap: 6px; flex-shrink: 0; font-size: 12.5px; font-weight: 600; color: #A8481F">
 <sc-if value="{{menuClosed}}" hint-placeholder-val="{{true}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg>Ver todos</sc-if>
 <sc-if value="{{menuOpen}}" hint-placeholder-val="{{false}}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>Cerrar</sc-if>
 </span>
 </button>
-<button type="button" onClick="{{navNext}}" aria-label="Módulo siguiente" style="width: 44px; height: 48px; flex-shrink: 0; border-radius: 10px; border: 1px solid #50473F; background: #332E2A; color: #F3EDE7; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button>
+<button type="button" onClick="{{navNext}}" aria-label="Módulo siguiente" style="width: 44px; height: 48px; flex-shrink: 0; border-radius: 10px; border: 1px solid #DDD2C5; background: #FFFFFF; color: #2A2421; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button>
 </div>
 
 <div class="app-body" style="display: flex; flex-wrap: wrap">
 
 <!-- Sidebar -->
-<nav aria-label="Módulos" class="app-side {{menuCls}}" style="flex: 1 1 210px; min-width: 0; background: #221F1D; border-right: 1px solid #3A3430; padding: 16px 12px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
+<nav aria-label="Módulos" class="app-side {{menuCls}}" style="flex: 1 1 210px; min-width: 0; background: #F6F1EA; border-right: 1px solid #E6DDD2; padding: 16px 12px; display: flex; flex-direction: column; gap: 14px; box-sizing: border-box">
 
 <div style="display: flex; flex-direction: column; gap: 4px">
-<span class="grp-label" style="font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #9C9087; padding: 0 10px 2px">Comercial</span>
+<span class="grp-label" style="font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #7A6D63; padding: 0 10px 2px">Comercial</span>
 <div class="grp-items" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 2px">
 <button type="button" onClick="{{tm.web.pick}}" aria-pressed="{{tm.web.on}}" style="display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 10px; border-radius: 8px; cursor: pointer; text-align: left; font-size: 14.5px; font-weight: 500; background: {{tm.web.bg}}; color: {{tm.web.fg}}; border: 1px solid {{tm.web.bd}}">
 <span style="display: flex; color: {{tm.web.ic}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg></span>Página web</button>
@@ -261,7 +312,7 @@ html{scroll-snap-type:y mandatory}
 </div>
 
 <div style="display: flex; flex-direction: column; gap: 4px">
-<span class="grp-label" style="font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #9C9087; padding: 0 10px 2px">Operaciones</span>
+<span class="grp-label" style="font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #7A6D63; padding: 0 10px 2px">Operaciones</span>
 <div class="grp-items" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 2px">
 <button type="button" onClick="{{tm.stock.pick}}" aria-pressed="{{tm.stock.on}}" style="display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 10px; border-radius: 8px; cursor: pointer; text-align: left; font-size: 14.5px; font-weight: 500; background: {{tm.stock.bg}}; color: {{tm.stock.fg}}; border: 1px solid {{tm.stock.bd}}">
 <span style="display: flex; color: {{tm.stock.ic}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8l-9-5-9 5 9 5 9-5z"></path><path d="M3 8v8l9 5 9-5V8M12 13v8"></path></svg></span>Stock</button>
@@ -277,7 +328,7 @@ html{scroll-snap-type:y mandatory}
 </div>
 
 <div style="display: flex; flex-direction: column; gap: 4px">
-<span class="grp-label" style="font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #9C9087; padding: 0 10px 2px">Administración</span>
+<span class="grp-label" style="font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #7A6D63; padding: 0 10px 2px">Administración</span>
 <div class="grp-items" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 2px">
 <button type="button" onClick="{{tm.caja.pick}}" aria-pressed="{{tm.caja.on}}" style="display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 10px; border-radius: 8px; cursor: pointer; text-align: left; font-size: 14.5px; font-weight: 500; background: {{tm.caja.bg}}; color: {{tm.caja.fg}}; border: 1px solid {{tm.caja.bd}}">
 <span style="display: flex; color: {{tm.caja.ic}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"></rect><path d="M3 10h18M16 15h2"></path></svg></span>Caja</button>
@@ -287,7 +338,7 @@ html{scroll-snap-type:y mandatory}
 </div>
 
 <div style="display: flex; flex-direction: column; gap: 4px">
-<span class="grp-label" style="font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #9C9087; padding: 0 10px 2px">Gestión</span>
+<span class="grp-label" style="font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #7A6D63; padding: 0 10px 2px">Gestión</span>
 <div class="grp-items" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 2px">
 <button type="button" onClick="{{tm.kpi.pick}}" aria-pressed="{{tm.kpi.on}}" style="display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 10px; border-radius: 8px; cursor: pointer; text-align: left; font-size: 14.5px; font-weight: 500; background: {{tm.kpi.bg}}; color: {{tm.kpi.fg}}; border: 1px solid {{tm.kpi.bd}}">
 <span style="display: flex; color: {{tm.kpi.ic}}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M21 20H3"></path></svg></span>Indicadores</button>
@@ -295,100 +346,83 @@ html{scroll-snap-type:y mandatory}
 </div>
 
 <div style="display: flex; flex-direction: column; gap: 4px">
-<span class="grp-label" style="font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #9C9087; padding: 0 10px 2px">A medida</span>
+<span class="grp-label" style="font-size: 11.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #7A6D63; padding: 0 10px 2px">A medida</span>
 <div class="grp-items" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 2px">
 <button type="button" onClick="{{tm.idea.pick}}" aria-pressed="{{tm.idea.on}}" style="display: flex; align-items: center; gap: 10px; height: 40px; padding: 0 10px; border-radius: 8px; cursor: pointer; text-align: left; font-size: 14.5px; font-weight: 500; background: {{tm.idea.bg}}; color: {{tm.idea.fg}}; border: 1px solid {{tm.idea.bd}}">
-<span style="display: flex; color: #E8B04A"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4"></path><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.9V16h5v-.2c0-.8.4-1.5 1-1.9A6 6 0 0 0 12 3z"></path></svg></span>Tu idea</button>
+<span style="display: flex; color: #C98A1E"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4"></path><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.9V16h5v-.2c0-.8.4-1.5 1-1.9A6 6 0 0 0 12 3z"></path></svg></span>Tu idea</button>
 </div>
 </div>
 
 </nav>
 
 <!-- Content -->
-<div class="app-content {{contentCls}}" style="flex: 999 1 600px; min-width: 0; padding: 22px 24px 24px; box-sizing: border-box; min-height: 620px; color: #F3EDE7">
+<div class="app-content {{contentCls}}" style="flex: 999 1 600px; min-width: 0; padding: 22px 24px 24px; box-sizing: border-box; min-height: 620px; color: #2A2421; background: #FBF9F6">
 
 <!-- ===================== COTIZADOR ===================== -->
 <sc-if value="{{isCot}}" hint-placeholder-val="{{false}}">
-<div style="display: flex; flex-direction: column; gap: 18px">
-<div style="display: flex; flex-direction: column; gap: 4px">
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px">
-<h3 class="mh3" style="margin: 0; font-size: 21px; font-weight: 700; letter-spacing: -0.01em; color: #FBF7F3">Presupuesto #0143</h3>
-<span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: {{cotStatus.bg}}; color: {{cotStatus.fg}}"><span style="width: 6px; height: 6px; border-radius: 50%; background: {{cotStatus.fg}}"></span>{{cotStatus.label}}</span>
+<div class="mroot" style="display: flex; flex-direction: column; gap: 14px">
+<div class="xhead">
+<div class="xtitle">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px"><h3 class="mh3" style="margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.01em; color: #2A2421">Presupuesto N.º 0143</h3><span class="xpill" style="background: {{cotStatus.bg}}; color: {{cotStatus.fg}}"><span class="xdot"></span>{{cotStatus.label}}</span></div>
+<span class="msub" style="font-size: 13.5px; color: #5C5049">Emitido el 15/10 · válido hasta el 30/10 · lista de precios de octubre</span>
 </div>
-<span class="msub" style="font-size: 14px; color: #C0B6AD">Martín Gómez · Válido por 15 días · Lista de precios de octubre</span>
+<a class="xbtn2 xsm" href="{{cotWa}}" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.6A8.5 8.5 0 1 1 21 11.5z"></path></svg>Enviar por WhatsApp</a>
 </div>
-
-<div style="display: flex; flex-wrap: wrap; gap: 18px; align-items: flex-start">
-<div style="flex: 999 1 400px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
-<div style="border: 1px solid #403934; border-radius: 12px; overflow: hidden">
+<div class="xcols">
+<div class="xmain">
+<div class="xcard xcli" style="padding: 12px 14px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px 16px">
+<div style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><div class="xlab">Cliente</div><span style="font-weight: 600; font-size: 14.5px">Martín Gómez</span><span style="font-size: 12.5px; color: #7A6D63">CUIT 20-28456789-3 · Cons. final</span></div>
+<div style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><div class="xlab">Entrega</div><span style="font-weight: 600; font-size: 14.5px">Barrio Jardín, Córdoba</span><span style="font-size: 12.5px; color: #7A6D63">Dentro de las 72 h</span></div>
+<div class="xcli3" style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><div class="xlab">Vendedor</div><span style="font-weight: 600; font-size: 14.5px">Ana García</span><span style="font-size: 12.5px; color: #7A6D63">Sucursal centro</span></div>
+</div>
+<div class="xcard" style="overflow: hidden">
 <div style="overflow-x: auto">
-<div class="tmin" style="min-width: 520px">
-<div class="thead" style="display: grid; grid-template-columns: minmax(0, 1fr) 120px 128px 120px; gap: 12px; padding: 10px 16px; background: #332E2A; border-bottom: 1px solid #403934; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #AA9F96">
-<span>Producto</span><span style="text-align: right">Precio unit.</span><span style="text-align: center">Cantidad</span><span style="text-align: right">Subtotal</span>
-</div>
+<div class="tmin" style="min-width: 540px">
+<div class="xth thead" style="grid-template-columns: minmax(0, 1fr) 112px 118px 112px"><span>Producto</span><span style="text-align: right">Precio unit.</span><span style="text-align: center">Cantidad</span><span style="text-align: right">Subtotal</span></div>
 <sc-for list="{{cotRows}}" as="r" hint-placeholder-count="3">
-<div class="trow" style="display: grid; grid-template-columns: minmax(0, 1fr) 120px 128px 120px; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #3A3430; align-items: center; font-size: 14.5px">
-<div class="tfull" style="display: flex; flex-direction: column; min-width: 0"><span style="font-weight: 600; color: #F5F0EB">{{r.name}}</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #AA9F96">{{r.code}}</span></div>
-<span style="text-align: right; font-variant-numeric: tabular-nums; color: #D3CAC2">{{r.price}}</span>
-<div style="display: flex; justify-content: center">
-<div style="display: inline-flex; align-items: center; border: 1px solid #50473F; border-radius: 8px; overflow: hidden">
-<button type="button" onClick="{{r.dec}}" aria-label="Restar uno" style="width: 36px; height: 36px; border: none; background: #332E2A; color: #F3EDE7; font-size: 18px; cursor: pointer">−</button>
-<span style="width: 40px; text-align: center; font-weight: 600; font-variant-numeric: tabular-nums; border-left: 1px solid #403934; border-right: 1px solid #403934; line-height: 36px; color: #FBF7F3">{{r.qty}}</span>
-<button type="button" onClick="{{r.inc}}" aria-label="Sumar uno" style="width: 36px; height: 36px; border: none; background: #332E2A; color: #F3EDE7; font-size: 18px; cursor: pointer">+</button>
+<div class="xtr trow" style="grid-template-columns: minmax(0, 1fr) 112px 118px 112px">
+<div class="tfull" style="display: flex; align-items: center; gap: 10px; min-width: 0">
+<span style="width: 36px; height: 36px; border-radius: 9px; background: #F6EDE6; color: #A8481F; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><sc-if value="{{r.isProd}}" hint-placeholder-val="{{true}}"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8l-9-5-9 5 9 5 9-5z"></path><path d="M3 8v8l9 5 9-5V8M12 13v8"></path></svg></sc-if><sc-if value="{{r.isSrv}}" hint-placeholder-val="{{false}}"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h11v10H3zM14 10h4l3 3v3h-7"></path><circle cx="7" cy="18" r="1.8"></circle><circle cx="17" cy="18" r="1.8"></circle></svg></sc-if></span>
+<span style="display: flex; flex-direction: column; min-width: 0"><span style="font-weight: 600">{{r.name}}</span><span style="font-size: 12px; color: {{r.stC}}"><span class="xmono" style="color: inherit">{{r.code}}</span> · {{r.stock}}</span></span>
 </div>
-</div>
-<span class="tend" style="text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; color: #FBF7F3">{{r.sub}}</span>
+<span class="xnum" style="text-align: right; color: #4A403A">{{r.price}}</span>
+<div style="display: flex; justify-content: center"><div class="xstep" style="display: inline-flex; align-items: center; border: 1px solid #DDD2C5; border-radius: 8px; overflow: hidden; background: #FFFFFF"><button type="button" onClick="{{r.dec}}" aria-label="Restar uno" style="width: 32px; height: 32px; border: none; background: #FFFFFF; color: #4A403A; font-size: 17px; cursor: pointer">−</button><span class="xnum" style="width: 40px; text-align: center; font-weight: 700; border-left: 1px solid #EFE8E0; border-right: 1px solid #EFE8E0; line-height: 32px; color: #2A2421">{{r.qty}}</span><button type="button" onClick="{{r.inc}}" aria-label="Sumar uno" style="width: 32px; height: 32px; border: none; background: #FFFFFF; color: #4A403A; font-size: 17px; cursor: pointer">+</button></div></div>
+<span class="tend xnum" style="text-align: right; font-weight: 700">{{r.sub}}</span>
 </div>
 </sc-for>
-</div>
-</div>
-</div>
-<div style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #C0B6AD">
-<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E07A45" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
-Precios tomados automáticamente de la lista vigente
-</div>
-</div>
-
-<div style="flex: 1 1 260px; background: #332E2A; border: 1px solid #403934; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 14px">
-<div style="display: flex; flex-direction: column; gap: 8px">
-<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #AA9F96">Descuento</span>
-<div style="display: inline-flex; align-self: flex-start; background: #221F1D; border: 1px solid #403934; border-radius: 10px; padding: 3px; gap: 2px">
-<sc-for list="{{descBtns}}" as="d" hint-placeholder-count="3">
-<button type="button" onClick="{{d.pick}}" style="height: 34px; min-width: 56px; padding: 0 12px; border-radius: 8px; border: none; font-weight: 600; font-size: 13.5px; cursor: pointer; background: {{d.bg}}; color: {{d.fg}}">{{d.label}}</button>
-</sc-for>
-</div>
-</div>
-<div style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-variant-numeric: tabular-nums">
-<div style="display: flex; justify-content: space-between; color: #D3CAC2"><span>Subtotal</span><span>{{cotSubtotal}}</span></div>
-<div style="display: flex; justify-content: space-between; color: #D3CAC2"><span>{{cotDescLabel}}</span><span>{{cotDesc}}</span></div>
-<div style="display: flex; justify-content: space-between; color: #D3CAC2"><span>IVA 21%</span><span>{{cotIva}}</span></div>
-<div style="display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid #4A423C; padding-top: 10px; margin-top: 4px"><span style="font-weight: 600; color: #FBF7F3">Total</span><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 24px; color: #FFFFFF">{{cotTotal}}</span></div>
-</div>
-<sc-if value="{{showApprovalWarn}}" hint-placeholder-val="{{false}}">
-<div style="display: flex; gap: 8px; align-items: flex-start; background: rgba(232,200,100,0.12); color: #E8CC7A; border-radius: 9px; padding: 9px 12px; font-size: 13px">
-<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px"><path d="M12 3l9.5 17h-19z"></path><path d="M12 10v4M12 17.5v.01"></path></svg>
-<span>Un descuento mayor al 15% requiere aprobación.</span>
-</div>
-</sc-if>
 <sc-if value="{{cotEmpty}}" hint-placeholder-val="{{false}}">
-<div style="display: flex; gap: 8px; align-items: flex-start; background: rgba(226,95,120,0.12); color: #F59DB0; border-radius: 9px; padding: 9px 12px; font-size: 13px">
-<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16.5v.01"></path></svg>
-<span>Agregá al menos un ítem para continuar.</span>
-</div>
+<div style="padding: 22px 16px; text-align: center; font-size: 13.5px; color: #7A6D63">El presupuesto está vacío. Agregá productos del catálogo.</div>
 </sc-if>
-<button type="button" onClick="{{cotGenerate}}" disabled="{{cotEmpty}}" style="height: 44px; border-radius: 10px; border: none; font-weight: 600; font-size: 14.5px; cursor: pointer; color: {{cotBtnFg}}; background: {{cotBtnBg}}">{{cotBtnLabel}}</button>
-<sc-if value="{{pdfDone}}" hint-placeholder-val="{{false}}">
-<div style="display: flex; gap: 8px; align-items: flex-start; background: rgba(130,190,140,0.12); color: #A5D6AA; border-radius: 9px; padding: 9px 12px; font-size: 13px">
-<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px"><path d="M20 6L9 17l-5-5"></path></svg>
-<span>PDF generado con tu logo, listo para enviar.</span>
 </div>
-</sc-if>
-<sc-if value="{{approvalSent}}" hint-placeholder-val="{{false}}">
-<div style="display: flex; gap: 8px; align-items: flex-start; background: rgba(232,200,100,0.12); color: #E8CC7A; border-radius: 9px; padding: 9px 12px; font-size: 13px">
-<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
-<span>Enviado al responsable. Al aprobarse, se genera el PDF.</span>
 </div>
-</sc-if>
+<div style="border-top: 1px solid #EFE8E0; padding: 10px 14px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; background: #FCFAF7">
+<span style="font-size: 12.5px; font-weight: 600; color: #7A6D63">Agregar del catálogo:</span>
+<sc-for list="{{cotAdd}}" as="a" hint-placeholder-count="2">
+<button type="button" class="xbtn2 xsm" onClick="{{a.add}}"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>{{a.name}}</button>
+</sc-for>
+<sc-if value="{{cotAllIn}}" hint-placeholder-val="{{false}}"><span style="font-size: 12.5px; color: #7A6D63">Todo el catálogo ya está en el presupuesto.</span></sc-if>
+</div>
+</div>
+</div>
+<div class="xside">
+<div class="xcard" style="padding: 14px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; flex-wrap: wrap; gap: 12px 18px">
+<div style="display: flex; flex-direction: column; gap: 6px"><div class="xlab">Descuento</div><div class="xseg"><sc-for list="{{descBtns}}" as="d" hint-placeholder-count="3"><button type="button" onClick="{{d.pick}}" style="background: {{d.bg}}; color: {{d.fg}}; box-shadow: {{d.sh}}">{{d.label}}</button></sc-for></div></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><div class="xlab">Forma de pago</div><div class="xseg"><sc-for list="{{payBtns}}" as="p" hint-placeholder-count="2"><button type="button" onClick="{{p.pick}}" style="background: {{p.bg}}; color: {{p.fg}}; box-shadow: {{p.sh}}">{{p.label}}</button></sc-for></div></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; border-top: 1px solid #EFE8E0; padding-top: 12px" class="xnum">
+<div style="display: flex; justify-content: space-between; color: #4A403A"><span>Subtotal</span><span>{{cotSubtotal}}</span></div>
+<div style="display: flex; justify-content: space-between; color: #4A403A"><span>{{cotDescLabel}}</span><span>{{cotDesc}}</span></div>
+<div style="display: flex; justify-content: space-between; color: #4A403A"><span>IVA 21%</span><span>{{cotIva}}</span></div>
+<div style="display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid #E6DDD2; padding-top: 10px; margin-top: 4px"><span style="font-weight: 600">Total</span><span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 25px; color: #2A2421">{{cotTotal}}</span></div>
+<span style="align-self: flex-end; font-size: 12.5px; color: #7A6D63">{{cotPayNote}}</span>
+</div>
+<sc-if value="{{showApprovalWarn}}" hint-placeholder-val="{{false}}"><div class="xnote" style="background: rgba(214,160,40,0.14); color: #8A5A00"><span style="display: flex; flex-shrink: 0; margin-top: 1px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9.5 17h-19z"></path><path d="M12 10v4M12 17.5v.01"></path></svg></span><span style="flex: 1">Un descuento mayor al 15% requiere aprobación del responsable.</span></div></sc-if>
+<sc-if value="{{cotShort}}" hint-placeholder-val="{{false}}"><div class="xnote" style="background: rgba(200,60,90,0.09); color: #A3284A"><span style="display: flex; flex-shrink: 0; margin-top: 1px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16.5v.01"></path></svg></span><span style="flex: 1">Hay productos con stock insuficiente. Se avisa a depósito al confirmar.</span></div></sc-if>
+<button type="button" onClick="{{cotGenerate}}" disabled="{{cotEmpty}}" style="height: 44px; border-radius: 10px; border: none; font-weight: 600; font-size: 14.5px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; color: {{cotBtnFg}}; background: {{cotBtnBg}}"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5M9 13h6M9 17h6"></path></svg>{{cotBtnLabel}}</button>
+<sc-if value="{{pdfDone}}" hint-placeholder-val="{{false}}"><div class="xnote" style="background: rgba(62,140,84,0.12); color: #2E6B3E"><span style="display: flex; flex-shrink: 0; margin-top: 1px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span><span style="flex: 1">PDF generado con tu logo y condiciones, listo para enviar.</span></div></sc-if>
+<sc-if value="{{approvalSent}}" hint-placeholder-val="{{false}}"><div class="xnote" style="background: rgba(214,160,40,0.14); color: #8A5A00"><span style="display: flex; flex-shrink: 0; margin-top: 1px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span><span style="flex: 1">Enviado al responsable. Al aprobarse, se genera el PDF.</span></div></sc-if>
+</div>
 </div>
 </div>
 </div>
@@ -396,50 +430,50 @@ Precios tomados automáticamente de la lista vigente
 
 <!-- ===================== CLIENTES ===================== -->
 <sc-if value="{{isCli}}" hint-placeholder-val="{{false}}">
-<div class="mroot" style="display: flex; flex-direction: column; gap: 16px">
-<div style="display: flex; flex-direction: column; gap: 4px">
-<h3 class="mh3" style="margin: 0; font-size: 21px; font-weight: 700; letter-spacing: -0.01em; color: #FBF7F3">Clientes</h3>
-<span class="msub" style="font-size: 14px; color: #C0B6AD">{{cliSummary}}</span>
+<div class="mroot" style="display: flex; flex-direction: column; gap: 14px">
+<div class="xhead">
+<div class="xtitle"><h3 class="mh3" style="margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.01em; color: #2A2421">Clientes</h3><span class="msub" style="font-size: 13.5px; color: #5C5049">{{cliSummary}}</span></div>
+<button type="button" class="xbtn2 xsm" onClick="{{cliFollowToggle}}" aria-pressed="{{cliFollowOn}}" style="background: {{cliFollowBg}}; color: {{cliFollowFg}}; border-color: {{cliFollowBd}}"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 8 3 8H3s3-1 3-8"></path><path d="M10 20a2 2 0 0 0 4 0"></path></svg>Para seguir hoy · {{followCount}}</button>
 </div>
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px">
-<label style="flex: 0 1 300px; position: relative; display: flex; align-items: center">
-<span style="position: absolute; left: 12px; display: flex; color: #AA9F96"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg></span>
-<input type="search" aria-label="Buscar cliente" value="{{cliQ}}" onChange="{{onCliQ}}" placeholder="Buscar cliente" style="width: 100%; height: 38px; border: 1px solid #50473F; border-radius: 9px; padding: 0 12px 0 36px; font-size: 14px; color: #F3EDE7; background: #221F1D; box-sizing: border-box"></input>
-</label>
-<div style="display: inline-flex; background: #221F1D; border: 1px solid #403934; border-radius: 10px; padding: 3px; gap: 2px">
-<sc-for list="{{cliFilters}}" as="f" hint-placeholder-count="2">
-<button type="button" onClick="{{f.pick}}" style="height: 34px; padding: 0 14px; border-radius: 8px; border: none; font-weight: 600; font-size: 13.5px; cursor: pointer; background: {{f.bg}}; color: {{f.fg}}">{{f.label}}</button>
+<div class="xpipe" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px">
+<sc-for list="{{cliStages}}" as="s" hint-placeholder-count="4">
+<button type="button" onClick="{{s.pick}}" aria-pressed="{{s.on}}" style="text-align: left; cursor: pointer; background: {{s.bg}}; border: 1px solid {{s.bd}}; border-radius: 12px; padding: 10px 12px 11px; display: flex; flex-direction: column; gap: 5px; min-width: 0; color: #2A2421; font-family: inherit">
+<span style="display: flex; align-items: center; justify-content: space-between; gap: 6px; width: 100%"><span style="font-size: 12.5px; font-weight: 600; color: #5C5049; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{s.label}}</span><span class="xnum" style="font-size: 12px; font-weight: 700; color: {{s.fg}}; background: {{s.cbg}}; border-radius: 999px; padding: 0 8px; flex-shrink: 0">{{s.count}}</span></span>
+<span class="xnum" style="font-size: 17px; font-weight: 700; white-space: nowrap">{{s.value}}</span>
+<span style="display: block; height: 4px; width: 100%; border-radius: 999px; background: {{s.bar}}"></span>
+</button>
 </sc-for>
 </div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 12px">
+<label class="xsearch" style="flex: 0 1 280px; min-width: 180px; position: relative; display: flex; align-items: center"><span style="position: absolute; left: 11px; display: flex; color: #7A6D63"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg></span><input class="xin" type="search" aria-label="Buscar cliente" value="{{cliQ}}" onChange="{{onCliQ}}" placeholder="Buscar por nombre o rubro" style="padding-left: 34px"></input></label>
+<span style="display: flex; align-items: center; gap: 10px; font-size: 13px; color: #7A6D63">{{cliCount}}<sc-if value="{{cliFiltered}}" hint-placeholder-val="{{false}}"><button type="button" onClick="{{cliClear}}" style="border: none; background: none; padding: 4px 0; color: #A8481F; font-weight: 600; font-size: 13px; cursor: pointer; font-family: inherit">Quitar filtros</button></sc-if></span>
 </div>
-<div style="border: 1px solid #403934; border-radius: 12px; overflow: hidden">
+<div class="xcard" style="overflow: hidden">
 <div style="overflow-x: auto">
-<div class="tmin" style="min-width: 720px">
-<div class="thead" style="display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, 0.9fr) minmax(0, 1.1fr) 116px; gap: 12px; padding: 10px 16px; background: #332E2A; border-bottom: 1px solid #403934; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #AA9F96">
-<span>Cliente</span><span>Estado</span><span>Último contacto</span><span>Próxima acción</span><span></span>
-</div>
-<div style="max-height: 336px; overflow-y: auto">
+<div class="tmin" style="min-width: 780px">
+<div class="xth thead" style="grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) 108px minmax(0, 0.85fr) minmax(0, 1.1fr) 112px"><span>Cliente</span><span>Etapa</span><span style="text-align: right">Valor</span><span>Último contacto</span><span>Próxima acción</span><span></span></div>
+<div class="xscroll" style="max-height: 300px; overflow-y: auto">
 <sc-for list="{{cliRows}}" as="c" hint-placeholder-count="5">
-<div class="trow" style="display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, 0.9fr) minmax(0, 1.1fr) 116px; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #3A3430; align-items: center; font-size: 14px">
+<div class="xtr trow" style="grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) 108px minmax(0, 0.85fr) minmax(0, 1.1fr) 112px">
 <div class="tfull" style="display: flex; align-items: center; gap: 10px; min-width: 0">
 <span style="width: 34px; height: 34px; border-radius: 50%; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 12.5px; flex-shrink: 0; background: {{c.av}}">{{c.ini}}</span>
-<span style="display: flex; flex-direction: column; min-width: 0"><span style="font-weight: 600; font-size: 14.5px; color: #F5F0EB">{{c.name}}</span><span style="font-size: 12.5px; color: #AA9F96">{{c.sub}}</span></span>
+<span style="display: flex; flex-direction: column; min-width: 0"><span style="font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{c.name}}</span><span style="font-size: 12.5px; color: #7A6D63">{{c.sub}} · {{c.tag}}</span></span>
 </div>
-<span style="justify-self: start; display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: {{c.sbg}}; color: {{c.sfg}}"><span style="width: 6px; height: 6px; border-radius: 50%; background: {{c.sfg}}"></span>{{c.status}}</span>
-<span style="font-weight: {{c.lastW}}; color: {{c.lastC}}">{{c.last}}</span>
-<span class="thide" style="color: #D3CAC2">{{c.next}}</span>
-<a class="tend" href="{{c.wa}}" target="_blank" rel="noopener" style="justify-self: end; display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 12px; border-radius: 8px; border: 1px solid #E07A45; color: #F2A57A; background: transparent; text-decoration: none; font-size: 13.5px; font-weight: 600">
-<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.6A8.5 8.5 0 1 1 21 11.5z"></path></svg>WhatsApp</a>
+<span class="xpill" style="background: {{c.sbg}}; color: {{c.sfg}}"><span class="xdot"></span>{{c.status}}</span>
+<span class="xnum" style="text-align: right; font-weight: 600">{{c.valueTxt}}</span>
+<span style="display: flex; align-items: center; gap: 5px; font-size: 13.5px; font-weight: {{c.lastW}}; color: {{c.lastC}}"><sc-if value="{{c.alert}}" hint-placeholder-val="{{false}}"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></sc-if>{{c.last}}</span>
+<span class="thide" style="font-size: 13.5px; color: #4A403A">{{c.next}}</span>
+<a class="tend xbtn2 xsm" href="{{c.wa}}" target="_blank" rel="noopener" style="justify-self: end"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.6A8.5 8.5 0 1 1 21 11.5z"></path></svg>WhatsApp</a>
 </div>
 </sc-for>
 <sc-if value="{{cliEmpty}}" hint-placeholder-val="{{false}}">
-<div style="padding: 28px 16px; text-align: center; font-size: 14px; color: #C0B6AD">No hay clientes que coincidan con la búsqueda.</div>
+<div style="padding: 26px 16px; text-align: center; font-size: 13.5px; color: #7A6D63">No hay clientes que coincidan con los filtros.</div>
 </sc-if>
 </div>
 </div>
 </div>
 </div>
-<span class="msub" style="font-size: 13px; color: #C0B6AD">El botón de WhatsApp abre el chat con un mensaje ya escrito según el estado de cada cliente.</span>
+<span class="msub" style="font-size: 12.5px; color: #7A6D63">Tocá una etapa para filtrar. El botón de WhatsApp abre el chat con un mensaje escrito según la etapa de cada cliente.</span>
 </div>
 </sc-if>
 
@@ -447,28 +481,28 @@ Precios tomados automáticamente de la lista vigente
 <sc-if value="{{isWeb}}" hint-placeholder-val="{{true}}">
 <div class="web-root" style="display: flex; flex-direction: column; gap: 10px">
 <div class="web-head" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px">
-<h3 class="mh3" style="margin: 0; font-size: 17px; font-weight: 700; letter-spacing: -0.01em; color: #FBF7F3">Página web</h3>
-<div style="display: inline-flex; background: #221F1D; border: 1px solid #403934; border-radius: 8px; padding: 2px; gap: 2px">
+<h3 class="mh3" style="margin: 0; font-size: 17px; font-weight: 700; letter-spacing: -0.01em; color: #2A2421">Página web</h3>
+<div style="display: inline-flex; background: #F4EEE7; border: 1px solid #E6DDD2; border-radius: 8px; padding: 2px; gap: 2px">
 <sc-for list="{{webTabs}}" as="w" hint-placeholder-count="3">
-<button type="button" onClick="{{w.pick}}" aria-pressed="{{w.on}}" style="height: 28px; padding: 0 11px; border-radius: 6px; border: none; font-weight: 600; font-size: 12.5px; cursor: pointer; background: {{w.bg}}; color: {{w.fg}}">{{w.label}}</button>
+<button type="button" onClick="{{w.pick}}" aria-pressed="{{w.on}}" style="height: 28px; padding: 0 11px; border-radius: 6px; border: none; font-weight: 600; font-size: 12.5px; cursor: pointer; background: {{w.bg}}; color: {{w.fg}}; box-shadow: {{w.sh}}">{{w.label}}</button>
 </sc-for>
 </div>
 <div style="margin-left: auto; display: flex; gap: 4px">
-<button type="button" onClick="{{webPrev}}" aria-label="Sitio anterior" class="hide-sm" style="width: 30px; height: 30px; border-radius: 7px; border: 1px solid #50473F; background: #332E2A; color: #F3EDE7; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg></button>
-<button type="button" onClick="{{webToggle}}" aria-label="{{webPauseLabel}}" style="width: 30px; height: 30px; border-radius: 7px; border: 1px solid #50473F; background: #332E2A; color: #F3EDE7; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0">
+<button type="button" onClick="{{webPrev}}" aria-label="Sitio anterior" class="hide-sm" style="width: 30px; height: 30px; border-radius: 7px; border: 1px solid #DDD2C5; background: #FFFFFF; color: #2A2421; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg></button>
+<button type="button" onClick="{{webToggle}}" aria-label="{{webPauseLabel}}" style="width: 30px; height: 30px; border-radius: 7px; border: 1px solid #DDD2C5; background: #FFFFFF; color: #2A2421; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0">
 <sc-if value="{{webPlaying}}" hint-placeholder-val="{{true}}"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"></rect><rect x="14" y="5" width="4" height="14" rx="1"></rect></svg></sc-if>
 <sc-if value="{{webPaused}}" hint-placeholder-val="{{false}}"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5l12 7-12 7z"></path></svg></sc-if>
 </button>
-<button type="button" onClick="{{webNext}}" aria-label="Sitio siguiente" class="hide-sm" style="width: 30px; height: 30px; border-radius: 7px; border: 1px solid #50473F; background: #332E2A; color: #F3EDE7; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button>
+<button type="button" onClick="{{webNext}}" aria-label="Sitio siguiente" class="hide-sm" style="width: 30px; height: 30px; border-radius: 7px; border: 1px solid #DDD2C5; background: #FFFFFF; color: #2A2421; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button>
 </div>
 </div>
 
-<div onMouseEnter="{{webEnter}}" onMouseLeave="{{webLeave}}" style="border: 1px solid #403934; border-radius: 12px; overflow: hidden; background: #332E2A">
-<div style="padding: 6px 10px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #403934">
-<span style="display: flex; gap: 6px"><span style="width: 10px; height: 10px; border-radius: 50%; background: #5A5048"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: #5A5048"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: #5A5048"></span></span>
-<span style="flex: 1; display: flex; align-items: center; gap: 6px; background: #221F1D; border-radius: 6px; padding: 3px 10px; font-size: 12px; color: #C0B6AD; min-width: 0">
+<div onMouseEnter="{{webEnter}}" onMouseLeave="{{webLeave}}" style="border: 1px solid #E6DDD2; border-radius: 12px; overflow: hidden; background: #FFFFFF">
+<div style="padding: 6px 10px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #E6DDD2">
+<span style="display: flex; gap: 6px"><span style="width: 10px; height: 10px; border-radius: 50%; background: #CFC2B3"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: #CFC2B3"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: #CFC2B3"></span></span>
+<span style="flex: 1; display: flex; align-items: center; gap: 6px; background: #F4EEE7; border-radius: 6px; padding: 3px 10px; font-size: 12px; color: #5C5049; min-width: 0">
 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg>{{siteDomain}}</span>
-<span style="display: flex; align-items: center; gap: 6px; font-size: 12.5px; color: #C0B6AD; white-space: nowrap"><span style="width: 7px; height: 7px; border-radius: 50%; background: {{webDot}}"></span>{{webStatusTxt}}</span>
+<span style="display: flex; align-items: center; gap: 6px; font-size: 12.5px; color: #5C5049; white-space: nowrap"><span style="width: 7px; height: 7px; border-radius: 50%; background: {{webDot}}"></span>{{webStatusTxt}}</span>
 </div>
 
 <!-- ======== SITIO 1: MUEBLERÍA ======== -->
@@ -695,48 +729,48 @@ Precios tomados automáticamente de la lista vigente
 <sc-if value="{{isAg}}" hint-placeholder-val="{{false}}">
 <div class="mroot" style="display: flex; flex-direction: column; gap: 16px">
 <div style="display: flex; flex-direction: column; gap: 4px">
-<h3 class="mh3" style="margin: 0; font-size: 21px; font-weight: 700; letter-spacing: -0.01em; color: #FBF7F3">Agenda y turnos</h3>
-<span class="msub" style="font-size: 14px; color: #C0B6AD">Viernes 17 de octubre · Studio Bruma · 3 profesionales</span>
+<h3 class="mh3" style="margin: 0; font-size: 21px; font-weight: 700; letter-spacing: -0.01em; color: #2A2421">Agenda y turnos</h3>
+<span class="msub" style="font-size: 14px; color: #5C5049">Viernes 17 de octubre · Studio Bruma · 3 profesionales</span>
 </div>
 <div class="kpis" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px">
-<div style="background: #332E2A; border: 1px solid #403934; border-radius: 12px; padding: 12px 14px"><div style="font-size: 12.5px; color: #C0B6AD">Turnos del día</div><div style="font-size: 24px; font-weight: 700; color: #FBF7F3; font-variant-numeric: tabular-nums">{{agTotal}}</div></div>
-<div style="background: rgba(130,190,140,0.10); border: 1px solid rgba(130,190,140,0.3); border-radius: 12px; padding: 12px 14px"><div style="font-size: 12.5px; color: #A5D6AA">Confirmados</div><div style="font-size: 24px; font-weight: 700; color: #FBF7F3; font-variant-numeric: tabular-nums">{{agConf}}</div></div>
-<div style="background: rgba(232,200,100,0.08); border: 1px solid rgba(232,200,100,0.3); border-radius: 12px; padding: 12px 14px"><div style="font-size: 12.5px; color: #E8CC7A">Sin confirmar</div><div style="font-size: 24px; font-weight: 700; color: #E8CC7A; font-variant-numeric: tabular-nums">{{agPend}}</div></div>
-<div style="background: #332E2A; border: 1px solid #403934; border-radius: 12px; padding: 12px 14px"><div style="font-size: 12.5px; color: #C0B6AD">Horarios libres</div><div style="font-size: 24px; font-weight: 700; color: #FBF7F3; font-variant-numeric: tabular-nums">{{agFree}}</div></div>
+<div style="background: #FFFFFF; border: 1px solid #E6DDD2; border-radius: 12px; padding: 12px 14px"><div style="font-size: 12.5px; color: #5C5049">Turnos del día</div><div style="font-size: 24px; font-weight: 700; color: #2A2421; font-variant-numeric: tabular-nums">{{agTotal}}</div></div>
+<div style="background: rgba(62,140,84,0.10); border: 1px solid rgba(62,140,84,0.3); border-radius: 12px; padding: 12px 14px"><div style="font-size: 12.5px; color: #2E6B3E">Confirmados</div><div style="font-size: 24px; font-weight: 700; color: #2A2421; font-variant-numeric: tabular-nums">{{agConf}}</div></div>
+<div style="background: rgba(214,160,40,0.08); border: 1px solid rgba(214,160,40,0.3); border-radius: 12px; padding: 12px 14px"><div style="font-size: 12.5px; color: #8A5A00">Sin confirmar</div><div style="font-size: 24px; font-weight: 700; color: #8A5A00; font-variant-numeric: tabular-nums">{{agPend}}</div></div>
+<div style="background: #FFFFFF; border: 1px solid #E6DDD2; border-radius: 12px; padding: 12px 14px"><div style="font-size: 12.5px; color: #5C5049">Horarios libres</div><div style="font-size: 24px; font-weight: 700; color: #2A2421; font-variant-numeric: tabular-nums">{{agFree}}</div></div>
 </div>
 
 <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: flex-start">
 
 <!-- Calendar -->
-<div style="flex: 999 1 460px; min-width: 0; border: 1px solid #403934; border-radius: 12px; overflow: hidden">
+<div style="flex: 999 1 460px; min-width: 0; border: 1px solid #E6DDD2; border-radius: 12px; overflow: hidden">
 <div style="overflow-x: auto">
 <div class="agmin" style="min-width: 520px">
-<div class="aggrid" style="display: grid; grid-template-columns: 60px repeat(3, minmax(0, 1fr)); background: #332E2A; border-bottom: 1px solid #403934">
+<div class="aggrid" style="display: grid; grid-template-columns: 60px repeat(3, minmax(0, 1fr)); background: #FFFFFF; border-bottom: 1px solid #E6DDD2">
 <span></span>
 <sc-for list="{{agPros}}" as="p" hint-placeholder-count="3">
-<div style="display: flex; align-items: center; gap: 9px; padding: 10px 12px; border-left: 1px solid #403934; min-width: 0">
+<div style="display: flex; align-items: center; gap: 9px; padding: 10px 12px; border-left: 1px solid #E6DDD2; min-width: 0">
 <span style="width: 30px; height: 30px; border-radius: 50%; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 12px; flex-shrink: 0; background: {{p.av}}">{{p.ini}}</span>
-<span style="display: flex; flex-direction: column; min-width: 0"><span style="font-size: 14px; font-weight: 600; color: #F5F0EB">{{p.name}}</span><span class="hide-sm" style="font-size: 12px; color: #AA9F96">{{p.role}}</span></span>
+<span style="display: flex; flex-direction: column; min-width: 0"><span style="font-size: 14px; font-weight: 600; color: #2A2421">{{p.name}}</span><span class="hide-sm" style="font-size: 12px; color: #6B5E54">{{p.role}}</span></span>
 </div>
 </sc-for>
 </div>
 <div class="agscroll" style="max-height: 452px; overflow-y: auto">
 <sc-for list="{{agRows}}" as="r" hint-placeholder-count="9">
-<div class="aggrid" style="display: grid; grid-template-columns: 60px repeat(3, minmax(0, 1fr)); border-bottom: 1px solid #3A3430">
-<span style="padding: 8px 0 0 12px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #AA9F96">{{r.time}}</span>
+<div class="aggrid" style="display: grid; grid-template-columns: 60px repeat(3, minmax(0, 1fr)); border-bottom: 1px solid #EFE8E0">
+<span style="padding: 8px 0 0 12px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #6B5E54">{{r.time}}</span>
 <sc-for list="{{r.cells}}" as="c" hint-placeholder-count="3">
-<div style="border-left: 1px solid #3A3430; padding: 4px; height: 58px; box-sizing: border-box" class="agcell">
+<div style="border-left: 1px solid #EFE8E0; padding: 4px; height: 58px; box-sizing: border-box" class="agcell">
 <sc-if value="{{c.isAppt}}" hint-placeholder-val="{{false}}">
-<button type="button" onClick="{{c.pick}}" aria-label="{{c.aria}}" style="width: 100%; height: 100%; border-radius: 8px; padding: 6px 9px; box-sizing: border-box; cursor: pointer; text-align: left; display: flex; flex-direction: column; justify-content: center; gap: 3px; overflow: hidden; background: {{c.bg}}; border: 1px solid {{c.bd}}; color: #F3EDE7">
+<button type="button" onClick="{{c.pick}}" aria-label="{{c.aria}}" style="width: 100%; height: 100%; border-radius: 8px; padding: 6px 9px; box-sizing: border-box; cursor: pointer; text-align: left; display: flex; flex-direction: column; justify-content: center; gap: 3px; overflow: hidden; background: {{c.bg}}; border: 1px solid {{c.bd}}; color: #2A2421">
 <span style="display: flex; align-items: center; gap: 6px; min-width: 0"><span style="width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; background: {{c.proC}}"></span><span style="font-size: 13px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{c.client}}</span></span>
-<span style="display: flex; align-items: center; gap: 6px; font-size: 11.5px; white-space: nowrap; overflow: hidden"><span style="color: {{c.sfg}}; font-weight: 600">{{c.status}}</span><span style="color: #AA9F96">· {{c.service}}</span></span>
+<span style="display: flex; align-items: center; gap: 6px; font-size: 11.5px; white-space: nowrap; overflow: hidden"><span style="color: {{c.sfg}}; font-weight: 600">{{c.status}}</span><span style="color: #6B5E54">· {{c.service}}</span></span>
 </button>
 </sc-if>
 <sc-if value="{{c.isFree}}" hint-placeholder-val="{{true}}">
 <button type="button" onClick="{{c.pick}}" aria-label="{{c.aria}}" style="width: 100%; height: 100%; border-radius: 8px; box-sizing: border-box; cursor: pointer; font-size: 12.5px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 4px; background: {{c.bg}}; border: 1px {{c.bs}} {{c.bd}}; color: {{c.fg}}">{{c.label}}</button>
 </sc-if>
 <sc-if value="{{c.isBlocked}}" hint-placeholder-val="{{false}}">
-<div style="width: 100%; height: 100%; border-radius: 8px; background: repeating-linear-gradient(135deg, #2F2A27 0, #2F2A27 6px, #35302C 6px, #35302C 12px); display: flex; align-items: center; justify-content: center; font-size: 12px; color: #9C9087">Almuerzo</div>
+<div style="width: 100%; height: 100%; border-radius: 8px; background: repeating-linear-gradient(135deg, #F6F1EB 0, #F6F1EB 6px, #F3EDE6 6px, #F3EDE6 12px); display: flex; align-items: center; justify-content: center; font-size: 12px; color: #7A6D63">Almuerzo</div>
 </sc-if>
 </div>
 </sc-for>
@@ -748,16 +782,16 @@ Precios tomados automáticamente de la lista vigente
 </div>
 
 <!-- Side panel -->
-<div style="flex: 1 1 250px; min-width: 0; background: #332E2A; border: 1px solid #403934; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 14px">
+<div style="flex: 1 1 250px; min-width: 0; background: #FFFFFF; border: 1px solid #E6DDD2; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 14px">
 
 <sc-if value="{{agPanelNone}}" hint-placeholder-val="{{true}}">
 <div style="display: flex; flex-direction: column; gap: 12px">
-<span style="font-size: 15px; font-weight: 600; color: #FBF7F3">Cómo usar la agenda</span>
-<span style="font-size: 13.5px; color: #C0B6AD">Tocá un horario libre para cargar un turno, o un turno para ver el detalle, confirmarlo o enviar un recordatorio.</span>
-<div style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #D3CAC2; border-top: 1px solid #403934; padding-top: 12px">
-<span style="display: flex; align-items: center; gap: 8px"><span style="width: 8px; height: 8px; border-radius: 50%; background: #A5D6AA"></span>Confirmado</span>
-<span style="display: flex; align-items: center; gap: 8px"><span style="width: 8px; height: 8px; border-radius: 50%; background: #E8CC7A"></span>Sin confirmar</span>
-<span style="display: flex; align-items: center; gap: 8px"><span style="width: 8px; height: 8px; border-radius: 50%; background: #8DB6F2"></span>Asistió</span>
+<span style="font-size: 15px; font-weight: 600; color: #2A2421">Cómo usar la agenda</span>
+<span style="font-size: 13.5px; color: #5C5049">Tocá un horario libre para cargar un turno, o un turno para ver el detalle, confirmarlo o enviar un recordatorio.</span>
+<div style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #4A403A; border-top: 1px solid #E6DDD2; padding-top: 12px">
+<span style="display: flex; align-items: center; gap: 8px"><span style="width: 8px; height: 8px; border-radius: 50%; background: #2E6B3E"></span>Confirmado</span>
+<span style="display: flex; align-items: center; gap: 8px"><span style="width: 8px; height: 8px; border-radius: 50%; background: #8A5A00"></span>Sin confirmar</span>
+<span style="display: flex; align-items: center; gap: 8px"><span style="width: 8px; height: 8px; border-radius: 50%; background: #2F5E91"></span>Asistió</span>
 </div>
 </div>
 </sc-if>
@@ -765,14 +799,14 @@ Precios tomados automáticamente de la lista vigente
 <sc-if value="{{agPanelNew}}" hint-placeholder-val="{{false}}">
 <div style="display: flex; flex-direction: column; gap: 12px">
 <div style="display: flex; flex-direction: column; gap: 2px">
-<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #AA9F96">Nuevo turno</span>
-<span style="font-size: 17px; font-weight: 700; color: #FBF7F3">{{agSelTitle}}</span>
+<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #6B5E54">Nuevo turno</span>
+<span style="font-size: 17px; font-weight: 700; color: #2A2421">{{agSelTitle}}</span>
 </div>
-<label style="display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 500; color: #D3CAC2">Cliente
-<input type="text" value="{{agName}}" onChange="{{onAgName}}" placeholder="Nombre y apellido" style="height: 38px; border: 1px solid #50473F; border-radius: 9px; padding: 0 12px; font-size: 14px; color: #F3EDE7; background: #221F1D"></input>
+<label style="display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 500; color: #4A403A">Cliente
+<input type="text" value="{{agName}}" onChange="{{onAgName}}" placeholder="Nombre y apellido" style="height: 38px; border: 1px solid #DDD2C5; border-radius: 9px; padding: 0 12px; font-size: 14px; color: #2A2421; background: #F4EEE7"></input>
 </label>
 <div style="display: flex; flex-direction: column; gap: 6px">
-<span style="font-size: 13px; font-weight: 500; color: #D3CAC2">Servicio</span>
+<span style="font-size: 13px; font-weight: 500; color: #4A403A">Servicio</span>
 <div style="display: flex; flex-wrap: wrap; gap: 6px">
 <sc-for list="{{agSvcs}}" as="v" hint-placeholder-count="5">
 <button type="button" onClick="{{v.pick}}" aria-pressed="{{v.on}}" style="height: 34px; padding: 0 12px; border-radius: 999px; font-size: 13px; font-weight: 600; cursor: pointer; background: {{v.bg}}; color: {{v.fg}}; border: 1px solid {{v.bd}}">{{v.label}}</button>
@@ -780,11 +814,11 @@ Precios tomados automáticamente de la lista vigente
 </div>
 </div>
 <sc-if value="{{agErrShow}}" hint-placeholder-val="{{false}}">
-<div style="border-radius: 9px; padding: 8px 12px; font-size: 13px; background: rgba(226,95,120,0.14); color: #F59DB0">{{agErr}}</div>
+<div style="border-radius: 9px; padding: 8px 12px; font-size: 13px; background: rgba(200,60,90,0.14); color: #A3284A">{{agErr}}</div>
 </sc-if>
 <div style="display: flex; gap: 8px">
-<button type="button" onClick="{{agBook}}" style="flex: 1; height: 40px; border-radius: 9px; border: none; background: #E07A45; color: #22150E; font-weight: 600; font-size: 14px; cursor: pointer">Agendar turno</button>
-<button type="button" onClick="{{agClose}}" style="height: 40px; padding: 0 14px; border-radius: 9px; border: 1px solid #5A5048; background: transparent; color: #F3EDE7; font-weight: 600; font-size: 14px; cursor: pointer">Cerrar</button>
+<button type="button" onClick="{{agBook}}" style="flex: 1; height: 40px; border-radius: 9px; border: none; background: #A8481F; color: #FFFFFF; font-weight: 600; font-size: 14px; cursor: pointer">Agendar turno</button>
+<button type="button" onClick="{{agClose}}" style="height: 40px; padding: 0 14px; border-radius: 9px; border: 1px solid #CFC2B3; background: transparent; color: #2A2421; font-weight: 600; font-size: 14px; cursor: pointer">Cerrar</button>
 </div>
 </div>
 </sc-if>
@@ -792,32 +826,32 @@ Precios tomados automáticamente de la lista vigente
 <sc-if value="{{agPanelAppt}}" hint-placeholder-val="{{false}}">
 <div style="display: flex; flex-direction: column; gap: 12px">
 <div style="display: flex; flex-direction: column; gap: 6px">
-<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #AA9F96">Turno</span>
-<span style="font-size: 18px; font-weight: 700; color: #FBF7F3">{{agD.client}}</span>
+<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #6B5E54">Turno</span>
+<span style="font-size: 18px; font-weight: 700; color: #2A2421">{{agD.client}}</span>
 <span style="align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: {{agD.sbg}}; color: {{agD.sfg}}"><span style="width: 6px; height: 6px; border-radius: 50%; background: {{agD.sfg}}"></span>{{agD.status}}</span>
 </div>
-<div style="display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; border-top: 1px solid #403934; padding-top: 12px">
-<div style="display: flex; justify-content: space-between; gap: 10px"><span style="color: #AA9F96">Servicio</span><span style="color: #F3EDE7; font-weight: 500">{{agD.service}}</span></div>
-<div style="display: flex; justify-content: space-between; gap: 10px"><span style="color: #AA9F96">Profesional</span><span style="color: #F3EDE7; font-weight: 500">{{agD.pro}}</span></div>
-<div style="display: flex; justify-content: space-between; gap: 10px"><span style="color: #AA9F96">Horario</span><span style="color: #F3EDE7; font-weight: 500">{{agD.time}}</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; border-top: 1px solid #E6DDD2; padding-top: 12px">
+<div style="display: flex; justify-content: space-between; gap: 10px"><span style="color: #6B5E54">Servicio</span><span style="color: #2A2421; font-weight: 500">{{agD.service}}</span></div>
+<div style="display: flex; justify-content: space-between; gap: 10px"><span style="color: #6B5E54">Profesional</span><span style="color: #2A2421; font-weight: 500">{{agD.pro}}</span></div>
+<div style="display: flex; justify-content: space-between; gap: 10px"><span style="color: #6B5E54">Horario</span><span style="color: #2A2421; font-weight: 500">{{agD.time}}</span></div>
 </div>
-<a href="{{agD.wa}}" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 40px; border-radius: 9px; border: 1px solid #E07A45; color: #F2A57A; text-decoration: none; font-weight: 600; font-size: 14px">
+<a href="{{agD.wa}}" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 40px; border-radius: 9px; border: 1px solid #A8481F; color: #A8481F; text-decoration: none; font-weight: 600; font-size: 14px">
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.6A8.5 8.5 0 1 1 21 11.5z"></path></svg>Recordar por WhatsApp</a>
 <sc-if value="{{agD.canConfirm}}" hint-placeholder-val="{{false}}">
-<button type="button" onClick="{{agConfirm}}" style="height: 40px; border-radius: 9px; border: none; background: #E07A45; color: #22150E; font-weight: 600; font-size: 14px; cursor: pointer">Marcar confirmado</button>
+<button type="button" onClick="{{agConfirm}}" style="height: 40px; border-radius: 9px; border: none; background: #A8481F; color: #FFFFFF; font-weight: 600; font-size: 14px; cursor: pointer">Marcar confirmado</button>
 </sc-if>
 <sc-if value="{{agD.canAttend}}" hint-placeholder-val="{{false}}">
-<button type="button" onClick="{{agAttend}}" style="height: 40px; border-radius: 9px; border: none; background: #E07A45; color: #22150E; font-weight: 600; font-size: 14px; cursor: pointer">Marcar que asistió</button>
+<button type="button" onClick="{{agAttend}}" style="height: 40px; border-radius: 9px; border: none; background: #A8481F; color: #FFFFFF; font-weight: 600; font-size: 14px; cursor: pointer">Marcar que asistió</button>
 </sc-if>
 <div style="display: flex; gap: 8px">
-<button type="button" onClick="{{agCancel}}" style="flex: 1; height: 38px; border-radius: 9px; border: 1px solid #5A5048; background: transparent; color: #F59DB0; font-weight: 600; font-size: 13.5px; cursor: pointer">Cancelar turno</button>
-<button type="button" onClick="{{agClose}}" style="height: 38px; padding: 0 14px; border-radius: 9px; border: 1px solid #5A5048; background: transparent; color: #F3EDE7; font-weight: 600; font-size: 13.5px; cursor: pointer">Cerrar</button>
+<button type="button" onClick="{{agCancel}}" style="flex: 1; height: 38px; border-radius: 9px; border: 1px solid #CFC2B3; background: transparent; color: #A3284A; font-weight: 600; font-size: 13.5px; cursor: pointer">Cancelar turno</button>
+<button type="button" onClick="{{agClose}}" style="height: 38px; padding: 0 14px; border-radius: 9px; border: 1px solid #CFC2B3; background: transparent; color: #2A2421; font-weight: 600; font-size: 13.5px; cursor: pointer">Cerrar</button>
 </div>
 </div>
 </sc-if>
 
 <sc-if value="{{agMsgShow}}" hint-placeholder-val="{{false}}">
-<div style="border-radius: 9px; padding: 9px 12px; font-size: 13px; background: rgba(130,190,140,0.12); color: #A5D6AA">{{agMsg}}</div>
+<div style="border-radius: 9px; padding: 9px 12px; font-size: 13px; background: rgba(62,140,84,0.12); color: #2E6B3E">{{agMsg}}</div>
 </sc-if>
 </div>
 </div>
@@ -828,138 +862,143 @@ Precios tomados automáticamente de la lista vigente
 <sc-if value="{{isIdea}}" hint-placeholder-val="{{false}}">
 <div class="mroot" style="display: flex; flex-direction: column; gap: 16px">
 <div style="display: flex; flex-direction: column; gap: 4px">
-<h3 class="mh3" style="margin: 0; font-size: 21px; font-weight: 700; letter-spacing: -0.01em; color: #FBF7F3">¿Tenés otra idea? También se puede hacer.</h3>
-<span class="msub" style="font-size: 14px; color: #C0B6AD">Si hoy lo resolvés con papeles, planillas o mensajes, se puede convertir en un sistema a tu medida.</span>
+<h3 class="mh3" style="margin: 0; font-size: 21px; font-weight: 700; letter-spacing: -0.01em; color: #2A2421">¿Tenés otra idea? También se puede hacer.</h3>
+<span class="msub" style="font-size: 14px; color: #5C5049">Si hoy lo resolvés con papeles, planillas o mensajes, se puede convertir en un sistema a tu medida.</span>
 </div>
 
-<div style="background: #332E2A; border: 1px solid #403934; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px">
+<div style="background: #FFFFFF; border: 1px solid #E6DDD2; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 12px">
 <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end">
-<label style="flex: 1 1 280px; display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 500; color: #D3CAC2">¿Qué te gustaría ordenar en tu negocio?
-<input type="text" value="{{ideaDraft}}" onChange="{{onIdeaDraft}}" placeholder="Ej: control de pedidos de mi panadería" style="height: 42px; border: 1px solid #50473F; border-radius: 10px; padding: 0 14px; font-size: 15px; color: #F3EDE7; background: #221F1D"></input>
+<label style="flex: 1 1 280px; display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 500; color: #4A403A">¿Qué te gustaría ordenar en tu negocio?
+<input type="text" value="{{ideaDraft}}" onChange="{{onIdeaDraft}}" placeholder="Ej: control de pedidos de mi panadería" style="height: 42px; border: 1px solid #DDD2C5; border-radius: 10px; padding: 0 14px; font-size: 15px; color: #2A2421; background: #F4EEE7"></input>
 </label>
-<button type="button" onClick="{{ideaBuild}}" style="height: 42px; padding: 0 18px; border-radius: 10px; border: none; background: #E8B04A; color: #1A1200; font-weight: 700; font-size: 14px; cursor: pointer">Ver cómo quedaría</button>
+<button type="button" onClick="{{ideaBuild}}" style="height: 42px; padding: 0 18px; border-radius: 10px; border: none; background: #A8481F; color: #FFFFFF; font-weight: 700; font-size: 14px; cursor: pointer">Ver cómo quedaría</button>
 </div>
 <sc-if value="{{ideaErrShow}}" hint-placeholder-val="{{false}}">
-<span style="font-size: 13px; color: #F59DB0">{{ideaErr}}</span>
+<span style="font-size: 13px; color: #A3284A">{{ideaErr}}</span>
 </sc-if>
 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px">
-<span style="font-size: 12.5px; color: #AA9F96">O probá con:</span>
+<span style="font-size: 12.5px; color: #6B5E54">O probá con:</span>
 <sc-for list="{{ideaChips}}" as="i" hint-placeholder-count="6">
 <button type="button" onClick="{{i.pick}}" aria-pressed="{{i.on}}" style="height: 34px; padding: 0 12px; border-radius: 999px; font-size: 13px; font-weight: 600; cursor: pointer; background: {{i.bg}}; color: {{i.fg}}; border: 1px solid {{i.bd}}">{{i.label}}</button>
 </sc-for>
 </div>
 </div>
 
-<div style="border: 1px solid #403934; border-radius: 12px; overflow: hidden; animation: siteIn 0.35s ease">
-<div style="background: #332E2A; border-bottom: 1px solid #403934; padding: 14px 16px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 16px">
+<div style="border: 1px solid #E6DDD2; border-radius: 12px; overflow: hidden; animation: siteIn 0.35s ease">
+<div style="background: #FFFFFF; border-bottom: 1px solid #E6DDD2; padding: 14px 16px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 16px">
 <div style="display: flex; flex-direction: column; gap: 2px; min-width: 0">
-<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #E8CC7A">Así podría quedar</span>
-<span style="font-size: 18px; font-weight: 700; color: #FBF7F3">{{idea.title}}</span>
+<span style="font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #8A5A00">Así podría quedar</span>
+<span style="font-size: 18px; font-weight: 700; color: #2A2421">{{idea.title}}</span>
 </div>
-<a href="{{idea.wa}}" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; height: 38px; padding: 0 14px; border-radius: 9px; background: #E07A45; color: #22150E; text-decoration: none; font-weight: 700; font-size: 13.5px">
+<a href="{{idea.wa}}" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; height: 38px; padding: 0 14px; border-radius: 9px; background: #A8481F; color: #FFFFFF; text-decoration: none; font-weight: 700; font-size: 13.5px">
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.6A8.5 8.5 0 1 1 21 11.5z"></path></svg>Contame tu idea</a>
 </div>
 <div style="overflow-x: auto">
 <div class="tmin" style="min-width: 560px">
-<div class="thead" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) 150px; gap: 12px; padding: 10px 16px; background: #2F2A27; border-bottom: 1px solid #403934; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #AA9F96">
+<div class="thead" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) 150px; gap: 12px; padding: 10px 16px; background: #F6F1EB; border-bottom: 1px solid #E6DDD2; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #6B5E54">
 <span>{{idea.c1}}</span><span>{{idea.c2}}</span><span>{{idea.c3}}</span><span>{{idea.c4}}</span>
 </div>
 <sc-for list="{{idea.rows}}" as="r" hint-placeholder-count="3">
-<div class="trow" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) 150px; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #3A3430; align-items: center; font-size: 14px">
-<span class="tfull" style="font-weight: 600; color: #F5F0EB">{{r.a}}</span>
-<span style="color: #D3CAC2">{{r.b}}</span>
-<span style="color: #D3CAC2; font-variant-numeric: tabular-nums">{{r.c}}</span>
+<div class="trow" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) 150px; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #EFE8E0; align-items: center; font-size: 14px">
+<span class="tfull" style="font-weight: 600; color: #2A2421">{{r.a}}</span>
+<span style="color: #4A403A">{{r.b}}</span>
+<span style="color: #4A403A; font-variant-numeric: tabular-nums">{{r.c}}</span>
 <span style="justify-self: start; display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: {{r.bg}}; color: {{r.fg}}"><span style="width: 6px; height: 6px; border-radius: 50%; background: {{r.fg}}"></span>{{r.st}}</span>
 </div>
 </sc-for>
 </div>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; border-top: 1px solid #403934">
-<div style="padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; border-right: 1px solid #3A3430">
-<span style="display: flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 700; color: #FBF7F3"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8DB6F2" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5M9 13h6M9 17h6"></path></svg>Qué registra</span>
-<sc-for list="{{idea.reg}}" as="t" hint-placeholder-count="3"><span style="font-size: 13px; color: #D3CAC2">{{t.x}}</span></sc-for>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; border-top: 1px solid #E6DDD2">
+<div style="padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; border-right: 1px solid #EFE8E0">
+<span style="display: flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 700; color: #2A2421"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2F5E91" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5M9 13h6M9 17h6"></path></svg>Qué registra</span>
+<sc-for list="{{idea.reg}}" as="t" hint-placeholder-count="3"><span style="font-size: 13px; color: #4A403A">{{t.x}}</span></sc-for>
 </div>
-<div style="padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; border-right: 1px solid #3A3430">
-<span style="display: flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 700; color: #FBF7F3"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A5D6AA" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg>Puntos de control</span>
-<sc-for list="{{idea.ctl}}" as="t" hint-placeholder-count="2"><span style="font-size: 13px; color: #D3CAC2">{{t.x}}</span></sc-for>
+<div style="padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; border-right: 1px solid #EFE8E0">
+<span style="display: flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 700; color: #2A2421"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2E6B3E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg>Puntos de control</span>
+<sc-for list="{{idea.ctl}}" as="t" hint-placeholder-count="2"><span style="font-size: 13px; color: #4A403A">{{t.x}}</span></sc-for>
 </div>
 <div style="padding: 14px 16px; display: flex; flex-direction: column; gap: 8px">
-<span style="display: flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 700; color: #FBF7F3"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8CC7A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.7 21a2 2 0 0 1-3.4 0"></path></svg>Alertas y reportes</span>
-<sc-for list="{{idea.al}}" as="t" hint-placeholder-count="2"><span style="font-size: 13px; color: #D3CAC2">{{t.x}}</span></sc-for>
+<span style="display: flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 700; color: #2A2421"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8A5A00" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.7 21a2 2 0 0 1-3.4 0"></path></svg>Alertas y reportes</span>
+<sc-for list="{{idea.al}}" as="t" hint-placeholder-count="2"><span style="font-size: 13px; color: #4A403A">{{t.x}}</span></sc-for>
 </div>
 </div>
 </div>
 
-<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 10px; font-size: 13px; color: #C0B6AD">
-<span style="padding: 5px 12px; border-radius: 999px; background: #332E2A; border: 1px solid #403934">1 · Me contás la idea</span>
-<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9C9087" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
-<span style="padding: 5px 12px; border-radius: 999px; background: #332E2A; border: 1px solid #403934">2 · Armo un prototipo para probar</span>
-<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9C9087" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
-<span style="padding: 5px 12px; border-radius: 999px; background: #332E2A; border: 1px solid #403934">3 · Lo ajustamos juntos</span>
-<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9C9087" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
-<span style="padding: 5px 12px; border-radius: 999px; background: rgba(130,190,140,0.12); border: 1px solid rgba(130,190,140,0.35); color: #A5D6AA">4 · Funcionando en tu negocio</span>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 10px; font-size: 13px; color: #5C5049">
+<span style="padding: 5px 12px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E6DDD2">1 · Me contás la idea</span>
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7A6D63" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+<span style="padding: 5px 12px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E6DDD2">2 · Armo un prototipo para probar</span>
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7A6D63" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+<span style="padding: 5px 12px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E6DDD2">3 · Lo ajustamos juntos</span>
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7A6D63" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+<span style="padding: 5px 12px; border-radius: 999px; background: rgba(62,140,84,0.12); border: 1px solid rgba(62,140,84,0.35); color: #2E6B3E">4 · Funcionando en tu negocio</span>
 </div>
 </div>
 </sc-if>
 
 <!-- ===================== STOCK ===================== -->
 <sc-if value="{{isStock}}" hint-placeholder-val="{{false}}">
-<div class="mroot" style="display: flex; flex-direction: column; gap: 16px">
-<div style="display: flex; flex-direction: column; gap: 4px">
-<h3 class="mh3" style="margin: 0; font-size: 21px; font-weight: 700; letter-spacing: -0.01em; color: #FBF7F3">Stock</h3>
-<span class="msub" style="font-size: 14px; color: #C0B6AD">Depósito central · cada movimiento queda registrado</span>
+<div class="mroot" style="display: flex; flex-direction: column; gap: 14px">
+<div class="xhead">
+<div class="xtitle"><h3 class="mh3" style="margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.01em; color: #2A2421">Stock</h3><span class="msub" style="font-size: 13.5px; color: #5C5049">Depósito central · cada movimiento queda registrado con hora y responsable</span></div>
+<sc-if value="{{stockHasLow}}" hint-placeholder-val="{{true}}"><a class="xbtn2 xsm" href="{{stockPoWa}}" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.5"></circle><circle cx="18" cy="20" r="1.5"></circle><path d="M3 4h2l2.4 11h11l2-8H6.2"></path></svg>Pedir reposición ({{lowCount}})</a></sc-if>
 </div>
-<div class="kpis" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px">
-<div style="background: #332E2A; border: 1px solid #403934; border-radius: 12px; padding: 12px 14px"><div style="font-size: 12.5px; color: #C0B6AD">Productos</div><div style="font-size: 24px; font-weight: 700; color: #FBF7F3; font-variant-numeric: tabular-nums">{{stockTotal}}</div></div>
-<div style="background: rgba(226,95,120,0.08); border: 1px solid rgba(226,95,120,0.3); border-radius: 12px; padding: 12px 14px"><div style="font-size: 12.5px; color: #F59DB0">Para reponer</div><div style="font-size: 24px; font-weight: 700; color: #F59DB0; font-variant-numeric: tabular-nums">{{lowCount}}</div></div>
-<div style="background: #332E2A; border: 1px solid #403934; border-radius: 12px; padding: 12px 14px"><div style="font-size: 12.5px; color: #C0B6AD">Movimientos hoy</div><div style="font-size: 24px; font-weight: 700; color: #FBF7F3; font-variant-numeric: tabular-nums">{{movesToday}}</div></div>
+<div class="xk">
+<div class="xkc"><span class="xkl">Productos</span><span class="xkv">{{stockTotal}}</span><span class="xkn">{{stockCats}} categorías</span></div>
+<div class="xkc"><span class="xkl">Valor del inventario</span><span class="xkv">{{stockValue}}</span><span class="xkn">a precio de costo</span></div>
+<div class="xkc" style="border-color: rgba(200,60,90,0.32); background: #FDF6F8"><span class="xkl" style="color: #A3284A">Para reponer</span><span class="xkv" style="color: #A3284A">{{lowCount}}</span><span class="xkn">en o debajo del mínimo</span></div>
+<div class="xkc"><span class="xkl">Movimientos hoy</span><span class="xkv">{{movesToday}}</span><span class="xkn">entradas y salidas</span></div>
 </div>
-<label style="position: relative; display: flex; align-items: center; max-width: 340px">
-<span style="position: absolute; left: 12px; display: flex; color: #AA9F96"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg></span>
-<input type="search" aria-label="Buscar producto o código" value="{{stockQ}}" onChange="{{onStockQ}}" placeholder="Buscar por nombre o código" style="width: 100%; height: 38px; border: 1px solid #50473F; border-radius: 9px; padding: 0 12px 0 36px; font-size: 14px; color: #F3EDE7; background: #221F1D; box-sizing: border-box"></input>
-</label>
-<div style="border: 1px solid #403934; border-radius: 12px; overflow: hidden">
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 12px">
+<label class="xsearch" style="flex: 0 1 280px; min-width: 180px; position: relative; display: flex; align-items: center"><span style="position: absolute; left: 11px; display: flex; color: #7A6D63"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg></span><input class="xin" type="search" aria-label="Buscar producto o código" value="{{stockQ}}" onChange="{{onStockQ}}" placeholder="Buscar por nombre o código" style="padding-left: 34px"></input></label>
+<div class="xsegwrap"><div class="xseg"><sc-for list="{{stockCatBtns}}" as="c" hint-placeholder-count="4"><button type="button" onClick="{{c.pick}}" style="background: {{c.bg}}; color: {{c.fg}}; box-shadow: {{c.sh}}">{{c.label}}</button></sc-for></div></div>
+</div>
+<div class="xcard" style="overflow: hidden">
 <div style="overflow-x: auto">
-<div class="tmin" style="min-width: 600px">
-<div class="thead" style="display: grid; grid-template-columns: 76px minmax(0, 1fr) 70px 140px 104px; gap: 12px; padding: 10px 16px; background: #332E2A; border-bottom: 1px solid #403934; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #AA9F96">
-<span>Código</span><span>Producto</span><span style="text-align: right">Mínimo</span><span style="text-align: center">Stock</span><span>Estado</span>
-</div>
-<div style="max-height: 228px; overflow-y: auto">
+<div class="tmin" style="min-width: 660px">
+<div class="xth thead" style="grid-template-columns: minmax(0, 1.6fr) minmax(0, 0.8fr) minmax(0, 1.1fr) 118px 100px"><span>Producto</span><span>Categoría</span><span>Nivel vs. mínimo</span><span style="text-align: center">Stock</span><span>Estado</span></div>
+<div class="xscroll" style="max-height: 252px; overflow-y: auto">
 <sc-for list="{{stockRows}}" as="p" hint-placeholder-count="6">
-<div class="trow" style="display: grid; grid-template-columns: 76px minmax(0, 1fr) 70px 140px 104px; gap: 12px; padding: 7px 16px; border-bottom: 1px solid #3A3430; align-items: center; font-size: 14px">
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #AA9F96">{{p.code}}</span>
-<span class="tfull tfirst" style="font-weight: 500; color: #F5F0EB">{{p.name}}</span>
-<span class="thide" style="text-align: right; color: #C0B6AD; font-variant-numeric: tabular-nums">{{p.min}}</span>
-<div style="display: flex; justify-content: center">
-<div style="display: inline-flex; align-items: center; border: 1px solid #50473F; border-radius: 8px; overflow: hidden">
-<button type="button" onClick="{{p.dec}}" aria-label="Registrar salida" style="width: 34px; height: 34px; border: none; background: #332E2A; color: #F3EDE7; font-size: 17px; cursor: pointer">−</button>
-<span style="width: 44px; text-align: center; font-weight: 700; font-variant-numeric: tabular-nums; border-left: 1px solid #403934; border-right: 1px solid #403934; line-height: 34px; color: {{p.qc}}">{{p.qty}}</span>
-<button type="button" onClick="{{p.inc}}" aria-label="Registrar entrada" style="width: 34px; height: 34px; border: none; background: #332E2A; color: #F3EDE7; font-size: 17px; cursor: pointer">+</button>
+<div class="xtr trow" style="grid-template-columns: minmax(0, 1.6fr) minmax(0, 0.8fr) minmax(0, 1.1fr) 118px 100px; padding-top: 8px; padding-bottom: 8px">
+<div class="tfull tfirst" style="display: flex; flex-direction: column; min-width: 0"><span style="font-weight: 600">{{p.name}}</span><span class="xmono">{{p.code}} · {{p.costTxt}}</span></div>
+<span class="thide" style="font-size: 13.5px; color: #5C5049">{{p.cat}}</span>
+<div class="tgrow" style="display: flex; flex-direction: column; gap: 5px; min-width: 0">
+<div class="xbar"><div style="height: 100%; border-radius: 999px; width: {{p.pct}}%; background: {{p.barC}}"></div><span style="position: absolute; top: 0; bottom: 0; left: {{p.minPct}}%; width: 2px; background: #FFFFFF"></span></div>
+<span style="font-size: 11.5px; color: #7A6D63">{{p.cover}}</span>
 </div>
-</div>
-<span style="justify-self: start; display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: {{p.sbg}}; color: {{p.sfg}}"><span style="width: 6px; height: 6px; border-radius: 50%; background: {{p.sfg}}"></span>{{p.status}}</span>
+<div style="display: flex; justify-content: center"><div class="xstep" style="display: inline-flex; align-items: center; border: 1px solid #DDD2C5; border-radius: 8px; overflow: hidden; background: #FFFFFF"><button type="button" onClick="{{p.dec}}" aria-label="Registrar salida" style="width: 32px; height: 32px; border: none; background: #FFFFFF; color: #4A403A; font-size: 17px; cursor: pointer">−</button><span class="xnum" style="width: 40px; text-align: center; font-weight: 700; border-left: 1px solid #EFE8E0; border-right: 1px solid #EFE8E0; line-height: 32px; color: {{p.qc}}">{{p.qty}}</span><button type="button" onClick="{{p.inc}}" aria-label="Registrar entrada" style="width: 32px; height: 32px; border: none; background: #FFFFFF; color: #4A403A; font-size: 17px; cursor: pointer">+</button></div></div>
+<span class="xpill tend" style="background: {{p.sbg}}; color: {{p.sfg}}"><span class="xdot"></span>{{p.status}}</span>
 </div>
 </sc-for>
 <sc-if value="{{stockNoResults}}" hint-placeholder-val="{{false}}">
-<div style="padding: 24px 16px; text-align: center; font-size: 14px; color: #C0B6AD">Sin resultados. Podés darlo de alta abajo.</div>
+<div style="padding: 24px 16px; text-align: center; font-size: 13.5px; color: #7A6D63">Sin resultados. Podés darlo de alta abajo.</div>
 </sc-if>
 </div>
 </div>
 </div>
 </div>
-<div style="background: #332E2A; border: 1px solid #403934; border-radius: 12px; padding: 12px 14px; display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end">
-<span style="flex: 1 1 100%; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #AA9F96">Alta rápida</span>
-<label style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 500; color: #D3CAC2">Producto
-<input type="text" value="{{newName}}" onChange="{{onNewName}}" placeholder="Nombre del producto" style="height: 38px; border: 1px solid #50473F; border-radius: 9px; padding: 0 12px; font-size: 14px; color: #F3EDE7; background: #221F1D"></input>
-</label>
-<label style="flex: 0 1 110px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 500; color: #D3CAC2">Cantidad
-<input type="number" min="0" value="{{newQty}}" onChange="{{onNewQty}}" placeholder="0" style="height: 38px; border: 1px solid #50473F; border-radius: 9px; padding: 0 12px; font-size: 14px; color: #F3EDE7; background: #221F1D; width: 100%; box-sizing: border-box"></input>
-</label>
-<button type="button" onClick="{{addProduct}}" style="height: 38px; padding: 0 18px; border-radius: 9px; border: none; background: #E07A45; color: #22150E; font-weight: 600; font-size: 14px; cursor: pointer">Dar de alta</button>
+<sc-if value="{{stockMsgShow}}" hint-placeholder-val="{{false}}"><div class="xnote" style="background: {{stockMsgBg}}; color: {{stockMsgFg}}"><span style="display: flex; flex-shrink: 0; margin-top: 1px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16.5v.01"></path></svg></span><span style="flex: 1">{{stockMsg}}</span></div></sc-if>
+<div class="xcols">
+<div class="xcard xmain" style="padding: 12px 14px; gap: 0">
+<div class="xlab" style="padding-bottom: 6px">Últimos movimientos</div>
+<sc-for list="{{stockLog}}" as="l" hint-placeholder-count="3">
+<div style="display: flex; align-items: center; gap: 10px; padding: 7px 0; border-top: 1px solid #EFE8E0">
+<span class="xnum" style="width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; flex-shrink: 0; background: {{l.bg}}; color: {{l.fg}}">{{l.sign}}</span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column"><span style="font-size: 13.5px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{l.name}}</span><span style="font-size: 12px; color: #7A6D63">{{l.kind}} · {{l.who}} · {{l.time}}</span></span>
+<span class="xnum" style="font-weight: 700; font-size: 14px; color: {{l.fg}}">{{l.qty}}</span>
 </div>
-<sc-if value="{{stockMsgShow}}" hint-placeholder-val="{{false}}">
-<div style="border-radius: 9px; padding: 9px 12px; font-size: 13.5px; background: {{stockMsgBg}}; color: {{stockMsgFg}}">{{stockMsg}}</div>
-</sc-if>
+</sc-for>
+</div>
+<div class="xcard xside" style="padding: 12px 14px; gap: 10px">
+<div class="xlab">Alta rápida</div>
+<label style="display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 500; color: #4A403A">Producto<input class="xin" type="text" value="{{newName}}" onChange="{{onNewName}}" placeholder="Nombre del producto"></input></label>
+<div style="display: flex; gap: 8px; align-items: flex-end">
+<label style="flex: 1; display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 500; color: #4A403A">Cantidad<input class="xin" type="number" min="0" value="{{newQty}}" onChange="{{onNewQty}}" placeholder="0"></input></label>
+<button type="button" class="xbtn" onClick="{{addProduct}}">Dar de alta</button>
+</div>
+<span style="font-size: 12px; color: #7A6D63">Se carga en la categoría: {{stockNewCat}}</span>
+</div>
+</div>
 </div>
 </sc-if>
 
@@ -968,40 +1007,40 @@ Precios tomados automáticamente de la lista vigente
 <div class="mroot" style="display: flex; flex-direction: column; gap: 16px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 10px 20px">
 <div style="display: flex; flex-direction: column; gap: 4px">
-<h3 class="mh3" style="margin: 0; font-size: 21px; font-weight: 700; letter-spacing: -0.01em; color: #FBF7F3">Planificación</h3>
-<span class="msub" style="font-size: 14px; color: #C0B6AD">Semana 42 · del 13 al 17 de octubre</span>
+<h3 class="mh3" style="margin: 0; font-size: 21px; font-weight: 700; letter-spacing: -0.01em; color: #2A2421">Planificación</h3>
+<span class="msub" style="font-size: 14px; color: #5C5049">Semana 42 · del 13 al 17 de octubre</span>
 </div>
-<div style="display: inline-flex; background: #221F1D; border: 1px solid #403934; border-radius: 10px; padding: 3px; gap: 2px">
+<div style="display: inline-flex; background: #F4EEE7; border: 1px solid #E6DDD2; border-radius: 10px; padding: 3px; gap: 2px">
 <sc-for list="{{planToggles}}" as="v" hint-placeholder-count="2">
-<button type="button" onClick="{{v.pick}}" style="height: 34px; padding: 0 14px; border-radius: 8px; border: none; font-weight: 600; font-size: 13.5px; cursor: pointer; background: {{v.bg}}; color: {{v.fg}}">{{v.label}}</button>
+<button type="button" onClick="{{v.pick}}" style="height: 34px; padding: 0 14px; border-radius: 8px; border: none; font-weight: 600; font-size: 13.5px; cursor: pointer; background: {{v.bg}}; color: {{v.fg}}; box-shadow: {{v.sh}}">{{v.label}}</button>
 </sc-for>
 </div>
 </div>
 <div style="display: flex; align-items: center; gap: 12px">
-<div style="flex: 1; height: 8px; background: #3D3733; border-radius: 999px; overflow: hidden"><div style="height: 100%; background: #E07A45; border-radius: 999px; width: {{planPct}}%"></div></div>
-<span style="font-size: 13.5px; font-weight: 600; white-space: nowrap; color: #F3EDE7">{{planProgress}}</span>
+<div style="flex: 1; height: 8px; background: #EFE8E0; border-radius: 999px; overflow: hidden"><div style="height: 100%; background: #A8481F; border-radius: 999px; width: {{planPct}}%"></div></div>
+<span style="font-size: 13.5px; font-weight: 600; white-space: nowrap; color: #2A2421">{{planProgress}}</span>
 </div>
 
 <sc-if value="{{planIsGantt}}" hint-placeholder-val="{{true}}">
-<div style="border: 1px solid #403934; border-radius: 12px; overflow: hidden">
+<div style="border: 1px solid #E6DDD2; border-radius: 12px; overflow: hidden">
 <div style="overflow-x: auto">
 <div class="gmin" style="min-width: 640px">
-<div class="ggrid" style="display: grid; grid-template-columns: 210px repeat(5, minmax(0, 1fr)); background: #332E2A; border-bottom: 1px solid #403934; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #AA9F96">
+<div class="ggrid" style="display: grid; grid-template-columns: 210px repeat(5, minmax(0, 1fr)); background: #F8F4EF; border-bottom: 1px solid #E6DDD2; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #6B5E54">
 <span style="padding: 10px 16px">Tarea</span>
-<span style="padding: 10px 0; text-align: center; border-left: 1px solid #403934">Lun 13</span>
-<span style="padding: 10px 0; text-align: center; border-left: 1px solid #403934">Mar 14</span>
-<span style="padding: 10px 0; text-align: center; border-left: 1px solid #403934; background: rgba(130,190,140,0.14); color: #A5D6AA">Hoy · Mié 15</span>
-<span style="padding: 10px 0; text-align: center; border-left: 1px solid #403934">Jue 16</span>
-<span style="padding: 10px 0; text-align: center; border-left: 1px solid #403934">Vie 17</span>
+<span style="padding: 10px 0; text-align: center; border-left: 1px solid #E6DDD2">Lun 13</span>
+<span style="padding: 10px 0; text-align: center; border-left: 1px solid #E6DDD2">Mar 14</span>
+<span style="padding: 10px 0; text-align: center; border-left: 1px solid #E6DDD2; background: rgba(62,140,84,0.14); color: #2E6B3E">Hoy · Mié 15</span>
+<span style="padding: 10px 0; text-align: center; border-left: 1px solid #E6DDD2">Jue 16</span>
+<span style="padding: 10px 0; text-align: center; border-left: 1px solid #E6DDD2">Vie 17</span>
 </div>
 <sc-for list="{{taskRows}}" as="t" hint-placeholder-count="5">
-<div class="ggrid" style="display: grid; grid-template-columns: 210px repeat(5, minmax(0, 1fr)); border-bottom: 1px solid #3A3430; align-items: stretch">
+<div class="ggrid" style="display: grid; grid-template-columns: 210px repeat(5, minmax(0, 1fr)); border-bottom: 1px solid #EFE8E0; align-items: stretch">
 <div style="display: flex; align-items: center; gap: 10px; padding: 9px 16px; min-width: 0">
 <span style="width: 26px; height: 26px; border-radius: 50%; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 10.5px; flex-shrink: 0; background: {{t.whoBg}}">{{t.ini}}</span>
 <span style="font-size: 14px; font-weight: 500; text-decoration: {{t.deco}}; color: {{t.tc}}">{{t.name}}</span>
 </div>
-<div style="grid-column: 2 / span 5; position: relative; min-height: 48px; background: repeating-linear-gradient(to right, transparent 0, transparent calc(20% - 1px), #3D3733 calc(20% - 1px), #3D3733 20%)">
-<div style="position: absolute; top: 0; bottom: 0; left: 40%; width: 20%; background: rgba(130,190,140,0.07)"></div>
+<div style="grid-column: 2 / span 5; position: relative; min-height: 48px; background: repeating-linear-gradient(to right, transparent 0, transparent calc(20% - 1px), #EFE8E0 calc(20% - 1px), #EFE8E0 20%)">
+<div style="position: absolute; top: 0; bottom: 0; left: 40%; width: 20%; background: rgba(62,140,84,0.07)"></div>
 <button type="button" onClick="{{t.toggle}}" aria-label="Marcar tarea" style="position: absolute; top: 9px; bottom: 9px; border: none; border-radius: 7px; color: #FFFFFF; font-size: 12.5px; font-weight: 600; cursor: pointer; text-align: left; padding: 0 10px; white-space: nowrap; overflow: hidden; display: flex; align-items: center; gap: 6px; left: calc({{t.left}}% + 4px); width: calc({{t.width}}% - 8px); background: {{t.barBg}}">
 <sc-if value="{{t.done}}" hint-placeholder-val="{{false}}"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></sc-if>{{t.barLabel}}</button>
 </div>
@@ -1010,26 +1049,26 @@ Precios tomados automáticamente de la lista vigente
 </div>
 </div>
 </div>
-<span class="msub" style="font-size: 13px; color: #C0B6AD">Tocá una barra para marcar la tarea como terminada.</span>
+<span class="msub" style="font-size: 13px; color: #5C5049">Tocá una barra para marcar la tarea como terminada.</span>
 </sc-if>
 
 <sc-if value="{{planIsTasks}}" hint-placeholder-val="{{false}}">
-<div style="border: 1px solid #403934; border-radius: 12px; overflow: hidden">
+<div style="border: 1px solid #E6DDD2; border-radius: 12px; overflow: hidden">
 <div style="overflow-x: auto">
 <div class="tmin" style="min-width: 600px">
-<div class="thead" style="display: grid; grid-template-columns: 44px minmax(0, 1fr) 150px 110px 110px; gap: 12px; padding: 10px 16px; background: #332E2A; border-bottom: 1px solid #403934; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #AA9F96">
+<div class="thead" style="display: grid; grid-template-columns: 44px minmax(0, 1fr) 150px 110px 110px; gap: 12px; padding: 10px 16px; background: #F8F4EF; border-bottom: 1px solid #E6DDD2; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #6B5E54">
 <span></span><span>Tarea</span><span>Responsable</span><span>Fechas</span><span>Estado</span>
 </div>
 <sc-for list="{{taskRows}}" as="t" hint-placeholder-count="5">
-<div class="trow" style="display: grid; grid-template-columns: 44px minmax(0, 1fr) 150px 110px 110px; gap: 12px; padding: 8px 16px; border-bottom: 1px solid #3A3430; align-items: center; font-size: 14px">
+<div class="trow" style="display: grid; grid-template-columns: 44px minmax(0, 1fr) 150px 110px 110px; gap: 12px; padding: 8px 16px; border-bottom: 1px solid #EFE8E0; align-items: center; font-size: 14px">
 <button type="button" onClick="{{t.toggle}}" aria-pressed="{{t.done}}" aria-label="Marcar tarea" style="width: 36px; height: 36px; border: none; background: transparent; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0">
-<span style="width: 22px; height: 22px; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #22150E; box-sizing: border-box; background: {{t.boxBg}}; border: 2px solid {{t.boxBd}}">
+<span style="width: 22px; height: 22px; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: #FFFFFF; box-sizing: border-box; background: {{t.boxBg}}; border: 2px solid {{t.boxBd}}">
 <sc-if value="{{t.done}}" hint-placeholder-val="{{false}}"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></sc-if>
 </span>
 </button>
 <span class="tgrow" style="font-weight: 500; text-decoration: {{t.deco}}; color: {{t.tc}}">{{t.name}}</span>
-<span style="display: flex; align-items: center; gap: 8px; color: #D3CAC2"><span style="width: 24px; height: 24px; border-radius: 50%; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 10px; background: {{t.whoBg}}">{{t.ini}}</span>{{t.who}}</span>
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #C0B6AD">{{t.when}}</span>
+<span style="display: flex; align-items: center; gap: 8px; color: #4A403A"><span style="width: 24px; height: 24px; border-radius: 50%; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 10px; background: {{t.whoBg}}">{{t.ini}}</span>{{t.who}}</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #5C5049">{{t.when}}</span>
 <span style="justify-self: start; display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: {{t.sbg}}; color: {{t.sfg}}"><span style="width: 6px; height: 6px; border-radius: 50%; background: {{t.sfg}}"></span>{{t.status}}</span>
 </div>
 </sc-for>
@@ -1042,32 +1081,37 @@ Precios tomados automáticamente de la lista vigente
 
 <!-- ===================== ÓRDENES ===================== -->
 <sc-if value="{{isOrd}}" hint-placeholder-val="{{false}}">
-<div class="mroot" style="display: flex; flex-direction: column; gap: 16px">
-<div style="display: flex; flex-direction: column; gap: 4px">
-<h3 class="mh3" style="margin: 0; font-size: 21px; font-weight: 700; letter-spacing: -0.01em; color: #FBF7F3">Órdenes de trabajo</h3>
-<span class="msub" style="font-size: 14px; color: #C0B6AD">{{ordSummary}}</span>
+<div class="mroot" style="display: flex; flex-direction: column; gap: 14px">
+<div class="xhead">
+<div class="xtitle"><h3 class="mh3" style="margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.01em; color: #2A2421">Órdenes de trabajo</h3><span class="msub" style="font-size: 13.5px; color: #5C5049">{{ordSummary}}</span></div>
+<button type="button" class="xbtn xsm" onClick="{{ordNew}}"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>Nueva orden</button>
 </div>
-<div class="kanban" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px">
+<div class="xk">
+<div class="xkc"><span class="xkl">Abiertas</span><span class="xkv">{{openOrders}}</span><span class="xkn">pendientes y en proceso</span></div>
+<div class="xkc" style="border-color: rgba(200,60,90,0.32); background: #FDF6F8"><span class="xkl" style="color: #A3284A">Atrasadas</span><span class="xkv" style="color: #A3284A">{{ordLate}}</span><span class="xkn">pasaron la fecha</span></div>
+<div class="xkc" style="border-color: rgba(214,160,40,0.4); background: #FDF9EF"><span class="xkl" style="color: #8A5A00">Vencen hoy</span><span class="xkv" style="color: #8A5A00">{{ordToday}}</span><span class="xkn">entregar antes de las 18</span></div>
+<div class="xkc" style="border-color: rgba(62,140,84,0.32); background: #F5FAF6"><span class="xkl" style="color: #2E6B3E">Terminadas</span><span class="xkv" style="color: #2E6B3E">{{ordDone}}</span><span class="xkn">esta semana</span></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px"><span class="xlab">Responsable</span><div class="xsegwrap"><div class="xseg"><sc-for list="{{ordWhoBtns}}" as="w" hint-placeholder-count="4"><button type="button" onClick="{{w.pick}}" style="background: {{w.bg}}; color: {{w.fg}}; box-shadow: {{w.sh}}">{{w.label}}</button></sc-for></div></div></div>
+<div class="kanban" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px">
 <sc-for list="{{ordCols}}" as="col" hint-placeholder-count="3">
-<div style="background: #2F2A27; border: 1px solid #3D3733; border-radius: 12px; padding: 10px; display: flex; flex-direction: column; gap: 8px; min-height: 380px" class="kcol">
-<div style="display: flex; justify-content: space-between; align-items: center; padding: 4px 4px 6px">
-<span style="display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; color: #F3EDE7"><span style="width: 8px; height: 8px; border-radius: 50%; background: {{col.dot}}"></span>{{col.title}}</span>
-<span style="font-size: 12.5px; font-weight: 600; color: #C0B6AD; background: #221F1D; border: 1px solid #403934; border-radius: 999px; padding: 1px 9px">{{col.count}}</span>
+<div class="kcol" style="background: #F4EFE8; border: 1px solid #E6DDD2; border-radius: 12px; padding: 10px; display: flex; flex-direction: column; gap: 8px; min-height: 280px">
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 2px 4px 4px">
+<span style="display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px"><span style="width: 8px; height: 8px; border-radius: 50%; background: {{col.dot}}"></span>{{col.title}}</span>
+<span class="xnum" style="font-size: 12px; font-weight: 700; color: #5C5049; background: #FFFFFF; border: 1px solid #E6DDD2; border-radius: 999px; padding: 0 9px">{{col.count}}</span>
 </div>
 <sc-for list="{{col.cards}}" as="o" hint-placeholder-count="2">
-<div style="background: #3A3430; border: 1px solid #4A423C; border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 8px">
-<div style="display: flex; justify-content: space-between; align-items: center; gap: 8px">
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #AA9F96">{{o.id}}</span>
-<span style="font-size: 11.5px; font-weight: 600; padding: 2px 8px; border-radius: 999px; background: {{o.pbg}}; color: {{o.pfg}}">{{o.prio}}</span>
-</div>
-<span style="font-size: 14.5px; font-weight: 600; line-height: 1.3; color: #F5F0EB">{{o.title}}</span>
-<span style="font-size: 12.5px; color: #C0B6AD">{{o.client}}</span>
-<div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; border-top: 1px solid #4A423C; padding-top: 8px">
-<span style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: #C0B6AD"><span style="width: 22px; height: 22px; border-radius: 50%; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 9.5px; background: {{o.av}}">{{o.who}}</span>{{o.due}}</span>
-<button type="button" onClick="{{o.advance}}" style="height: 30px; padding: 0 10px; border-radius: 7px; border: 1px solid #5A5048; background: transparent; color: #F3EDE7; font-size: 12.5px; font-weight: 600; cursor: pointer">{{o.action}}</button>
+<div style="background: #FFFFFF; border: 1px solid #E6DDD2; border-left: 3px solid {{o.pc}}; border-radius: 10px; padding: 11px 12px; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 1px 2px rgba(42,36,33,0.05)">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 8px"><span class="xmono">{{o.id}}</span><span style="font-size: 11.5px; font-weight: 600; padding: 2px 8px; border-radius: 999px; background: {{o.pbg}}; color: {{o.pfg}}">Prioridad {{o.prioL}}</span></div>
+<div style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 14.5px; font-weight: 600; line-height: 1.3">{{o.title}}</span><span style="display: flex; align-items: center; gap: 5px; font-size: 12.5px; color: #7A6D63"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>{{o.client}}</span></div>
+<div style="display: flex; align-items: center; gap: 8px"><div class="xbar" style="flex: 1"><div style="height: 100%; border-radius: 999px; width: {{o.pct}}%; background: {{o.barC}}"></div></div><span class="xnum" style="font-size: 11.5px; color: #7A6D63; white-space: nowrap">{{o.chkTxt}}</span></div>
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; border-top: 1px solid #EFE8E0; padding-top: 8px">
+<span style="display: flex; align-items: center; gap: 6px; min-width: 0"><span title="{{o.whoN}}" style="width: 24px; height: 24px; border-radius: 50%; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 10px; flex-shrink: 0; background: {{o.av}}">{{o.who}}</span><span style="font-size: 11.5px; font-weight: 600; padding: 2px 8px; border-radius: 6px; white-space: nowrap; background: {{o.dbg}}; color: {{o.dfg}}">{{o.dueTxt}}</span></span>
+<button type="button" class="xbtn2 xsm" onClick="{{o.advance}}" style="height: 30px; padding: 0 10px; font-size: 12.5px">{{o.action}}</button>
 </div>
 </div>
 </sc-for>
+<sc-if value="{{col.empty}}" hint-placeholder-val="{{false}}"><div style="border: 1px dashed #D6CABC; border-radius: 10px; padding: 18px 10px; text-align: center; font-size: 12.5px; color: #9A8D82">Sin órdenes en esta etapa</div></sc-if>
 </div>
 </sc-for>
 </div>
@@ -1079,27 +1123,27 @@ Precios tomados automáticamente de la lista vigente
 <div class="mroot" style="display: flex; flex-direction: column; gap: 16px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 10px 20px">
 <div style="display: flex; flex-direction: column; gap: 4px">
-<h3 class="mh3" style="margin: 0; font-size: 21px; font-weight: 700; letter-spacing: -0.01em; color: #FBF7F3">Control de calidad</h3>
-<span class="msub" style="font-size: 14px; color: #C0B6AD">Orden #0587 · Mesa de roble 1,60 m · Laura Fernández</span>
+<h3 class="mh3" style="margin: 0; font-size: 21px; font-weight: 700; letter-spacing: -0.01em; color: #2A2421">Control de calidad</h3>
+<span class="msub" style="font-size: 14px; color: #5C5049">Orden #0587 · Mesa de roble 1,60 m · Laura Fernández</span>
 </div>
 <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: {{chkBadge.bg}}; color: {{chkBadge.fg}}"><span style="width: 6px; height: 6px; border-radius: 50%; background: {{chkBadge.fg}}"></span>{{chkBadge.label}}</span>
 </div>
 <div style="display: flex; align-items: center; gap: 12px">
-<div style="flex: 1; height: 8px; background: #3D3733; border-radius: 999px; overflow: hidden"><div style="height: 100%; background: #E07A45; border-radius: 999px; width: {{chkPct}}%"></div></div>
-<span style="font-size: 13.5px; font-weight: 600; white-space: nowrap; color: #F3EDE7">{{chkProgress}}</span>
+<div style="flex: 1; height: 8px; background: #EFE8E0; border-radius: 999px; overflow: hidden"><div style="height: 100%; background: #A8481F; border-radius: 999px; width: {{chkPct}}%"></div></div>
+<span style="font-size: 13.5px; font-weight: 600; white-space: nowrap; color: #2A2421">{{chkProgress}}</span>
 </div>
-<div style="border: 1px solid #403934; border-radius: 12px; padding: 8px 18px">
+<div style="border: 1px solid #E6DDD2; border-radius: 12px; padding: 8px 18px">
 <sc-for list="{{chkRows}}" as="s" hint-placeholder-count="5">
 <div style="display: flex; gap: 14px">
 <div style="display: flex; flex-direction: column; align-items: center; width: 30px; flex-shrink: 0; padding-top: 12px">
 <sc-if value="{{s.isDone}}" hint-placeholder-val="{{false}}">
-<span style="width: 30px; height: 30px; border-radius: 50%; background: #E07A45; color: #22150E; display: flex; align-items: center; justify-content: center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span>
+<span style="width: 30px; height: 30px; border-radius: 50%; background: #A8481F; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span>
 </sc-if>
 <sc-if value="{{s.isNext}}" hint-placeholder-val="{{false}}">
-<span style="width: 30px; height: 30px; border-radius: 50%; border: 2px solid #E07A45; color: #A5D6AA; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; box-sizing: border-box">{{s.num}}</span>
+<span style="width: 30px; height: 30px; border-radius: 50%; border: 2px solid #A8481F; color: #2E6B3E; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; box-sizing: border-box">{{s.num}}</span>
 </sc-if>
 <sc-if value="{{s.isLocked}}" hint-placeholder-val="{{false}}">
-<span style="width: 30px; height: 30px; border-radius: 50%; background: #3A3430; color: #9C9087; display: flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg></span>
+<span style="width: 30px; height: 30px; border-radius: 50%; background: #EFE8E0; color: #7A6D63; display: flex; align-items: center; justify-content: center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg></span>
 </sc-if>
 <sc-if value="{{s.hasLine}}" hint-placeholder-val="{{true}}">
 <span style="flex: 1; width: 2px; min-height: 14px; margin-top: 4px; background: {{s.lineC}}"></span>
@@ -1108,69 +1152,91 @@ Precios tomados automáticamente de la lista vigente
 <div style="flex: 1; min-width: 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; padding: 12px 0 14px">
 <div style="display: flex; flex-direction: column; gap: 2px; min-width: 0">
 <span style="font-size: 14.5px; font-weight: 600; color: {{s.tc}}">{{s.text}}</span>
-<span style="font-size: 12.5px; color: #AA9F96">{{s.meta}}</span>
+<span style="font-size: 12.5px; color: #6B5E54">{{s.meta}}</span>
 </div>
 <sc-if value="{{s.isNext}}" hint-placeholder-val="{{false}}">
-<button type="button" onClick="{{chkNext}}" style="height: 36px; padding: 0 14px; border-radius: 9px; border: none; background: #E07A45; color: #22150E; font-weight: 600; font-size: 13.5px; cursor: pointer">Marcar como hecho</button>
+<button type="button" onClick="{{chkNext}}" style="height: 36px; padding: 0 14px; border-radius: 9px; border: none; background: #A8481F; color: #FFFFFF; font-weight: 600; font-size: 13.5px; cursor: pointer">Marcar como hecho</button>
 </sc-if>
 </div>
 </div>
 </sc-for>
 </div>
 <sc-if value="{{chkComplete}}" hint-placeholder-val="{{false}}">
-<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; background: rgba(130,190,140,0.12); border: 1px solid rgba(130,190,140,0.35); color: #A5D6AA; border-radius: 12px; padding: 12px 16px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; background: rgba(62,140,84,0.12); border: 1px solid rgba(62,140,84,0.35); color: #2E6B3E; border-radius: 12px; padding: 12px 16px">
 <span style="font-weight: 600; font-size: 14.5px">Control completo: la orden pasa a entregas.</span>
-<button type="button" onClick="{{chkReset}}" style="height: 36px; padding: 0 14px; border-radius: 8px; border: 1px solid #5A5048; background: transparent; color: #F3EDE7; font-weight: 600; font-size: 13.5px; cursor: pointer">Reiniciar demo</button>
+<button type="button" onClick="{{chkReset}}" style="height: 36px; padding: 0 14px; border-radius: 8px; border: 1px solid #CFC2B3; background: transparent; color: #2A2421; font-weight: 600; font-size: 13.5px; cursor: pointer">Reiniciar demo</button>
 </div>
 </sc-if>
 <sc-if value="{{chkNotComplete}}" hint-placeholder-val="{{true}}">
-<span class="msub" style="font-size: 13px; color: #C0B6AD">Los pasos se habilitan en orden y cada uno registra quién lo hizo y cuándo.</span>
+<span class="msub" style="font-size: 13px; color: #5C5049">Los pasos se habilitan en orden y cada uno registra quién lo hizo y cuándo.</span>
 </sc-if>
 </div>
 </sc-if>
 
 <!-- ===================== CAJA ===================== -->
 <sc-if value="{{isCaja}}" hint-placeholder-val="{{false}}">
-<div class="mroot" style="display: flex; flex-direction: column; gap: 16px">
-<div style="display: flex; flex-direction: column; gap: 4px">
-<h3 class="mh3" style="margin: 0; font-size: 21px; font-weight: 700; letter-spacing: -0.01em; color: #FBF7F3">Caja</h3>
-<span class="msub" style="font-size: 14px; color: #C0B6AD">Caja del día · Local central · saldo inicial {{cajaInicial}}</span>
+<div class="mroot" style="display: flex; flex-direction: column; gap: 14px">
+<div class="xhead">
+<div class="xtitle">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px"><h3 class="mh3" style="margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.01em; color: #2A2421">Caja del día</h3><span class="xpill" style="background: {{cajaState.bg}}; color: {{cajaState.fg}}"><span class="xdot"></span>{{cajaState.label}}</span></div>
+<span class="msub" style="font-size: 13.5px; color: #5C5049">Local central · abierta a las 08:30 por Ana G. · saldo inicial {{cajaInicial}}</span>
 </div>
-<div class="kpis" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px">
-<div style="background: rgba(130,190,140,0.10); border: 1px solid rgba(130,190,140,0.3); border-radius: 12px; padding: 12px 16px"><div style="font-size: 12.5px; color: #A5D6AA">Saldo actual</div><div style="font-size: 24px; font-weight: 700; color: #FBF7F3; font-variant-numeric: tabular-nums">{{cajaSaldo}}</div></div>
-<div style="background: #332E2A; border: 1px solid #403934; border-radius: 12px; padding: 12px 16px"><div style="font-size: 12.5px; color: #C0B6AD">Ingresos</div><div style="font-size: 24px; font-weight: 700; color: #A5D6AA; font-variant-numeric: tabular-nums">{{cajaIn}}</div></div>
-<div style="background: #332E2A; border: 1px solid #403934; border-radius: 12px; padding: 12px 16px"><div style="font-size: 12.5px; color: #C0B6AD">Egresos</div><div style="font-size: 24px; font-weight: 700; color: #F59DB0; font-variant-numeric: tabular-nums">{{cajaOut}}</div></div>
 </div>
-<div style="background: #332E2A; border: 1px solid #403934; border-radius: 12px; padding: 12px 14px; display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end">
-<span style="flex: 1 1 100%; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #AA9F96">Nuevo movimiento</span>
-<label style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 500; color: #D3CAC2">Concepto
-<input type="text" value="{{cConcept}}" onChange="{{onConcept}}" placeholder="Ej: Venta mostrador" style="height: 38px; border: 1px solid #50473F; border-radius: 9px; padding: 0 12px; font-size: 14px; color: #F3EDE7; background: #221F1D"></input>
-</label>
-<label style="flex: 0 1 140px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 500; color: #D3CAC2">Monto
-<input type="text" inputmode="numeric" value="{{cAmount}}" onChange="{{onAmount}}" placeholder="$ 0" style="height: 38px; border: 1px solid #50473F; border-radius: 9px; padding: 0 12px; font-size: 14px; color: #F3EDE7; background: #221F1D; width: 100%; box-sizing: border-box"></input>
-</label>
-<button type="button" onClick="{{addIn}}" style="height: 38px; padding: 0 16px; border-radius: 9px; border: none; background: #E07A45; color: #22150E; font-weight: 600; font-size: 14px; cursor: pointer">Ingreso</button>
-<button type="button" onClick="{{addOut}}" style="height: 38px; padding: 0 16px; border-radius: 9px; border: 1px solid #5A5048; background: transparent; color: #F59DB0; font-weight: 600; font-size: 14px; cursor: pointer">Egreso</button>
+<div class="xk">
+<div class="xkc" style="border-color: rgba(62,140,84,0.32); background: #F5FAF6"><span class="xkl" style="color: #2E6B3E">Saldo del día</span><span class="xkv" style="color: #2E6B3E">{{cajaSaldo}}</span><span class="xkn">todos los medios</span></div>
+<div class="xkc"><span class="xkl">Ingresos</span><span class="xkv">{{cajaIn}}</span><span class="xkn">{{cajaInN}}</span></div>
+<div class="xkc"><span class="xkl">Egresos</span><span class="xkv">{{cajaOut}}</span><span class="xkn">{{cajaOutN}}</span></div>
+<div class="xkc"><span class="xkl">Efectivo esperado</span><span class="xkv">{{cajaEfEsp}}</span><span class="xkn">para el arqueo</span></div>
 </div>
-<sc-if value="{{cajaMsgShow}}" hint-placeholder-val="{{false}}">
-<div style="border-radius: 9px; padding: 9px 12px; font-size: 13.5px; background: {{cajaMsgBg}}; color: {{cajaMsgFg}}">{{cajaMsg}}</div>
-</sc-if>
-<div style="border: 1px solid #403934; border-radius: 12px; overflow: hidden">
+<div class="xcols">
+<div class="xmain">
+<div class="xcard" style="padding: 12px 14px; display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end">
+<div class="xlab" style="flex: 1 1 100%">Nuevo movimiento</div>
+<label style="flex: 1 1 200px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 500; color: #4A403A">Concepto<input class="xin" type="text" value="{{cConcept}}" onChange="{{onConcept}}" placeholder="Ej: Venta mostrador"></input></label>
+<label style="flex: 0 1 130px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 500; color: #4A403A">Monto<input class="xin" type="text" inputmode="numeric" value="{{cAmount}}" onChange="{{onAmount}}" placeholder="$ 0"></input></label>
+<div style="flex: 1 1 100%; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px">
+<div class="xsegwrap"><div class="xseg"><sc-for list="{{cajaMethodBtns}}" as="m" hint-placeholder-count="3"><button type="button" onClick="{{m.pick}}" style="background: {{m.bg}}; color: {{m.fg}}; box-shadow: {{m.sh}}">{{m.label}}</button></sc-for></div></div>
+<div style="display: flex; gap: 8px"><button type="button" class="xbtn" onClick="{{addIn}}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 7L7 17M7 9v8h8"></path></svg>Ingreso</button><button type="button" class="xbtn2" onClick="{{addOut}}" style="color: #A3284A"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg>Egreso</button></div>
+</div>
+</div>
+<sc-if value="{{cajaMsgShow}}" hint-placeholder-val="{{false}}"><div class="xnote" style="background: {{cajaMsgBg}}; color: {{cajaMsgFg}}"><span style="display: flex; flex-shrink: 0; margin-top: 1px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v5M12 16.5v.01"></path></svg></span><span style="flex: 1">{{cajaMsg}}</span></div></sc-if>
+<div class="xcard" style="overflow: hidden">
 <div style="overflow-x: auto">
-<div class="tmin" style="min-width: 520px">
-<div class="thead" style="display: grid; grid-template-columns: 70px minmax(0, 1fr) 100px 130px; gap: 12px; padding: 10px 16px; background: #332E2A; border-bottom: 1px solid #403934; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #AA9F96">
-<span>Hora</span><span>Concepto</span><span>Tipo</span><span style="text-align: right">Monto</span>
-</div>
-<div style="max-height: 200px; overflow-y: auto">
-<sc-for list="{{movRows}}" as="m" hint-placeholder-count="3">
-<div class="trow" style="display: grid; grid-template-columns: 70px minmax(0, 1fr) 100px 130px; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #3A3430; align-items: center; font-size: 14px">
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #AA9F96">{{m.time}}</span>
-<span class="tgrow" style="font-weight: 500; color: #F5F0EB">{{m.concept}}</span>
-<span style="justify-self: start; display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: {{m.bg}}; color: {{m.fg}}"><span style="width: 6px; height: 6px; border-radius: 50%; background: {{m.fg}}"></span>{{m.type}}</span>
-<span class="tend" style="text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; color: {{m.fg}}">{{m.amount}}</span>
+<div class="tmin" style="min-width: 470px">
+<div class="xth thead" style="grid-template-columns: 58px minmax(0, 1fr) 118px 118px"><span>Hora</span><span>Concepto</span><span>Medio</span><span style="text-align: right">Monto</span></div>
+<div class="xscroll" style="max-height: 230px; overflow-y: auto">
+<sc-for list="{{movRows}}" as="m" hint-placeholder-count="4">
+<div class="xtr trow" style="grid-template-columns: 58px minmax(0, 1fr) 118px 118px">
+<span class="xmono">{{m.time}}</span>
+<span class="tfull tfirst" style="display: flex; align-items: center; gap: 9px; min-width: 0"><span style="width: 26px; height: 26px; border-radius: 7px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: {{m.bg}}; color: {{m.fg}}"><sc-if value="{{m.isIn}}" hint-placeholder-val="{{true}}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 7L7 17M7 9v8h8"></path></svg></sc-if><sc-if value="{{m.isOut}}" hint-placeholder-val="{{false}}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"></path></svg></sc-if></span><span style="display: flex; flex-direction: column; min-width: 0"><span style="font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{m.concept}}</span><span style="font-size: 12px; color: #7A6D63">{{m.kind}}</span></span></span>
+<span style="display: flex; align-items: center; gap: 6px; font-size: 13px; color: #4A403A"><span style="width: 8px; height: 8px; border-radius: 2px; background: {{m.mc}}"></span>{{m.method}}</span>
+<span class="tend xnum" style="text-align: right; font-weight: 700; color: {{m.fg}}">{{m.amount}}</span>
 </div>
 </sc-for>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="xside">
+<div class="xcard" style="padding: 14px; display: flex; flex-direction: column; gap: 10px">
+<div class="xlab">Ingresos por medio de pago</div>
+<div style="display: flex; height: 10px; border-radius: 999px; overflow: hidden; background: #EFE8E0"><sc-for list="{{cajaMix}}" as="x" hint-placeholder-count="3"><span style="display: block; height: 100%; width: {{x.pct}}%; background: {{x.c}}"></span></sc-for></div>
+<sc-for list="{{cajaMix}}" as="x" hint-placeholder-count="3">
+<div style="display: flex; align-items: center; gap: 8px; font-size: 13.5px"><span style="width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; background: {{x.c}}"></span><span style="flex: 1; color: #4A403A">{{x.label}}</span><span class="xnum" style="font-weight: 600">{{x.amt}}</span><span class="xnum" style="width: 36px; text-align: right; font-size: 12.5px; color: #7A6D63">{{x.pctTxt}}</span></div>
+</sc-for>
+</div>
+<div class="xcard" style="padding: 14px; display: flex; flex-direction: column; gap: 10px">
+<div class="xlab">Arqueo y cierre</div>
+<div style="display: flex; justify-content: space-between; align-items: baseline; font-size: 13.5px; color: #4A403A"><span>Efectivo esperado</span><span class="xnum" style="font-weight: 700; font-size: 15px; color: #2A2421">{{cajaEfEsp}}</span></div>
+<sc-if value="{{cajaOpen}}" hint-placeholder-val="{{true}}">
+<label style="display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 500; color: #4A403A">Efectivo contado<input class="xin" type="text" inputmode="numeric" value="{{cajaCount}}" onChange="{{onCajaCount}}" placeholder="Lo que hay en la caja"></input></label>
+</sc-if>
+<sc-if value="{{cajaCountShow}}" hint-placeholder-val="{{false}}"><div class="xnote" style="background: {{cajaDiff.bg}}; color: {{cajaDiff.fg}}">{{cajaDiff.txt}}</div></sc-if>
+<sc-if value="{{cajaOpen}}" hint-placeholder-val="{{true}}"><button type="button" class="xbtn2" onClick="{{cajaClose}}" style="width: 100%">Cerrar caja</button></sc-if>
+<sc-if value="{{cajaClosed}}" hint-placeholder-val="{{false}}">
+<div class="xnote" style="background: rgba(62,140,84,0.12); color: #2E6B3E; flex-direction: column; gap: 6px"><span>{{cajaClosedMsg}}</span><button type="button" onClick="{{cajaReopen}}" style="align-self: flex-start; border: none; background: none; padding: 0; color: #2E6B3E; font-weight: 700; font-size: 13px; text-decoration: underline; cursor: pointer; font-family: inherit">Reabrir caja</button></div>
+</sc-if>
 </div>
 </div>
 </div>
@@ -1179,37 +1245,46 @@ Precios tomados automáticamente de la lista vigente
 
 <!-- ===================== COBRANZAS ===================== -->
 <sc-if value="{{isCob}}" hint-placeholder-val="{{false}}">
-<div class="mroot" style="display: flex; flex-direction: column; gap: 16px">
-<div style="display: flex; flex-direction: column; gap: 4px">
-<h3 class="mh3" style="margin: 0; font-size: 21px; font-weight: 700; letter-spacing: -0.01em; color: #FBF7F3">Cobranzas</h3>
-<span class="msub" style="font-size: 14px; color: #C0B6AD">Cuentas corrientes ordenadas por urgencia</span>
+<div class="mroot" style="display: flex; flex-direction: column; gap: 14px">
+<div class="xhead">
+<div class="xtitle"><h3 class="mh3" style="margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.01em; color: #2A2421">Cobranzas</h3><span class="msub" style="font-size: 13.5px; color: #5C5049">Cuentas corrientes ordenadas por urgencia · hoy 15/10</span></div>
+<div class="xsegwrap"><div class="xseg"><sc-for list="{{cobFilters}}" as="f" hint-placeholder-count="4"><button type="button" onClick="{{f.pick}}" style="background: {{f.bg}}; color: {{f.fg}}; box-shadow: {{f.sh}}">{{f.label}}</button></sc-for></div></div>
 </div>
-<div class="kpis" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px">
-<div style="background: #332E2A; border: 1px solid #403934; border-radius: 12px; padding: 12px 16px"><div style="font-size: 12.5px; color: #C0B6AD">Total a cobrar</div><div style="font-size: 24px; font-weight: 700; color: #FBF7F3; font-variant-numeric: tabular-nums">{{cobTotal}}</div></div>
-<div style="background: rgba(226,95,120,0.08); border: 1px solid rgba(226,95,120,0.3); border-radius: 12px; padding: 12px 16px"><div style="font-size: 12.5px; color: #F59DB0">Vencido</div><div style="font-size: 24px; font-weight: 700; color: #F59DB0; font-variant-numeric: tabular-nums">{{cobVencido}}</div></div>
-<div style="background: rgba(232,200,100,0.08); border: 1px solid rgba(232,200,100,0.3); border-radius: 12px; padding: 12px 16px"><div style="font-size: 12.5px; color: #E8CC7A">Vence en 7 días</div><div style="font-size: 24px; font-weight: 700; color: #E8CC7A; font-variant-numeric: tabular-nums">{{cobProx}}</div></div>
+<div class="xk">
+<div class="xkc"><span class="xkl">Total a cobrar</span><span class="xkv">{{cobTotal}}</span><span class="xkn">{{cobOpenN}}</span></div>
+<div class="xkc" style="border-color: rgba(200,60,90,0.32); background: #FDF6F8"><span class="xkl" style="color: #A3284A">Vencido</span><span class="xkv" style="color: #A3284A">{{cobVencido}}</span><span class="xkn">{{cobVencN}}</span></div>
+<div class="xkc" style="border-color: rgba(214,160,40,0.4); background: #FDF9EF"><span class="xkl" style="color: #8A5A00">Vence en 7 días</span><span class="xkv" style="color: #8A5A00">{{cobProx}}</span><span class="xkn">recordar esta semana</span></div>
+<div class="xkc" style="border-color: rgba(62,140,84,0.32); background: #F5FAF6"><span class="xkl" style="color: #2E6B3E">Cobrado en octubre</span><span class="xkv" style="color: #2E6B3E">{{cobCobrado}}</span><span class="xkn">{{cobHoyTxt}}</span></div>
 </div>
-<div style="border: 1px solid #403934; border-radius: 12px; overflow: hidden">
+<div class="xcard" style="padding: 12px 14px; display: flex; flex-direction: column; gap: 9px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 10px"><span class="xlab">Antigüedad de la deuda</span><span style="font-size: 12.5px; color: #7A6D63">{{cobAgingNote}}</span></div>
+<div style="display: flex; height: 12px; border-radius: 999px; overflow: hidden; background: #EFE8E0"><sc-for list="{{cobAging}}" as="a" hint-placeholder-count="4"><span style="display: block; height: 100%; width: {{a.pct}}%; background: {{a.c}}"></span></sc-for></div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px 18px"><sc-for list="{{cobAging}}" as="a" hint-placeholder-count="4"><span style="display: flex; align-items: center; gap: 6px; font-size: 12.5px; color: #5C5049"><span style="width: 9px; height: 9px; border-radius: 3px; background: {{a.c}}"></span>{{a.label}}<strong class="xnum" style="color: #2A2421; font-weight: 600">{{a.amt}}</strong></span></sc-for></div>
+</div>
+<sc-if value="{{cobMsgShow}}" hint-placeholder-val="{{false}}"><div class="xnote" style="background: rgba(62,140,84,0.12); color: #2E6B3E"><span style="display: flex; flex-shrink: 0; margin-top: 1px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg></span><span style="flex: 1">{{cobMsg}}</span></div></sc-if>
+<div class="xcard" style="overflow: hidden">
 <div style="overflow-x: auto">
-<div class="tmin" style="min-width: 760px">
-<div class="thead" style="display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr) 100px minmax(0, 1.1fr) 120px 112px; gap: 12px; padding: 10px 16px; background: #332E2A; border-bottom: 1px solid #403934; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #AA9F96">
-<span>Cliente</span><span>Comprobante</span><span>Vence</span><span>Estado</span><span style="text-align: right">Saldo</span><span></span>
+<div class="tmin" style="min-width: 800px">
+<div class="xth thead" style="grid-template-columns: minmax(0, 1.5fr) 118px 112px 118px 214px"><span>Cliente y comprobante</span><span>Vencimiento</span><span>Estado</span><span style="text-align: right">Saldo</span><span></span></div>
+<div class="xscroll" style="max-height: 280px; overflow-y: auto">
+<sc-for list="{{debtRows}}" as="d" hint-placeholder-count="5">
+<div class="xtr trow" style="grid-template-columns: minmax(0, 1.5fr) 118px 112px 118px 214px">
+<div class="tfull" style="display: flex; flex-direction: column; min-width: 0"><span style="font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{d.name}}</span><span class="xmono">{{d.comp}}</span></div>
+<span style="display: flex; flex-direction: column"><span class="xnum" style="font-size: 13.5px">{{d.vto}}</span><span style="font-size: 12px; color: {{d.fg}}">{{d.when}}</span></span>
+<span class="xpill" style="background: {{d.bg}}; color: {{d.fg}}"><span class="xdot"></span>{{d.status}}</span>
+<span class="xnum" style="text-align: right; font-weight: 700; color: {{d.amtC}}">{{d.amount}}</span>
+<div class="tend" style="display: flex; justify-content: flex-end; gap: 6px">
+<sc-if value="{{d.isOpen}}" hint-placeholder-val="{{true}}"><a class="xbtn2 xsm" href="{{d.wa}}" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.6A8.5 8.5 0 1 1 21 11.5z"></path></svg>Recordar</a><button type="button" class="xbtn xsm" onClick="{{d.pay}}">Registrar pago</button></sc-if>
+<sc-if value="{{d.isPaid}}" hint-placeholder-val="{{false}}"><button type="button" class="xbtn2 xsm" onClick="{{d.undo}}">Deshacer</button></sc-if>
 </div>
-<sc-for list="{{debtRows}}" as="d" hint-placeholder-count="4">
-<div class="trow" style="display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr) 100px minmax(0, 1.1fr) 120px 112px; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #3A3430; align-items: center; font-size: 14px">
-<span class="tfull" style="font-weight: 600; color: #F5F0EB">{{d.name}}</span>
-<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #AA9F96">{{d.comp}}</span>
-<span style="font-variant-numeric: tabular-nums; color: #D3CAC2">{{d.vto}}</span>
-<span style="justify-self: start; display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: {{d.bg}}; color: {{d.fg}}"><span style="width: 6px; height: 6px; border-radius: 50%; background: {{d.fg}}"></span>{{d.status}}</span>
-<span style="text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; color: #FBF7F3">{{d.amount}}</span>
-<a class="tend" href="{{d.wa}}" target="_blank" rel="noopener" style="justify-self: end; display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 12px; border-radius: 8px; border: 1px solid #E07A45; color: #F2A57A; background: transparent; text-decoration: none; font-size: 13.5px; font-weight: 600">
-<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.5L3 21l2-5.6A8.5 8.5 0 1 1 21 11.5z"></path></svg>Recordar</a>
 </div>
 </sc-for>
+<sc-if value="{{cobEmpty}}" hint-placeholder-val="{{false}}"><div style="padding: 24px 16px; text-align: center; font-size: 13.5px; color: #7A6D63">No hay comprobantes en este filtro.</div></sc-if>
 </div>
 </div>
 </div>
-<span class="msub" style="font-size: 13px; color: #C0B6AD">"Recordar" abre WhatsApp con el monto y el vencimiento ya escritos.</span>
+</div>
+<span class="msub" style="font-size: 12.5px; color: #7A6D63">"Recordar" abre WhatsApp con el monto y el vencimiento escritos. "Registrar pago" también lo suma a la Caja del día.</span>
 </div>
 </sc-if>
 
@@ -1218,44 +1293,44 @@ Precios tomados automáticamente de la lista vigente
 <div class="mroot" style="display: flex; flex-direction: column; gap: 16px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 10px 20px">
 <div style="display: flex; flex-direction: column; gap: 4px">
-<h3 class="mh3" style="margin: 0; font-size: 21px; font-weight: 700; letter-spacing: -0.01em; color: #FBF7F3">Indicadores</h3>
-<span class="msub" style="font-size: 14px; color: #C0B6AD">Resumen del negocio, actualizado con cada módulo</span>
+<h3 class="mh3" style="margin: 0; font-size: 21px; font-weight: 700; letter-spacing: -0.01em; color: #2A2421">Indicadores</h3>
+<span class="msub" style="font-size: 14px; color: #5C5049">Resumen del negocio, actualizado con cada módulo</span>
 </div>
-<div style="display: inline-flex; background: #221F1D; border: 1px solid #403934; border-radius: 10px; padding: 3px; gap: 2px">
+<div style="display: inline-flex; background: #F4EEE7; border: 1px solid #E6DDD2; border-radius: 10px; padding: 3px; gap: 2px">
 <sc-for list="{{periodBtns}}" as="b" hint-placeholder-count="2">
-<button type="button" onClick="{{b.pick}}" style="height: 34px; padding: 0 14px; border-radius: 8px; border: none; font-weight: 600; font-size: 13.5px; cursor: pointer; background: {{b.bg}}; color: {{b.fg}}">{{b.label}}</button>
+<button type="button" onClick="{{b.pick}}" style="height: 34px; padding: 0 14px; border-radius: 8px; border: none; font-weight: 600; font-size: 13.5px; cursor: pointer; background: {{b.bg}}; color: {{b.fg}}; box-shadow: {{b.sh}}">{{b.label}}</button>
 </sc-for>
 </div>
 </div>
 <div class="kpis2" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px">
 <sc-for list="{{kpis}}" as="k" hint-placeholder-count="4">
-<div style="background: #332E2A; border: 1px solid #403934; border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; gap: 4px">
-<span style="font-size: 12.5px; color: #C0B6AD">{{k.label}}</span>
-<span style="font-size: 23px; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; color: #FBF7F3">{{k.value}}</span>
+<div style="background: #FFFFFF; border: 1px solid #E6DDD2; border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 12.5px; color: #5C5049">{{k.label}}</span>
+<span style="font-size: 23px; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; color: #2A2421">{{k.value}}</span>
 <span style="align-self: flex-start; font-size: 12px; font-weight: 600; padding: 1px 8px; border-radius: 999px; background: {{k.nbg}}; color: {{k.nfg}}">{{k.note}}</span>
 </div>
 </sc-for>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: stretch">
-<div style="flex: 999 1 360px; min-width: 0; background: #332E2A; border: 1px solid #403934; border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px">
-<span style="font-size: 14px; font-weight: 600; color: #F3EDE7">{{chartTitle}}</span>
-<div class="chart" style="position: relative; height: 180px; display: flex; align-items: flex-end; gap: 14px; padding: 0 4px 22px; box-sizing: border-box; background: repeating-linear-gradient(to top, transparent 0, transparent 22px, #403934 22px, #403934 23px, transparent 23px, transparent 61px)">
+<div style="flex: 999 1 360px; min-width: 0; background: #FFFFFF; border: 1px solid #E6DDD2; border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 14px; font-weight: 600; color: #2A2421">{{chartTitle}}</span>
+<div class="chart" style="position: relative; height: 180px; display: flex; align-items: flex-end; gap: 14px; padding: 0 4px 22px; box-sizing: border-box; background: repeating-linear-gradient(to top, transparent 0, transparent 22px, #E6DDD2 22px, #E6DDD2 23px, transparent 23px, transparent 61px)">
 <sc-for list="{{bars}}" as="b" hint-placeholder-count="6">
 <div style="flex: 1; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 4px; position: relative">
-<span style="font-size: 11.5px; font-weight: 600; color: #D3CAC2; font-variant-numeric: tabular-nums">{{b.val}}</span>
+<span style="font-size: 11.5px; font-weight: 600; color: #4A403A; font-variant-numeric: tabular-nums">{{b.val}}</span>
 <div style="width: 100%; max-width: 48px; border-radius: 5px 5px 0 0; height: {{b.h}}%; background: {{b.bg}}"></div>
-<span style="position: absolute; bottom: -20px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #AA9F96">{{b.label}}</span>
+<span style="position: absolute; bottom: -20px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #6B5E54">{{b.label}}</span>
 </div>
 </sc-for>
 </div>
 </div>
-<div style="flex: 1 1 230px; background: #332E2A; border: 1px solid #403934; border-radius: 12px; padding: 14px 12px; display: flex; flex-direction: column; gap: 6px">
-<span style="font-size: 14px; font-weight: 600; padding: 0 4px 4px; color: #F3EDE7">Para atender hoy</span>
+<div style="flex: 1 1 230px; background: #FFFFFF; border: 1px solid #E6DDD2; border-radius: 12px; padding: 14px 12px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 14px; font-weight: 600; padding: 0 4px 4px; color: #2A2421">Para atender hoy</span>
 <sc-for list="{{alerts}}" as="a" hint-placeholder-count="5">
-<button type="button" onClick="{{a.go}}" style="display: flex; align-items: center; gap: 10px; padding: 9px 8px; border: none; border-radius: 8px; background: transparent; color: #F3EDE7; text-align: left; cursor: pointer; min-height: 44px">
+<button type="button" onClick="{{a.go}}" style="display: flex; align-items: center; gap: 10px; padding: 9px 8px; border: none; border-radius: 8px; background: transparent; color: #2A2421; text-align: left; cursor: pointer; min-height: 44px">
 <span style="width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; background: {{a.dot}}"></span>
-<span style="flex: 1; display: flex; flex-direction: column; min-width: 0"><span style="font-size: 13.5px; font-weight: 600">{{a.text}}</span><span style="font-size: 12px; color: #AA9F96">{{a.mod}}</span></span>
-<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9C9087" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+<span style="flex: 1; display: flex; flex-direction: column; min-width: 0"><span style="font-size: 13.5px; font-weight: 600">{{a.text}}</span><span style="font-size: 12px; color: #6B5E54">{{a.mod}}</span></span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7A6D63" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
 </button>
 </sc-for>
 </div>
@@ -1268,11 +1343,11 @@ Precios tomados automáticamente de la lista vigente
 </div>
 
 <!-- Status bar -->
-<div class="app-status" style="border-top: 1px solid #3A3430; background: #221F1D; padding: 9px 16px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px 16px; font-size: 13px; color: #C0B6AD">
-<span style="display: flex; align-items: center; gap: 8px"><span style="width: 7px; height: 7px; border-radius: 50%; background: #7FC08A"></span>Datos guardados en Google Sheets · respaldo diario</span>
+<div class="app-status" style="border-top: 1px solid #EFE8E0; background: #F4EEE7; padding: 9px 16px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px 16px; font-size: 13px; color: #5C5049">
+<span style="display: flex; align-items: center; gap: 8px"><span style="width: 7px; height: 7px; border-radius: 50%; background: #3E8C54"></span>Datos guardados en Google Sheets · respaldo diario</span>
 <span style="display: flex; align-items: center; gap: 8px">
-<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#E07A45" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"></path><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"></path></svg>
-Se integra con: <strong style="color: #F3EDE7">{{cur.integra}}</strong>
+<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#A8481F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"></path><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"></path></svg>
+Se integra con: <strong style="color: #2A2421">{{cur.integra}}</strong>
 </span>
 </div>
 </div>
@@ -1285,7 +1360,7 @@ Se integra con: <strong style="color: #F3EDE7">{{cur.integra}}</strong>
 <div class="proc-head" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px">
 <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #A8481F">Cómo trabajamos</div>
 <h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(28px, 3.4vw, 42px); line-height: 1.08; letter-spacing: -0.02em; color: #2A2421">Un proceso claro, de principio a fin</h2>
-<p style="margin: 0; font-size: 17px; color: #5C5049; max-width: 560px">Sabés en todo momento qué se hace, en qué plazos y con qué presupuesto.</p>
+<p style="margin: 0; font-size: 17px; color: #5C5049; max-width: 640px">Sistemas a medida para ventas, administración y procesos. Sabés en todo momento qué se hace, en qué plazos y con qué presupuesto.</p>
 </div>
 <ol class="steps" style="margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px">
 <li class="step" style="position: relative; display: flex; flex-direction: column; gap: 16px; list-style: none">
