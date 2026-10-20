@@ -134,7 +134,8 @@ class Component extends DCLogic {
     const navName = (i) => (MODS.find((m) => m.id === NAV_ORDER[(i + NAV_ORDER.length) % NAV_ORDER.length]) || MODS[0]).name;
     const navGo = (d) => () => set({ mod: NAV_ORDER[(navIdx + d + NAV_ORDER.length) % NAV_ORDER.length], menuOpen: false });
     const hp = {};
-    NAV_ORDER.forEach((id) => { hp[id] = () => set({ mod: id, menuOpen: false }); });
+    const goMods = () => { const el = typeof document !== 'undefined' && document.getElementById('modulos'); if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 20); };
+    NAV_ORDER.forEach((id) => { hp[id] = (e) => { if (e && e.preventDefault) e.preventDefault(); set({ mod: id, menuOpen: false }); goMods(); }; });
     const heroMods = NAV_ORDER.map((id) => {
       const isIdea = id === 'idea';
       const mm = MODS.find((x) => x.id === id) || MODS[0];
